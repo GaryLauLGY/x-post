@@ -1,0 +1,38 @@
+{
+  "taxonomy": {
+    "AI工具": "具体模型、产品、工具新闻与工具选择",
+    "AI效率": "AI 对个人工作流、团队协作与组织效率的提升",
+    "AI实操": "可以直接照做的安装、配置、订阅与使用步骤",
+    "AI世界观": "AI 时代、产业变化、社会影响与宏观判断",
+    "AI认知": "理解 AI 能力、输出特征与个人应对方法",
+    "AI商业": "AI 变现、副业、投资与商业模式",
+    "AI学习": "AI 学习路径与信息来源"
+  },
+  "items": [
+    { "source": "rwayne", "post_id": "2043147477243789820", "category": "AI世界观", "reason": "用日本与 DeepSeek 的双关表达 AI 发展阶段想象。" },
+    { "source": "rwayne", "post_id": "2058788288094425146", "category": "AI世界观", "reason": "围绕 DeepSeek 创始人与产业圈层展开判断。" },
+    { "source": "rwayne", "post_id": "2040625039616414000", "category": "AI认知", "reason": "解释 AI 写作特征与人类写作习惯。" },
+    { "source": "rwayne", "post_id": "2058256310244925715", "category": "AI商业", "reason": "分享使用豆包获得收入的案例。" },
+    { "source": "rwayne", "post_id": "2030841764815495422", "category": "AI实操", "reason": "涉及 OpenClaw 与 Claude Code 的安装配置。" },
+    { "source": "rwayne", "post_id": "2030178887213211742", "category": "AI效率", "reason": "用 OpenClaw 自动完成筛选、聊天和约会流程。" },
+    { "source": "rwayne", "post_id": "2035332261944676600", "category": "AI认知", "reason": "讨论 AI 时代的信息接入与判断结构。" },
+    { "source": "rwayne", "post_id": "2039324715303760034", "category": "AI商业", "reason": "验证面向中年用户的线下 AI 教学商业模式。" },
+    { "source": "rwayne", "post_id": "2032061290580230620", "category": "AI世界观", "reason": "通过模型命名与人格印象表达对 AI 的文化观察。" },
+    { "source": "rwayne", "post_id": "2057726093382267173", "category": "AI实操", "reason": "讨论 AI 中转站的合规落地方案。" },
+    { "source": "rwayne", "post_id": "2055497202886418643", "category": "AI学习", "reason": "推荐中文区 AI 内容学习来源。" },
+    { "source": "rwayne", "post_id": "2041540132529127562", "category": "AI认知", "reason": "强调个人学习 AI 的时代必要性。" },
+    { "source": "rwayne", "post_id": "2050990520093282713", "category": "AI效率", "reason": "观察苹果内部使用 Claude Code 提升软件开发效率。" },
+    { "source": "rwayne", "post_id": "2048766830869889215", "category": "AI世界观", "reason": "从 Manus 事件提炼做大事前的行业教训。" },
+    { "source": "rwayne", "post_id": "2025106523593343145", "category": "AI商业", "reason": "讨论 AI 浪潮中的投资与赚钱机会。" },
+    { "source": "rwayne", "post_id": "2051691388442653084", "category": "AI工具", "reason": "分析 Kimi 的会员、算力与产品策略。" },
+    { "source": "rwayne", "post_id": "2028310113149465001", "category": "AI效率", "reason": "直接比较会用 AI 与不会用 AI 的组织效率。" },
+    { "source": "ai-xiaomu", "post_id": "2055946814910775600", "category": "AI工具", "reason": "介绍 Claude Code 的工具版本差异。" },
+    { "source": "ai-xiaomu", "post_id": "2059965751772242373", "category": "AI商业", "reason": "给出文档转换加 Claude 服务的副业路径。" },
+    { "source": "ai-xiaomu", "post_id": "2050738610379362434", "category": "AI世界观", "reason": "讨论 GPT-6、AGI 与 OpenAI 的产业方向。" },
+    { "source": "ai-xiaomu", "post_id": "2057404282090008945", "category": "AI工具", "reason": "比较 Claude Code 与 Codex 两个编程工具。" },
+    { "source": "ai-xiaomu", "post_id": "2047613769933553877", "category": "AI认知", "reason": "把 AI 工具能力放进中年职业准备框架。" },
+    { "source": "ai-xiaomu", "post_id": "2059468634536247498", "category": "AI实操", "reason": "提供 Claude Code 订阅的具体操作步骤。" },
+    { "source": "ai-xiaomu", "post_id": "2066181367340429446", "category": "AI工具", "reason": "比较 GLM、GPT 与 Claude 的性能和部署成本。" },
+    { "source": "rwayne", "post_id": "2065059725612601446", "category": "生活冷知识", "reason": "内容核心是高考阅卷期间的信息隔离与保密机制。" }
+  ]
+}

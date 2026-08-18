@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "post_id": "sample-1001",
+      "original_text": "把素材、判断和制作放在同一条链路里，团队才会真正积累能力。",
+      "source": "示例来源 A",
+      "published_at": "2026-08-18T10:00:00+08:00",
+      "link": "https://x.com/example/status/sample-1001",
+      "category": "pure_text",
+      "tags": ["团队效率", "内容系统"],
+      "note": "合成样例，不含真实账号数据",
+      "impressions": 68000,
+      "replies": 23,
+      "reposts": 128,
+      "likes": 946
+    },
+    {
+      "post_id": "sample-1002",
+      "original_text": "工具真正的价值，不是替你做一次，而是让下一次更容易。",
+      "source": "示例来源 B",
+      "published_at": "2026-08-17T16:30:00+08:00",
+      "link": "https://x.com/example/status/sample-1002",
+      "category": "image_text",
+      "tags": ["工具", "复用"],
+      "note": "合成样例，不含真实账号数据",
+      "impressions": 49200,
+      "replies": 16,
+      "reposts": 86,
+      "likes": 721
+    }
+  ]
+}

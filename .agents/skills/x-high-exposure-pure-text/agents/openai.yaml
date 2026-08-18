@@ -1,0 +1,4 @@
+interface:
+  display_name: "X 高曝光纯文字帖"
+  short_description: "严格抓取、筛选并同步高曝光 X 纯文字原创帖子"
+  default_prompt: "Use $x-high-exposure-pure-text to crawl and sync high-exposure pure-text posts for an authorized X author."

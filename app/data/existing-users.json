@@ -1,0 +1,41 @@
+[
+  {
+    "id": "user-gyro-ai",
+    "name": "Gyro",
+    "handle": "@gyro_ai",
+    "role": "已导入用户",
+    "accountIds": []
+  },
+  {
+    "id": "user-weiyux2021",
+    "name": "动物园园长",
+    "handle": "@weiyux2021",
+    "role": "已导入用户",
+    "accountIds": []
+  },
+  {
+    "id": "user-wsl8297",
+    "name": "Joruno",
+    "handle": "@wsl8297",
+    "role": "已导入用户",
+    "accountIds": []
+  },
+  {
+    "id": "user-ai-xiaomu",
+    "name": "黄小木",
+    "handle": "@ai_xiaomu",
+    "role": "已导入用户",
+    "accountIds": [
+      "ai-xiaomu"
+    ]
+  },
+  {
+    "id": "user-rwayne",
+    "name": "Roland.W",
+    "handle": "@rwayne",
+    "role": "已导入用户",
+    "accountIds": [
+      "rwayne"
+    ]
+  }
+]
