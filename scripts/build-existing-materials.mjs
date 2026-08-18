@@ -26,7 +26,7 @@ const sources = [
 
 const accounts = [
   { id: "ai-xiaomu", name: "黄小木", handle: "@ai_xiaomu", verified: true, label: "#黄小木", accent: "#263033", avatar: "/avatars/ai-xiaomu.png" },
-  { id: "rwayne", name: "Roland.W", handle: "@rwayne", verified: true, label: "#RolandW", accent: "#756b92", avatar: "/avatars/rwayne.png" },
+  { id: "rwayne", name: "Roland.W", handle: "@rwayne", verified: true, label: "#Roland.W", accent: "#756b92", avatar: "/avatars/rwayne.png" },
 ];
 
 const users = [

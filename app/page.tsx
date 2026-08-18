@@ -68,6 +68,35 @@ const CATEGORY_ORDER = [
   "情绪八卦",
   "其他",
 ];
+const GLOBAL_TAG_POOL = [
+  "认知",
+  "思考",
+  "洞察",
+  "趋势",
+  "成长",
+  "方法论",
+  "信息差",
+  "新知",
+  "观察",
+  "经验",
+];
+const CATEGORY_PUBLISHING: Record<string, { caption: string; tag: string }> = {
+  AI工具: { caption: "这个 AI 工具值得收藏，关键时刻真能提升效率。", tag: "AI工具" },
+  AI效率: { caption: "真正拉开效率差距的，是把 AI 用进每天的工作流。", tag: "效率工具" },
+  AI实操: { caption: "与其讨论 AI，不如先把这个方法真正跑一遍。", tag: "AI实战" },
+  AI世界观: { caption: "AI 正在重写规则，越早看懂变化，越能掌握主动权。", tag: "AI趋势" },
+  AI认知: { caption: "理解 AI 的边界，比盲目追逐每个新模型更重要。", tag: "AI思维" },
+  AI商业: { caption: "AI 的价值最终要回到真实需求和商业结果。", tag: "AI商业化" },
+  AI学习: { caption: "学 AI 最有效的方式，是边做边验证。", tag: "AI学习" },
+  认知提升: { caption: "很多差距，往往从看待问题的方式开始拉开。", tag: "认知升级" },
+  赚钱副业: { caption: "赚钱没有万能公式，但信息、执行和复利缺一不可。", tag: "副业思路" },
+  职场裁员: { caption: "职场变化从不提前通知，持续积累选择权才是底气。", tag: "职场生存" },
+  社会观察: { caption: "一个值得记录的社会切面，也许能帮我们重新理解日常。", tag: "社会洞察" },
+  平台产品: { caption: "产品细节背后，往往藏着平台真正的取舍。", tag: "产品观察" },
+  生活冷知识: { caption: "又学到一个看似不起眼、实际很有用的冷知识。", tag: "冷知识" },
+  情绪八卦: { caption: "情绪之外，这件事也值得换个角度再看一遍。", tag: "热点观察" },
+  其他: { caption: "先记下这个值得关注的信息，之后再慢慢消化。", tag: "值得关注" },
+};
 const METRIC_FIELDS: Array<{ key: keyof PostMetrics; label: string }> = [
   { key: "views", label: "浏览" },
   { key: "replies", label: "回复" },
@@ -137,6 +166,28 @@ const initialPost = seedPosts[0]!;
 const accountForSource = (source: string) =>
   accounts.find((account) => account.name === source || account.handle.slice(1) === source);
 const initialAccount = accountForSource(initialPost.source) ?? accounts[0]!;
+
+function publishingForCategory(category: string) {
+  return CATEGORY_PUBLISHING[category] ?? {
+    caption: `关于${category}，这里有一个值得继续关注的观察。`,
+    tag: category,
+  };
+}
+
+function stableTagPair(key: string, offset = 0) {
+  const seed = Array.from(key).reduce((total, character) => ((total * 31) + character.codePointAt(0)!) >>> 0, 0);
+  const firstIndex = (seed + offset) % GLOBAL_TAG_POOL.length;
+  let secondIndex = ((seed >>> 3) + offset * 3 + 1) % GLOBAL_TAG_POOL.length;
+  if (secondIndex === firstIndex) secondIndex = (secondIndex + 1) % GLOBAL_TAG_POOL.length;
+  return [GLOBAL_TAG_POOL[firstIndex]!, GLOBAL_TAG_POOL[secondIndex]!];
+}
+
+function buildPublishingTags(post: Post, account: Account, offset = 0) {
+  const category = publishingForCategory(post.category);
+  const categoryTag = post.category.startsWith("AI") ? "AI" : post.category;
+  const [globalTagA, globalTagB] = stableTagPair(post.id, offset);
+  return [categoryTag, globalTagA, globalTagB, category.tag, account.name];
+}
 
 const builtinBackgrounds: Background[] = [
   { id: "ny-sunset", name: "纽约落日", kind: "image", value: "/backgrounds/ny-sunset.jpg" },
@@ -230,6 +281,8 @@ export default function Home() {
   const posts = seedPosts;
   const [selectedPostId, setSelectedPostId] = useState(initialPost.id);
   const [text, setText] = useState(initialPost.text);
+  const [publishCaption, setPublishCaption] = useState(publishingForCategory(initialPost.category).caption);
+  const [tagOffset, setTagOffset] = useState(0);
   const [cardMetrics, setCardMetrics] = useState<PostMetrics>({ ...initialPost.metrics });
   const [accountId, setAccountId] = useState(initialAccount.id);
   const [backgrounds, setBackgrounds] = useState(builtinBackgrounds);
@@ -284,7 +337,11 @@ export default function Home() {
     });
   }, [author, category, posts, search]);
   const effectiveCardScale = Math.min(cardScale, maxCardScale);
-  const publishCopy = `${text}\n\n${account.label}`;
+  const publishingTags = useMemo(
+    () => buildPublishingTags(selectedPost, account, tagOffset),
+    [account, selectedPost, tagOffset],
+  );
+  const publishCopy = `${publishCaption.trim()}\n\n${publishingTags.map((tag) => `#${tag}`).join(" ")}`;
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -363,6 +420,8 @@ export default function Home() {
   const choosePost = (post: Post) => {
     setSelectedPostId(post.id);
     setText(post.text);
+    setPublishCaption(publishingForCategory(post.category).caption);
+    setTagOffset(0);
     setCardMetrics({ ...post.metrics });
     const sourceAccount = accountForSource(post.source);
     if (sourceAccount) setAccountId(sourceAccount.id);
@@ -376,6 +435,10 @@ export default function Home() {
   const restoreOriginal = () => {
     setText(selectedPost?.text ?? "");
     setCardMetrics({ ...(selectedPost?.metrics ?? initialPost.metrics) });
+  };
+
+  const restorePublishingCaption = () => {
+    setPublishCaption(publishingForCategory(selectedPost.category).caption);
   };
 
   const uploadBackground = (event: ChangeEvent<HTMLInputElement>) => {
@@ -862,8 +925,24 @@ export default function Home() {
               <button onClick={addNetworkBackground}>添加</button>
             </div>
             <div className="copy-box">
-              <div><span>发布文案</span><button onClick={copyPublishText}>复制</button></div>
-              <p>{text}<br /><b>{account.label}</b></p>
+              <div className="copy-box-heading">
+                <span>发布文案</span>
+                <button onClick={copyPublishText}>复制文案</button>
+              </div>
+              <textarea
+                value={publishCaption}
+                onChange={(event) => setPublishCaption(event.target.value)}
+                rows={3}
+                aria-label="发布文案"
+              />
+              <div className="publishing-tag-heading">
+                <span>五个发布标签</span>
+                <button type="button" onClick={() => setTagOffset((current) => current + 1)}>换一组通用标签</button>
+              </div>
+              <div className="publishing-tags">
+                {publishingTags.map((tag, index) => <b key={`${index}-${tag}`}>#{tag}</b>)}
+              </div>
+              <button type="button" className="restore-caption" onClick={restorePublishingCaption}>恢复分类固定文案</button>
             </div>
           </aside>
         </section>

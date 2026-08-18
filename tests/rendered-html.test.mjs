@@ -50,6 +50,14 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(page, /function CandidateMetric/);
   assert.match(page, /candidate-metrics/);
   assert.match(page, /const \[cardMetrics, setCardMetrics\]/);
+  assert.match(page, /const \[publishCaption, setPublishCaption\]/);
+  assert.match(page, /const GLOBAL_TAG_POOL/);
+  assert.match(page, /const CATEGORY_PUBLISHING/);
+  assert.match(page, /post\.category\.startsWith\("AI"\) \? "AI" : post\.category/);
+  assert.match(page, /buildPublishingTags\(selectedPost, account, tagOffset\)/);
+  assert.match(page, /account\.name/);
+  assert.match(page, /换一组通用标签/);
+  assert.match(page, /恢复分类固定文案/);
   assert.match(page, /setCardMetrics\(\{ \.\.\.post\.metrics \}\)/);
   assert.match(page, /METRIC_FIELDS\.map/);
   assert.match(page, /type="number"/);
@@ -189,6 +197,7 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.deepEqual(accountRecords.map((item) => item.id), ["ai-xiaomu", "rwayne"]);
   assert.equal(accountRecords.find((item) => item.id === "rwayne").avatar, "/avatars/rwayne.png");
   assert.equal(accountRecords.find((item) => item.id === "ai-xiaomu").avatar, "/avatars/ai-xiaomu.png");
+  assert.equal(accountRecords.find((item) => item.id === "rwayne").label, "#Roland.W");
   assert.equal(JSON.parse(users).length, 5);
   assert.deepEqual(
     JSON.parse(users).filter((item) => item.accountIds.length).map((item) => item.accountIds[0]),
@@ -205,6 +214,7 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(syncScript, /screenshot\.bodyLines/);
   assert.match(syncScript, /readDirectoryCategories/);
   assert.match(syncScript, /crawled-high-exposure-materials\.json/);
+  assert.match(syncScript, /#Roland\.W/);
   assert.doesNotMatch(syncScript, /pic\.twitter\.com|t\.co/);
   assert.match(styles, /\.tweet-card[\s\S]*?border-radius: 0/);
   assert.match(styles, /\.x-action-icon[\s\S]*?fill: currentColor/);

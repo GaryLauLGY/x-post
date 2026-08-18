@@ -513,7 +513,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   font-weight: 700;
 }
 .copy-box { margin-top: 16px; padding: 13px; border: 1px solid #e5e8f5; border-radius: 12px; background: #f7f8ff; }
-.copy-box > div { display: flex; justify-content: space-between; align-items: center; }
+.copy-box-heading, .publishing-tag-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .copy-box span { color: #76837b; font-size: 10px; font-weight: 800; }
 .copy-box button {
   border: 0;
@@ -522,8 +522,20 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   font-size: 10px;
   font-weight: 800;
 }
-.copy-box p { margin: 8px 0 0; font-size: 11px; line-height: 1.6; white-space: pre-wrap; }
-.copy-box b { color: var(--accent-violet); }
+.copy-box textarea { min-height: 72px; margin-top: 9px; resize: vertical; background: #fff; font-size: 11px; }
+.publishing-tag-heading { margin-top: 11px; }
+.publishing-tag-heading button { font-size: 9px; }
+.publishing-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.publishing-tags b {
+  border: 1px solid #d9defa;
+  border-radius: 999px;
+  padding: 4px 7px;
+  color: var(--accent-violet);
+  background: #fff;
+  font-size: 9px;
+  line-height: 1;
+}
+.copy-box .restore-caption { margin-top: 10px; color: #778196; font-size: 9px; }
 
 .wide-page {
   min-height: calc(100vh - 108px);
