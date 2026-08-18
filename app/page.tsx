@@ -189,6 +189,25 @@ function buildPublishingTags(post: Post, account: Account, offset = 0) {
   return [categoryTag, globalTagA, globalTagB, category.tag, account.name];
 }
 
+function publishingTagLine(tags: string[]) {
+  return tags.map((tag) => `#${tag}`).join(" ");
+}
+
+function buildPublishingDraft(post: Post, account: Account, offset = 0) {
+  return `${publishingForCategory(post.category).caption}\n\n${publishingTagLine(buildPublishingTags(post, account, offset))}`;
+}
+
+function replacePublishingTagLine(draft: string, tags: string[]) {
+  const lines = draft.split("\n");
+  const lastContentIndex = lines.findLastIndex((line) => line.trim().length > 0);
+  const tagPattern = /^(?:#\S+\s+){4}#\S+$/u;
+  if (lastContentIndex >= 0 && tagPattern.test(lines[lastContentIndex]!.trim())) {
+    lines[lastContentIndex] = publishingTagLine(tags);
+    return lines.join("\n");
+  }
+  return `${draft.trimEnd()}\n\n${publishingTagLine(tags)}`;
+}
+
 const builtinBackgrounds: Background[] = [
   { id: "ny-sunset", name: "纽约落日", kind: "image", value: "/backgrounds/ny-sunset.jpg" },
   { id: "hongkong-neon", name: "香港霓虹", kind: "image", value: "/backgrounds/hongkong-neon.jpg" },
@@ -281,7 +300,7 @@ export default function Home() {
   const posts = seedPosts;
   const [selectedPostId, setSelectedPostId] = useState(initialPost.id);
   const [text, setText] = useState(initialPost.text);
-  const [publishCaption, setPublishCaption] = useState(publishingForCategory(initialPost.category).caption);
+  const [publishDraft, setPublishDraft] = useState(buildPublishingDraft(initialPost, initialAccount));
   const [tagOffset, setTagOffset] = useState(0);
   const [cardMetrics, setCardMetrics] = useState<PostMetrics>({ ...initialPost.metrics });
   const [accountId, setAccountId] = useState(initialAccount.id);
@@ -337,11 +356,6 @@ export default function Home() {
     });
   }, [author, category, posts, search]);
   const effectiveCardScale = Math.min(cardScale, maxCardScale);
-  const publishingTags = useMemo(
-    () => buildPublishingTags(selectedPost, account, tagOffset),
-    [account, selectedPost, tagOffset],
-  );
-  const publishCopy = `${publishCaption.trim()}\n\n${publishingTags.map((tag) => `#${tag}`).join(" ")}`;
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -418,13 +432,19 @@ export default function Home() {
   };
 
   const choosePost = (post: Post) => {
+    const sourceAccount = accountForSource(post.source) ?? account;
     setSelectedPostId(post.id);
     setText(post.text);
-    setPublishCaption(publishingForCategory(post.category).caption);
+    setPublishDraft(buildPublishingDraft(post, sourceAccount));
     setTagOffset(0);
     setCardMetrics({ ...post.metrics });
-    const sourceAccount = accountForSource(post.source);
     if (sourceAccount) setAccountId(sourceAccount.id);
+  };
+
+  const chooseAccount = (nextAccountId: string) => {
+    const nextAccount = availableAccounts.find((item) => item.id === nextAccountId) ?? account;
+    setAccountId(nextAccount.id);
+    setPublishDraft((current) => replacePublishingTagLine(current, buildPublishingTags(selectedPost, nextAccount, tagOffset)));
   };
 
   const updateMetric = (key: keyof PostMetrics, value: string) => {
@@ -437,8 +457,14 @@ export default function Home() {
     setCardMetrics({ ...(selectedPost?.metrics ?? initialPost.metrics) });
   };
 
-  const restorePublishingCaption = () => {
-    setPublishCaption(publishingForCategory(selectedPost.category).caption);
+  const restorePublishingDraft = () => {
+    setPublishDraft(buildPublishingDraft(selectedPost, account, tagOffset));
+  };
+
+  const shufflePublishingTags = () => {
+    const nextOffset = tagOffset + 1;
+    setTagOffset(nextOffset);
+    setPublishDraft((current) => replacePublishingTagLine(current, buildPublishingTags(selectedPost, account, nextOffset)));
   };
 
   const uploadBackground = (event: ChangeEvent<HTMLInputElement>) => {
@@ -477,7 +503,7 @@ export default function Home() {
 
   const copyPublishText = async () => {
     try {
-      await navigator.clipboard.writeText(publishCopy);
+      await navigator.clipboard.writeText(publishDraft);
       notify("发布文案已复制");
     } catch {
       notify("浏览器未授予剪贴板权限");
@@ -863,7 +889,7 @@ export default function Home() {
               <h2>卡片设置</h2>
             </div>
             <label>发布账号
-              <select value={account.id} onChange={(event) => setAccountId(event.target.value)}>
+              <select value={account.id} onChange={(event) => chooseAccount(event.target.value)}>
                 {availableAccounts.map((item) => <option key={item.id} value={item.id}>{item.name} {item.handle}</option>)}
               </select>
             </label>
@@ -930,19 +956,15 @@ export default function Home() {
                 <button onClick={copyPublishText}>复制文案</button>
               </div>
               <textarea
-                value={publishCaption}
-                onChange={(event) => setPublishCaption(event.target.value)}
-                rows={3}
+                value={publishDraft}
+                onChange={(event) => setPublishDraft(event.target.value)}
+                rows={6}
                 aria-label="发布文案"
               />
-              <div className="publishing-tag-heading">
-                <span>五个发布标签</span>
-                <button type="button" onClick={() => setTagOffset((current) => current + 1)}>换一组通用标签</button>
+              <div className="copy-box-actions">
+                <button type="button" onClick={shufflePublishingTags}>换一组通用标签</button>
+                <button type="button" onClick={restorePublishingDraft}>恢复分类文案与标签</button>
               </div>
-              <div className="publishing-tags">
-                {publishingTags.map((tag, index) => <b key={`${index}-${tag}`}>#{tag}</b>)}
-              </div>
-              <button type="button" className="restore-caption" onClick={restorePublishingCaption}>恢复分类固定文案</button>
             </div>
           </aside>
         </section>
