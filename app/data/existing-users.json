@@ -37,5 +37,23 @@
     "accountIds": [
       "rwayne"
     ]
+  },
+  {
+    "id": "user-dashen-wang",
+    "name": "AI最严厉的父亲",
+    "handle": "@dashen_wang",
+    "role": "已导入用户",
+    "accountIds": [
+      "dashen-wang"
+    ]
+  },
+  {
+    "id": "user-ai-jacksaku",
+    "name": "阿川 | AI thinking",
+    "handle": "@AI_jacksaku",
+    "role": "已导入用户",
+    "accountIds": [
+      "ai-jacksaku"
+    ]
   }
 ]

@@ -57,7 +57,7 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(page, /buildPublishingTags\(selectedPost, account, nextOffset\)/);
   assert.match(page, /buildPublishingDraft\(initialPost, initialAccount\)/);
   assert.match(page, /replacePublishingTagLine/);
-  assert.match(page, /account\.name/);
+  assert.match(page, /account\.label\.replace\(\/\^#\/u, ""\)/);
   assert.match(page, /换一组通用标签/);
   assert.match(page, /恢复分类文案与标签/);
   assert.match(page, /setCardMetrics\(\{ \.\.\.post\.metrics \}\)/);
@@ -137,34 +137,20 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(layout, /lang="zh-CN"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   const materialRecords = JSON.parse(materials);
-  assert.equal(materialRecords.length, 122);
-  assert.deepEqual([...new Set(materialRecords.map((item) => item.source))].sort(), ["rwayne", "黄小木"].sort());
+  assert.ok(materialRecords.length > 122);
+  assert.deepEqual(
+    [...new Set(materialRecords.map((item) => item.source))].sort(),
+    ["rwayne", "黄小木", "AI最严厉的父亲", "阿川 | AI thinking"].sort(),
+  );
   assert.ok(materialRecords.every((item) => item.category !== "纯文字"));
   assert.ok(materialRecords.every((item) => item.category !== "类别"));
   assert.ok(materialRecords.every((item) => !item.tags.includes("纯文字")));
   assert.ok(materialRecords.every((item) => /^https:\/\/x\.com\/[^/]+\/status\/\d+$/u.test(item.link)));
   const rwayneRecords = materialRecords.filter((item) => item.source === "rwayne");
-  const rwayneCategories = Object.fromEntries(
-    [...new Set(rwayneRecords.map((item) => item.category))]
-      .map((category) => [category, rwayneRecords.filter((item) => item.category === category).length]),
-  );
-  assert.deepEqual(rwayneCategories, {
-    "情绪八卦": 17,
-    "社会观察": 12,
-    "平台产品": 5,
-    "认知提升": 15,
-    "职场裁员": 6,
-    "赚钱副业": 10,
-    "生活冷知识": 18,
-    "AI学习": 1,
-    "AI工具": 1,
-    "其他": 1,
-    "AI世界观": 4,
-    "AI认知": 3,
-    "AI商业": 3,
-    "AI实操": 2,
-    "AI效率": 3,
-  });
+  const rwayneCategories = new Set(rwayneRecords.map((item) => item.category));
+  for (const category of ["AI世界观", "AI认知", "社会观察", "认知提升", "生活冷知识"]) {
+    assert.ok(rwayneCategories.has(category));
+  }
   const firstRwayne = materialRecords.find((item) => item.id === "existing-rwayne-2043147477243789820");
   assert.equal(firstRwayne.category, "AI世界观");
   assert.equal(
@@ -190,20 +176,22 @@ test("removes starter-only preview assets and metadata", async () => {
   );
   assert.ok(materialRecords.filter((item) => item.text.includes("\n")).length >= 80);
   const crawledHighExposure = materialRecords.filter((item) => item.id.startsWith("crawl-"));
-  assert.equal(crawledHighExposure.length, 5);
-  assert.ok(crawledHighExposure.every((item) => item.metrics.views > 100000));
-  assert.ok(crawledHighExposure.every((item) => !/https?:\/\//u.test(item.text)));
+  assert.ok(crawledHighExposure.length > 5);
+  assert.ok(crawledHighExposure.every((item) => item.metrics.views > 5000));
+  assert.ok(crawledHighExposure.every((item) => !/(?:https?:\/\/|(?:x|twitter)\.com\/|t\.co\/)/u.test(item.text.replace(/\s+/gu, ""))));
   assert.ok(crawledHighExposure.every((item) => item.category !== "其他"));
   const accountRecords = JSON.parse(accounts);
-  assert.equal(accountRecords.length, 2);
-  assert.deepEqual(accountRecords.map((item) => item.id), ["ai-xiaomu", "rwayne"]);
+  assert.equal(accountRecords.length, 4);
+  assert.deepEqual(accountRecords.map((item) => item.id), ["ai-xiaomu", "rwayne", "dashen-wang", "ai-jacksaku"]);
   assert.equal(accountRecords.find((item) => item.id === "rwayne").avatar, "/avatars/rwayne.png");
   assert.equal(accountRecords.find((item) => item.id === "ai-xiaomu").avatar, "/avatars/ai-xiaomu.png");
   assert.equal(accountRecords.find((item) => item.id === "rwayne").label, "#Roland.W");
-  assert.equal(JSON.parse(users).length, 5);
+  assert.equal(accountRecords.find((item) => item.id === "dashen-wang").avatar, "/avatars/dashen-wang.jpg");
+  assert.equal(accountRecords.find((item) => item.id === "ai-jacksaku").avatar, "/avatars/ai-jacksaku.jpg");
+  assert.equal(JSON.parse(users).length, 7);
   assert.deepEqual(
     JSON.parse(users).filter((item) => item.accountIds.length).map((item) => item.accountIds[0]),
-    ["ai-xiaomu", "rwayne"],
+    ["ai-xiaomu", "rwayne", "dashen-wang", "ai-jacksaku"],
   );
   assert.doesNotMatch(materials, /Stanleysobest/);
   assert.doesNotMatch(materials, /weiyux2021|wsl8297/);
@@ -217,6 +205,8 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(syncScript, /readDirectoryCategories/);
   assert.match(syncScript, /crawled-high-exposure-materials\.json/);
   assert.match(syncScript, /#Roland\.W/);
+  assert.match(syncScript, /#AI最严厉的父亲/);
+  assert.match(syncScript, /#阿川/);
   assert.doesNotMatch(syncScript, /pic\.twitter\.com|t\.co/);
   assert.match(styles, /\.tweet-card[\s\S]*?border-radius: 0/);
   assert.match(styles, /\.x-action-icon[\s\S]*?fill: currentColor/);

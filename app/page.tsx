@@ -186,7 +186,7 @@ function buildPublishingTags(post: Post, account: Account, offset = 0) {
   const category = publishingForCategory(post.category);
   const categoryTag = post.category.startsWith("AI") ? "AI" : post.category;
   const [globalTagA, globalTagB] = stableTagPair(post.id, offset);
-  return [categoryTag, globalTagA, globalTagB, category.tag, account.name];
+  return [categoryTag, globalTagA, globalTagB, category.tag, account.label.replace(/^#/u, "")];
 }
 
 function publishingTagLine(tags: string[]) {

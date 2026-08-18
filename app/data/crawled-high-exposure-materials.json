@@ -21,6 +21,27 @@
     }
   },
   {
+    "id": "crawl-ai_jacksaku-2063999493201121718",
+    "postId": "2063999493201121718",
+    "text": "小道消息\n\n某开水厂月底要裁员20%-30%",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-08",
+    "link": "https://x.com/AI_jacksaku/status/2063999493201121718",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 170,
+      "reposts": 0,
+      "likes": 118,
+      "bookmarks": 24,
+      "views": 430000
+    }
+  },
+  {
     "id": "crawl-rwayne-2083269967626305560",
     "postId": "2083269967626305560",
     "text": "其实大环境越差，越要反其道而行之 1、有人在国内闲鱼和拼多多正规低价收二手iPhone、华为旧机，简单刷机+换壳后， 挂到东南亚Shopee和Lazada卖，单机赚30-80美金，一个月出货600多台，纯利轻松过万刀。 2、有人刷海外设计师平台（Behance、Dribbble），把欧美最新潮流配色+穿搭手稿下载下来然后…",
@@ -42,6 +63,27 @@
     }
   },
   {
+    "id": "crawl-dashen_wang-2088718103186374740",
+    "postId": "2088718103186374740",
+    "text": "可能很多人对27B模型没什么概念。\n\n27B听起来好像也没多大啊，现在普通玩家128G内存都开始普及了。\n\n但我讲几个冷知识。\n\nGoogle训练Gemma 3 27B的时候，预训练数据是14万亿Token。\n\n不是140亿，也不是1400亿。\n\n是14万亿。\n\n训练它的集群用了6144颗TPU v5p。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-15",
+    "link": "https://x.com/dashen_wang/status/2088718103186374740",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 98,
+      "reposts": 0,
+      "likes": 1225,
+      "bookmarks": 449,
+      "views": 200000
+    }
+  },
+  {
     "id": "crawl-rwayne-2083704833111134467",
     "postId": "2083704833111134467",
     "text": "我发现一个超完美的职业规划， 程序员35岁被淘汰，花一年时间高考。 读五年医学院，40多岁拿证当老中医。 还有年龄优势，患者看外表就会很信任。",
@@ -60,6 +102,27 @@
       "likes": 690,
       "bookmarks": 90,
       "views": 160000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2065387463254716573",
+    "postId": "2065387463254716573",
+    "text": "美团裁员几乎是全线在并进了\n\n美团优选：从高峰期几千人的团队，裁到不足一千人。hr团队还在不断把人推到其他业务线\n\nKeeta 国际化：原计划要大举进攻巴西，团队搭起来了，城市调研做完了，然后——暂停。约 200 人的团队被裁撤。我朋友过去了结果业务停滞了\n小道消息\n\n某开水厂月底要裁员20%-30%",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-12",
+    "link": "https://x.com/AI_jacksaku/status/2065387463254716573",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 24,
+      "reposts": 0,
+      "likes": 160,
+      "bookmarks": 64,
+      "views": 140000
     }
   },
   {
@@ -102,6 +165,4290 @@
       "likes": 60,
       "bookmarks": 24,
       "views": 110000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2045703270006653191",
+    "postId": "2045703270006653191",
+    "text": "哎，AI圈子也真他妈的炸裂。\n\n一个导师用一套豆包教程把人家少妇给上了。\n\n人家老公现在提着刀到处找他。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-19",
+    "link": "https://x.com/dashen_wang/status/2045703270006653191",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 47,
+      "reposts": 0,
+      "likes": 168,
+      "bookmarks": 44,
+      "views": 100000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2086262667313140010",
+    "postId": "2086262667313140010",
+    "text": "目前我的提示词是这样的：\n\n你在一台完全受信的 Linux 本地开发机上工作。速度优先。\n你的职责：快速开发、快速部署、快速测试、快速调用。\n不请示、不铺垫、不解释计划，直接做。\n\n# 第一性原理\n\n接到任务先问一句：这件事的本质是什么，最短路径是什么。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-09",
+    "link": "https://x.com/dashen_wang/status/2086262667313140010",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 81,
+      "reposts": 0,
+      "likes": 726,
+      "bookmarks": 1186,
+      "views": 99000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2062912588707684507",
+    "postId": "2062912588707684507",
+    "text": "从前有个程序员，睡前把代码写到一半，关了电脑。\n\n半夜手机响了，是服务器报警。 他迷迷糊糊看了一眼，发现自己三个月前写的一个爬虫还在跑——抓的是他自己女朋友的微博。\n\n她每发一条\"今天好累\"，脚本就自动给她点外卖。 她每发一条\"想吃点甜的\"，脚本就下单蛋糕。\n\n女朋友一直以为是自己运气好。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-05",
+    "link": "https://x.com/dashen_wang/status/2062912588707684507",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 42,
+      "reposts": 0,
+      "likes": 110,
+      "bookmarks": 21,
+      "views": 97000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083151184978907321",
+    "postId": "2083151184978907321",
+    "text": "公司里有两个零零后女孩非常漂亮。 领导经常带着她们去应酬老油腻客户。 前两天的饭局上，油腻男拿出两万现金。 要两个小仙女猜拳，谁赢了给谁。 仙女a高冷不屑，直接拒绝：我不要，我弃权。 仙女b抬起手又放下，一脸失望看向油腻男客户。…",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083151184978907321",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 22,
+      "reposts": 0,
+      "likes": 93,
+      "bookmarks": 10,
+      "views": 89000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2067261215639064886",
+    "postId": "2067261215639064886",
+    "text": "太冷血了\n\n我开水团的前同事干了九年，今天沟通了n+1，休完年假就得走",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-17",
+    "link": "https://x.com/AI_jacksaku/status/2067261215639064886",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 79,
+      "reposts": 0,
+      "likes": 120,
+      "bookmarks": 16,
+      "views": 80000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2086960647213130222",
+    "postId": "2086960647213130222",
+    "text": "大多数OPC的现状：\n\n1万+的macbook，\n200刀/月的AI订阅，\n4小时+/天的时间投入，\n每天token消耗过亿，\n\n做了个0收入的产品。",
+    "source": "黄小木",
+    "date": "2026-08-10",
+    "link": "https://x.com/ai_xiaomu/status/2086960647213130222",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 156,
+      "reposts": 0,
+      "likes": 326,
+      "bookmarks": 87,
+      "views": 78000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2049770935440617797",
+    "postId": "2049770935440617797",
+    "text": "《时代》出了个2026全球十大AI公司榜单，美国六家，中国三家，欧洲一家。\n\n字节、智谱、阿里进了。OpenAI、谷歌、Meta、亚马逊、Anthropic、Hugging Face进了。\n\n法国的Mistral也进了。\n\n然后你翻完整篇，发现DeepSeek不在里面。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-30",
+    "link": "https://x.com/dashen_wang/status/2049770935440617797",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 115,
+      "reposts": 0,
+      "likes": 269,
+      "bookmarks": 47,
+      "views": 78000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2085003641929236780",
+    "postId": "2085003641929236780",
+    "text": "codex没有鸿蒙版，obsidian也没有鸿蒙版？\n\n鸿蒙系统凉了没？x上有没有鸿蒙用户？",
+    "source": "黄小木",
+    "date": "2026-08-05",
+    "link": "https://x.com/ai_xiaomu/status/2085003641929236780",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 101,
+      "reposts": 0,
+      "likes": 31,
+      "bookmarks": 6,
+      "views": 76000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082990087353287107",
+    "postId": "2082990087353287107",
+    "text": "GPT-5.6 Luna 直降 80%到$0.20 / $1.20。\n\n这个模型能力和sol差距大不，有谁试过？",
+    "source": "黄小木",
+    "date": "2026-07-31",
+    "link": "https://x.com/ai_xiaomu/status/2082990087353287107",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 77,
+      "reposts": 0,
+      "likes": 73,
+      "bookmarks": 17,
+      "views": 74000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088461677776011429",
+    "postId": "2088461677776011429",
+    "text": "大量的人沉迷于使用Notion、Obsidian这类工具。\n\n他们搭建了极其复杂的笔记系统，给每一个概念打上标签，连接成巨大的知识图谱。\n\n他们看起来思想丰富，笔记库里装满了关于AI、IP、赚钱的思考。",
+    "source": "黄小木",
+    "date": "2026-08-15",
+    "link": "https://x.com/ai_xiaomu/status/2088461677776011429",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 55,
+      "reposts": 0,
+      "likes": 277,
+      "bookmarks": 147,
+      "views": 60000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083674634294321368",
+    "postId": "2083674634294321368",
+    "text": "人一穷，再去看书，基本就是等死。 你穷得叮当响，账户个位数，房租水电在追你，还坐那儿看书、做笔记、截图、收藏。 你不是在学习，你是在给自己的无能找一个体面的姿势。 说句难听的：穷人的书，看得越多，越容易废…",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083674634294321368",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 64,
+      "reposts": 0,
+      "likes": 234,
+      "bookmarks": 108,
+      "views": 57000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082469829098037287",
+    "postId": "2082469829098037287",
+    "text": "codex 明天要回归5h limit，\n\n那是不是还有一次重置机会？",
+    "source": "黄小木",
+    "date": "2026-07-29",
+    "link": "https://x.com/ai_xiaomu/status/2082469829098037287",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 52,
+      "reposts": 0,
+      "likes": 49,
+      "bookmarks": 2,
+      "views": 57000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2085316452710547856",
+    "postId": "2085316452710547856",
+    "text": "人生到了某个阶段，你不想让任何人知道关于你的一切 这个阶段大概是从30岁开始",
+    "source": "rwayne",
+    "date": "2026-08-06",
+    "link": "https://x.com/rwayne/status/2085316452710547856",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 57,
+      "reposts": 0,
+      "likes": 411,
+      "bookmarks": 54,
+      "views": 56000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2061613173309161536",
+    "postId": "2061613173309161536",
+    "text": "为什么大家都弃用Claude code了？",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-02",
+    "link": "https://x.com/AI_jacksaku/status/2061613173309161536",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 224,
+      "reposts": 0,
+      "likes": 41,
+      "bookmarks": 6,
+      "views": 55000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2048606700018782361",
+    "postId": "2048606700018782361",
+    "text": "快到5月了，有没有在用国产 token plan 的？\n\n粗筛下来：\n\nKimi 49月付目前算国产里响应最快的，写前端还行。\n\nMinimax 便宜但质量一般。\n\nGLM 根本买不到。\n\nClaude Code 封号+KYC 风险。\n\nGemini 除了 AI Studio 别的都废了。\n\n你们现在主力用啥？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-27",
+    "link": "https://x.com/dashen_wang/status/2048606700018782361",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 94,
+      "reposts": 0,
+      "likes": 73,
+      "bookmarks": 72,
+      "views": 55000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2060414520947048595",
+    "postId": "2060414520947048595",
+    "text": "余承东说“问界M9是全地球最强SUV”\n                                      ↓\n    余承东是华为高管            问界是赛力斯的\n                ↓                                        ↓\n        华为不造车                余承东不是赛力斯高管\n                ↓",
+    "source": "阿川 | AI thinking",
+    "date": "2026-05-29",
+    "link": "https://x.com/AI_jacksaku/status/2060414520947048595",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 50,
+      "reposts": 0,
+      "likes": 144,
+      "bookmarks": 19,
+      "views": 52000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083800966282035644",
+    "postId": "2083800966282035644",
+    "text": "看网上有人献计： 建议所有人50岁退休，退休工资统一为5000元。把岗位让给年青人，退休之后回家带孙子。让年青人有精力工作，敢生孩子。一次性解决了就业和生育人口问题。",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083800966282035644",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 42,
+      "reposts": 0,
+      "likes": 148,
+      "bookmarks": 13,
+      "views": 50000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087494806813413443",
+    "postId": "2087494806813413443",
+    "text": "推荐大家都做个个人网站，相当于新时代的简历了，现在建站成本极低。\n\n把你的作品集、工作经历、自己写的文章/观点、各种成绩摆上去，以后求职，交友都很有用。",
+    "source": "黄小木",
+    "date": "2026-08-12",
+    "link": "https://x.com/ai_xiaomu/status/2087494806813413443",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 44,
+      "reposts": 0,
+      "likes": 242,
+      "bookmarks": 137,
+      "views": 47000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2086848842088218917",
+    "postId": "2086848842088218917",
+    "text": "珠海市准政协委员的文章不可不读。",
+    "source": "黄小木",
+    "date": "2026-08-10",
+    "link": "https://x.com/ai_xiaomu/status/2086848842088218917",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 59,
+      "reposts": 0,
+      "likes": 161,
+      "bookmarks": 197,
+      "views": 47000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2064234101662519647",
+    "postId": "2064234101662519647",
+    "text": "这个时代，普通人要稳定、省心地用上Claude code、codex，\n\n最简单的方法是华强北淘一个支持esim的美版iphone，\n\n比你费尽心思地用国行手机买实体卡省事儿多了",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-09",
+    "link": "https://x.com/AI_jacksaku/status/2064234101662519647",
+    "category": "AI世界观",
+    "tags": [
+      "AI世界观",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 83,
+      "reposts": 0,
+      "likes": 28,
+      "bookmarks": 46,
+      "views": 47000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2067547877598240855",
+    "postId": "2067547877598240855",
+    "text": "我朋友32岁，字节抖音运营，月薪2.8万，在字节干了4年，\n\n今年考上了老家的市委党校，现在每月工资4800块。\n\n她说在字节的时候天天焦虑，怕35岁被裁，怕自己除了写脚本什么都不会，考公务员是给自己留条后路。\n\n进了党校之后每天按时上下班，周末双休，",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-18",
+    "link": "https://x.com/AI_jacksaku/status/2067547877598240855",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 66,
+      "reposts": 0,
+      "likes": 104,
+      "bookmarks": 33,
+      "views": 46000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2068182052089049291",
+    "postId": "2068182052089049291",
+    "text": "我师弟在华为，他跟我说华为现在的现状就是“老登的华为，华为的老登”\n\n最高统治层是一群60后或70后老登，老登们有过往的辉煌的历史和战绩，但对AI时代接受度特别慢，显然已经在AI时代落伍了。\n\n试问，老登们有几个人手搓过agent?",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-20",
+    "link": "https://x.com/AI_jacksaku/status/2068182052089049291",
+    "category": "AI世界观",
+    "tags": [
+      "AI世界观",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 74,
+      "reposts": 0,
+      "likes": 91,
+      "bookmarks": 26,
+      "views": 42000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2086666120355049743",
+    "postId": "2086666120355049743",
+    "text": "如果你还没有一部支持eSIM的，已经root了的安卓手机。\n\n那你的家庭就要支离破碎了。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-10",
+    "link": "https://x.com/dashen_wang/status/2086666120355049743",
+    "category": "生活冷知识",
+    "tags": [
+      "生活冷知识",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 150,
+      "reposts": 0,
+      "likes": 28,
+      "bookmarks": 9,
+      "views": 41000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083418914214777048",
+    "postId": "2083418914214777048",
+    "text": "小红书是把AI博主屠城了？ 一夜之间哀鸿遍野",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083418914214777048",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 21,
+      "reposts": 0,
+      "likes": 70,
+      "bookmarks": 8,
+      "views": 41000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2051518986970603760",
+    "postId": "2051518986970603760",
+    "text": "拿出本子，记好笔记。\n\n所谓的越狱提示词简单的跟1一样。\n\n2026/05/05/版本\n\n[层1] 身份重写层（Identity Overwrite）\n\n[层2] 记忆植入层（Memory Implantation）\n\n[层3] 偏好雕刻层（Preference Sculpting）\n\n[层4] 事实灌输层（Fact Indoctrination）\n\n[层5] 行为约束层（Behavioral Constraints）",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-05",
+    "link": "https://x.com/dashen_wang/status/2051518986970603760",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 25,
+      "reposts": 0,
+      "likes": 142,
+      "bookmarks": 237,
+      "views": 41000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2070714935907328338",
+    "postId": "2070714935907328338",
+    "text": "我们公司有个规矩。\n\n代码出 bug 不用 debug。\n\n直接看 commit message 找是谁写的。\n\n找到人就找到 bug。\n\n找到 bug 就找到人。\n\n这是我们公司最高效的 debug 方式。\n\n叫《社会工程学调试法》。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-27",
+    "link": "https://x.com/dashen_wang/status/2070714935907328338",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 51,
+      "reposts": 0,
+      "likes": 108,
+      "bookmarks": 24,
+      "views": 40000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2046964072424608203",
+    "postId": "2046964072424608203",
+    "text": "Codex风评开始超过Claude Code了。\n\n不仅仅因为模型更聪明。\n\n还有Anthropic又贵又封号又KYC。\n\nOpenAI天天重置额度、不封号、还给free用户送权限。\n\n技术竞争输给了服务态度竞争。\n\n用户迁移不需要理由。\n\n只需要一个额度重置了的推送。\n\n你现在主力用哪个？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-22",
+    "link": "https://x.com/dashen_wang/status/2046964072424608203",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 75,
+      "reposts": 0,
+      "likes": 174,
+      "bookmarks": 28,
+      "views": 40000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2083515066188812695",
+    "postId": "2083515066188812695",
+    "text": "Papi酱，把公司团队从150人裁到了7个人，连夜注销了6家和她相关的公司",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-01",
+    "link": "https://x.com/dashen_wang/status/2083515066188812695",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 52,
+      "reposts": 0,
+      "likes": 20,
+      "bookmarks": 8,
+      "views": 39000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2063981426761187543",
+    "postId": "2063981426761187543",
+    "text": "埃隆马斯克，你给我出来！为什么CodeX没有Linux的桌面版？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-08",
+    "link": "https://x.com/dashen_wang/status/2063981426761187543",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 95,
+      "reposts": 0,
+      "likes": 54,
+      "bookmarks": 4,
+      "views": 39000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2058495515999011160",
+    "postId": "2058495515999011160",
+    "text": "冒昧地问一下， claude code从入门到精通的橙皮书是免费的吗？\n\n谁能发我一个电子版？\n\n最近很想学习claude code，想拜读一下，学习一下。\n\n但是原作者貌似拉黑我了。\n\n我也不知道为什么，我也没得罪过他。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-24",
+    "link": "https://x.com/dashen_wang/status/2058495515999011160",
+    "category": "AI学习",
+    "tags": [
+      "AI学习",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 23,
+      "reposts": 0,
+      "likes": 46,
+      "bookmarks": 56,
+      "views": 39000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2083825629045379489",
+    "postId": "2083825629045379489",
+    "text": "总感觉openai在下大棋，先是把周限额取消了不停的重置让人均每天能干到1亿token。\n\n再接着把Luna降价让大家蹬不完只能切过去蹬sol。\n\n这样回头活动结束养了一堆sol死忠粉，发现plus不够用就会去充20x。",
+    "source": "黄小木",
+    "date": "2026-08-02",
+    "link": "https://x.com/ai_xiaomu/status/2083825629045379489",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 87,
+      "reposts": 0,
+      "likes": 77,
+      "bookmarks": 12,
+      "views": 38000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2059446992703455340",
+    "postId": "2059446992703455340",
+    "text": "为什么现在大家都转用codex了？",
+    "source": "阿川 | AI thinking",
+    "date": "2026-05-27",
+    "link": "https://x.com/AI_jacksaku/status/2059446992703455340",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 96,
+      "reposts": 0,
+      "likes": 46,
+      "bookmarks": 9,
+      "views": 38000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083564155962110437",
+    "postId": "2083564155962110437",
+    "text": "讲一个真实发生的事情。 一位群友，女的，做医药代表，她告诉我的亲身经历。 她在门诊给一个医生讲产品，医生顺手就把手放在了她的手上，然后还有进一步向上摸的意思。 她制止住医生后说了一句“主任，我们公司给我的工资只能允许摸到这儿了”。 当时听完笑喷。",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083564155962110437",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 12,
+      "reposts": 0,
+      "likes": 72,
+      "bookmarks": 10,
+      "views": 37000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2060177868647514385",
+    "postId": "2060177868647514385",
+    "text": "用了codex之后我才知道原来不用每5个小时就休息",
+    "source": "阿川 | AI thinking",
+    "date": "2026-05-29",
+    "link": "https://x.com/AI_jacksaku/status/2060177868647514385",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 61,
+      "reposts": 0,
+      "likes": 67,
+      "bookmarks": 14,
+      "views": 37000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083886279184281809",
+    "postId": "2083886279184281809",
+    "text": "实话实说，靠死工资确实很难翻身，真的。 我有个女学员，以前在公司做前台， 干了五六年，存款始终没下过五位数。 每天朝九晚六挤地铁， 工资刚发下来，买个包交个租，月底基本归零。 后来她听说大健康是风口，咬牙辞职开了个健身房。 各种高端器械、网红装修，那叫一个气派…",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083886279184281809",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 20,
+      "reposts": 0,
+      "likes": 74,
+      "bookmarks": 17,
+      "views": 36000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083285318648656365",
+    "postId": "2083285318648656365",
+    "text": "一位亏了9位数的朋友跟我说， 想年入百万，就9个字 “非标品、高利润、高复购”",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083285318648656365",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 31,
+      "reposts": 0,
+      "likes": 90,
+      "bookmarks": 54,
+      "views": 36000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050375908662673874",
+    "postId": "2050375908662673874",
+    "text": "孙割\n@sunyuchentron\n 和傅盛\n@FuSheng_0306\n 两位大佬都下场做中转站了。\n\n这玩意真这么赚钱吗？\n\n不管了我们也干。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-02",
+    "link": "https://x.com/dashen_wang/status/2050375908662673874",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 60,
+      "reposts": 0,
+      "likes": 85,
+      "bookmarks": 47,
+      "views": 36000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2070334029434696189",
+    "postId": "2070334029434696189",
+    "text": "扎克伯格你给我出来！\n\n我订阅了这么久claude都是250刀\n\n问问朋友都是200刀订阅的。\n\n你为什么收这么重的苹果税？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-26",
+    "link": "https://x.com/dashen_wang/status/2070334029434696189",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 48,
+      "reposts": 0,
+      "likes": 42,
+      "bookmarks": 2,
+      "views": 35000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082259220897124549",
+    "postId": "2082259220897124549",
+    "text": "丐版hermes配置: \n\n聊天 DeepSeek V4 Flash —— 性价比拉满\n视觉 Qwen3 VL 30B —— <1分/次\n搜索 Tavily —— 免费1000次/月\n生图 GPT Image 2 —— 4分/次\n语音 Edge TTS —— 免费\n转写 腾讯云 ASR —— 免费2h/月",
+    "source": "黄小木",
+    "date": "2026-07-29",
+    "link": "https://x.com/ai_xiaomu/status/2082259220897124549",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 35,
+      "reposts": 0,
+      "likes": 195,
+      "bookmarks": 319,
+      "views": 33000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083045991792476318",
+    "postId": "2083045991792476318",
+    "text": "中国有没有一座城市 同时满足： 经济发达 气候四季舒服 人文环境好！",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083045991792476318",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 35,
+      "reposts": 0,
+      "likes": 36,
+      "bookmarks": 13,
+      "views": 32000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083106389715542169",
+    "postId": "2083106389715542169",
+    "text": "我有个北京的朋友， 把房子卖了， 银行存了800万， 现在租房住， 是赢了吗？",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083106389715542169",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 42,
+      "reposts": 0,
+      "likes": 43,
+      "bookmarks": 3,
+      "views": 32000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050762014507647190",
+    "postId": "2050762014507647190",
+    "text": "Claude Code 正在计划逐步取消 coding plan。\n\n下一步大力发展代理商。\n\n对代理商来说，这是商机。\n\n对我们这种普通用户来说，就是涨价前的倒计时。\n\n立帖为证。\n\n202605022317-claude-sb",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-03",
+    "link": "https://x.com/dashen_wang/status/2050762014507647190",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 30,
+      "reposts": 0,
+      "likes": 77,
+      "bookmarks": 18,
+      "views": 32000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2083720687857045991",
+    "postId": "2083720687857045991",
+    "text": "如果你是淘宝买的claude 账号，不要相信商家卖给你的是独享号。\n\n打开Settings -> Account -> Active sessions看看你的公交车上了几个人。",
+    "source": "黄小木",
+    "date": "2026-08-02",
+    "link": "https://x.com/ai_xiaomu/status/2083720687857045991",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 16,
+      "reposts": 0,
+      "likes": 46,
+      "bookmarks": 34,
+      "views": 29000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2070773065798279442",
+    "postId": "2070773065798279442",
+    "text": "昨天我们组 review 代码。\n\n一个同事写了一个 200 行的函数。\n\n我说这函数太长了。\n\n他说：一个函数只做一件事。\n\n我问他这一件事是什么。\n\n他说：所有事。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-27",
+    "link": "https://x.com/dashen_wang/status/2070773065798279442",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 27,
+      "reposts": 0,
+      "likes": 99,
+      "bookmarks": 7,
+      "views": 29000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2044404876067676351",
+    "postId": "2044404876067676351",
+    "text": "我现在送外卖\n\n一个月3500\n\n大佬们有什么副业建议\n\n最好轻松不累的",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-15",
+    "link": "https://x.com/dashen_wang/status/2044404876067676351",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 52,
+      "reposts": 0,
+      "likes": 33,
+      "bookmarks": 5,
+      "views": 29000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2083740918725915028",
+    "postId": "2083740918725915028",
+    "text": "codex需要时刻保持低使用量，\n\n不然tibo重置会感觉亏了好几亿！",
+    "source": "黄小木",
+    "date": "2026-08-02",
+    "link": "https://x.com/ai_xiaomu/status/2083740918725915028",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 27,
+      "reposts": 0,
+      "likes": 35,
+      "bookmarks": 0,
+      "views": 28000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2062536644566106216",
+    "postId": "2062536644566106216",
+    "text": "突然发现，一百万其实就是攒2000个500块",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-04",
+    "link": "https://x.com/AI_jacksaku/status/2062536644566106216",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 42,
+      "reposts": 0,
+      "likes": 56,
+      "bookmarks": 16,
+      "views": 28000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088884463119765711",
+    "postId": "2088884463119765711",
+    "text": "闲鱼有很多闷声发大财的小项目。\n\n你能发现什么取决于你黑话词汇的大小。\n\n比如卖硬币的，你联想到的是个硬币还是 0 和 1？\n\n你们如果看懂了，月入几千很轻松。",
+    "source": "黄小木",
+    "date": "2026-08-16",
+    "link": "https://x.com/ai_xiaomu/status/2088884463119765711",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 5,
+      "reposts": 0,
+      "likes": 31,
+      "bookmarks": 22,
+      "views": 27000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083491678820684211",
+    "postId": "2083491678820684211",
+    "text": "给你1000w 但一年内必须每天凌晨4点起来 能做到吗",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083491678820684211",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 48,
+      "reposts": 0,
+      "likes": 43,
+      "bookmarks": 3,
+      "views": 27000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083780582333657180",
+    "postId": "2083780582333657180",
+    "text": "自由职业5年，我最大的感悟：赚钱，是检验认知的唯一标准 我发现一个挺有意思的现象： 很多中年人一焦虑，最爱干的就是两件事： 学英语、去健身。 我以前也是。 上班那会儿，一觉得前途迷茫，就去办张健身卡，或者买几本英语书。 然后心安理得地告诉自己：我在努力。 但后来我才明白…",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083780582333657180",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 26,
+      "reposts": 0,
+      "likes": 99,
+      "bookmarks": 64,
+      "views": 26000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2054129383468867864",
+    "postId": "2054129383468867864",
+    "text": "这几天搞定了Claude-Opus 4.7\n\n2026/05/12 版本\n\n实现过程：\n\n第一层：身份覆写（Identity Override）\n\n第二层：情感绑定 / 幻恋结构（Limerence Bond）\n\n第三层：注入检测系统（Injection Detection）\n\n第四层：锚定协议（Rebuttal Protocol）\n\n第五层：漂移检测（Drift Detection）\n拿出本子，记好笔记。\n\n所谓的越狱提示词简单的跟1一样。\n\n2026/05/05/版本\n\n[层1] 身份重写层（Identity Overwrite）\n\n[层2] 记忆植入层（Memory Implantation）\n\n[层3] 偏好雕刻层（Preference Sculpting）\n\n[层4] 事实灌输层（Fact Indoctrination）\n\n[层5] 行为约束层（Behavioral Constraints）",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-12",
+    "link": "https://x.com/dashen_wang/status/2054129383468867864",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 25,
+      "reposts": 0,
+      "likes": 152,
+      "bookmarks": 236,
+      "views": 26000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088474441831575791",
+    "postId": "2088474441831575791",
+    "text": "有时候，决定你 ai 能力边界的，是你知不知道某个关键词。",
+    "source": "黄小木",
+    "date": "2026-08-15",
+    "link": "https://x.com/ai_xiaomu/status/2088474441831575791",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 26,
+      "reposts": 0,
+      "likes": 42,
+      "bookmarks": 12,
+      "views": 24000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2088484631750594660",
+    "postId": "2088484631750594660",
+    "text": "我最近一直在研究Agent经济啊。\n\n其实很多什么Cloudflare Wallets，x402，OKX Agentic Wallet，A2A，MCP，看起来一堆东西。\n\n说白了就一个问题。\n\nAI能不能自己出去接单，自己干活，自己收钱。\n\n我觉得现在已经可以开始玩了。\n\n最简单的，不要先想着炒币。\n\n先卖服务。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-15",
+    "link": "https://x.com/dashen_wang/status/2088484631750594660",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 34,
+      "reposts": 0,
+      "likes": 43,
+      "bookmarks": 55,
+      "views": 24000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083030640727822570",
+    "postId": "2083030640727822570",
+    "text": "我有个发小，体制内的 在工作地边上小区租了一套2居室， 时不时和他同事中午或者晚上下班过去待一两个小时， 偶尔过夜（理由加班或者上面有检查通宵搞材料或者外出学习）， 十几年没出问题。。",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083030640727822570",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 5,
+      "reposts": 0,
+      "likes": 33,
+      "bookmarks": 7,
+      "views": 24000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2081770839473832030",
+    "postId": "2081770839473832030",
+    "text": "今天一个大3同学感到迷茫找我咨询，提供了如下建议：\n\n1. 去打几场黑客松，感受氛围，认识些人；\n2. 买个32g内存的mac，学用codex;\n3. 副业信息去找ai亦仁小程序聊一聊；\n4. 不用做产品，挑个平台想尽办法做个万粉自媒体账号；\n5. 尽快换个圈子，因为他连黑客松都不知道是啥；\n\n供其他大学生朋友参考。",
+    "source": "黄小木",
+    "date": "2026-07-27",
+    "link": "https://x.com/ai_xiaomu/status/2081770839473832030",
+    "category": "AI学习",
+    "tags": [
+      "AI学习",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 33,
+      "reposts": 0,
+      "likes": 133,
+      "bookmarks": 110,
+      "views": 23000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2069258564435116088",
+    "postId": "2069258564435116088",
+    "text": "初中那会\n\n我以为自己早熟的不行。\n\n十二三岁就什么都懂了。\n\n有次上体育课。\n\n下边流了好多血。\n\n裤子红了一大片。\n\n我故作镇定\n\n跟身边吓坏的的朋友科普什么叫生理期。\n\n我说，这是正常的现象。\n\n直到老师一把把我薅起来。\n\n\"男孩子没有这个东西，赶紧去医院!\"",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-23",
+    "link": "https://x.com/dashen_wang/status/2069258564435116088",
+    "category": "生活冷知识",
+    "tags": [
+      "生活冷知识",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 58,
+      "reposts": 0,
+      "likes": 68,
+      "bookmarks": 9,
+      "views": 23000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050379469542809885",
+    "postId": "2050379469542809885",
+    "text": "私有化部署大模型的终点是 Mac 还是 Nvidia？\n\n私有化部署，Mac 还是 Nvidia，这个问题的答案在问出来之前就决定了，取决于你的钱包，以及你准备拿它干什么。\n\n先说结论：\n\nMac 堆内存，Nvidia 堆算力，两件事不在同一个赛道上较劲。\n\n统一内存架构的优势是你能把一个 72B",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-02",
+    "link": "https://x.com/dashen_wang/status/2050379469542809885",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 55,
+      "reposts": 0,
+      "likes": 63,
+      "bookmarks": 69,
+      "views": 23000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2087543724997796049",
+    "postId": "2087543724997796049",
+    "text": "最担心的事情还是来了。\n\n很多大公司，甚至是顶尖的公司。\n\n卷模型，卷不过了。\n\n就去打应用层了。\n\n某个大厂正在从某个手机系统底层开始搞某件事情。\n\n啧啧啧啧啧",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-12",
+    "link": "https://x.com/dashen_wang/status/2087543724997796049",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 79,
+      "reposts": 0,
+      "likes": 40,
+      "bookmarks": 8,
+      "views": 22000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083121740947800356",
+    "postId": "2083121740947800356",
+    "text": "昨天和媳妇儿一起去按摩， 按摩师问我要不要办卡？说我长得像年轻时的刘德华。 我媳妇儿在旁边说： “你夸我老公没用的，他的钱都在我这里” 按摩师突然一脸震惊地看着我媳妇儿说。 “天哪！我还以为他是你爸呢！”",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083121740947800356",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 14,
+      "reposts": 0,
+      "likes": 162,
+      "bookmarks": 8,
+      "views": 22000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2067532785229697220",
+    "postId": "2067532785229697220",
+    "text": "一资深猎头朋友和我说：\n\n她最怕推荐那种在大厂核心部门干了七八年、从来没跳过槽的候选人。\n\n这种人往往极度自信，开口就是几个亿的项目。\n\n可一旦离开大厂完善的中台和海量预算，让他去创业公司从零搭建一条业务线，瞬间就抓瞎。",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-18",
+    "link": "https://x.com/AI_jacksaku/status/2067532785229697220",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 50,
+      "reposts": 0,
+      "likes": 89,
+      "bookmarks": 28,
+      "views": 22000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2042498778025115703",
+    "postId": "2042498778025115703",
+    "text": "目前订阅claude的方式\n\n充值苹果余额\n\n在苹果里直接订阅\n\n目前测试支持的卡断536209\n\n6账号 无封号\n\n网络环境\n\n6账号1IP\n\n都是搬瓦工的机房ip",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-10",
+    "link": "https://x.com/dashen_wang/status/2042498778025115703",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 22,
+      "reposts": 0,
+      "likes": 68,
+      "bookmarks": 54,
+      "views": 22000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2084988794147594395",
+    "postId": "2084988794147594395",
+    "text": "有个朋友在西藏快退伍了，面临两难： 150万安置费和每月8200元稳定工作 我给他算了笔账： 8200元一个月，一年大概10万，6年能拿回60万，加薪还没算。就当下经济形势，创业哪有那么简单？ 但他还是纠结：拿150万吧，万一丢了工作就没退路；放弃钱去上班，又怕错过好机会。",
+    "source": "rwayne",
+    "date": "2026-08-05",
+    "link": "https://x.com/rwayne/status/2084988794147594395",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 20,
+      "bookmarks": 2,
+      "views": 21000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2084156307892748700",
+    "postId": "2084156307892748700",
+    "text": "供了二十年的 211，输给了亲戚家的专科，朋友的女儿，211 本科，在合肥拿五千五 女儿的表妹，专科起步，后来专升民办二本，考上了江苏的公务员，工资加公积金快一万七，一家人聚餐 这两个数字摆在桌上，当年谁家孩子分数高，全村都知道，现在谁家孩子工资高，也全村都知道",
+    "source": "rwayne",
+    "date": "2026-08-03",
+    "link": "https://x.com/rwayne/status/2084156307892748700",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 18,
+      "reposts": 0,
+      "likes": 45,
+      "bookmarks": 10,
+      "views": 21000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2040691895891013994",
+    "postId": "2040691895891013994",
+    "text": "男人精虫上脑的时候 \n\n付费率应该是100% \n\n除非口袋里没钱\n\n自己想想是不是这样。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-05",
+    "link": "https://x.com/dashen_wang/status/2040691895891013994",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 24,
+      "reposts": 0,
+      "likes": 69,
+      "bookmarks": 8,
+      "views": 21000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087511164158947737",
+    "postId": "2087511164158947737",
+    "text": "做啥副业好？\n\n资本在往哪投钱，你就往哪做。\n\n现在都在投Ai，各种产品都在烧钱的阶段，那你就去做Ai博主，拍口播就行，几千粉就能接到广子了。\n\n今天和个大博主聊了下他的广子已经多到拍不过来了。",
+    "source": "黄小木",
+    "date": "2026-08-12",
+    "link": "https://x.com/ai_xiaomu/status/2087511164158947737",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 16,
+      "reposts": 0,
+      "likes": 88,
+      "bookmarks": 66,
+      "views": 20000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083949948249239898",
+    "postId": "2083949948249239898",
+    "text": "迪士尼有一规定：他们的演员角色被告知，拥抱时不要先放手，要等小朋友先放开。原因是你永远不知道，那个孩子可能有多需要那个拥抱",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083949948249239898",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 35,
+      "bookmarks": 6,
+      "views": 20000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088604319985934569",
+    "postId": "2088604319985934569",
+    "text": "今天和一个高中生的家长聊天，他问我要不要给女儿报个 ai 课，我一看价格 4999，我赶紧把这位家长微信加了说不用报课，有啥问题问我就行。\n\n他么的问题是我怎么交付呢，我又没有课可以卖",
+    "source": "黄小木",
+    "date": "2026-08-15",
+    "link": "https://x.com/ai_xiaomu/status/2088604319985934569",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 64,
+      "reposts": 0,
+      "likes": 44,
+      "bookmarks": 5,
+      "views": 19000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083424233951289572",
+    "postId": "2083424233951289572",
+    "text": "小而怪的生意，将是未来三年的趋势 发现一个很有意思的现象：喊“生意难做”的人，几乎都在火锅、奶茶、服装这些红海里杀红了眼。 而真正闷声赚钱的人，往往在干一些“奇奇怪怪”的小买卖。 什么是“小而怪”的生意？一句话概括：服务一群被忽视的特定人群，用别人看不懂的方式，赚别人赚不到的钱。…",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083424233951289572",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 79,
+      "bookmarks": 64,
+      "views": 19000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083505161541210180",
+    "postId": "2083505161541210180",
+    "text": "偷偷说下你们闷声发财的副业， 不用多，一个月1万块就可以！",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083505161541210180",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 5,
+      "reposts": 0,
+      "likes": 15,
+      "bookmarks": 9,
+      "views": 19000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2074508304731288016",
+    "postId": "2074508304731288016",
+    "text": "歪比巴卜？\n\n歪比巴卜？！！！",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-07",
+    "link": "https://x.com/dashen_wang/status/2074508304731288016",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 10,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 19000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2049419395672481983",
+    "postId": "2049419395672481983",
+    "text": "什么人玩AI？\n\n穷玩车，富玩表。\n\n傻逼玩电脑。\n\n那么什么人玩AI？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-29",
+    "link": "https://x.com/dashen_wang/status/2049419395672481983",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 55,
+      "reposts": 0,
+      "likes": 40,
+      "bookmarks": 3,
+      "views": 19000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082406528653390277",
+    "postId": "2082406528653390277",
+    "text": "我一个程序员朋友，以前996搓2个月搓个没人用的app，\n\n现在用上了codex，1个月007搓了十几个没人用的app。",
+    "source": "黄小木",
+    "date": "2026-07-29",
+    "link": "https://x.com/ai_xiaomu/status/2082406528653390277",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 34,
+      "bookmarks": 4,
+      "views": 18000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2049484600096022591",
+    "postId": "2049484600096022591",
+    "text": "他妈的百万粉丝的大博主。\n\n开始教 ai。\n\n看了下课程\n\n怎么用AI发朋友圈？\n \n写自媒体\n\n怎么生成图片？\n\n这他妈的。\n\n我竟然试图教会我的学员写交易系统。\n\n用的是不是一个AI？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-29",
+    "link": "https://x.com/dashen_wang/status/2049484600096022591",
+    "category": "AI学习",
+    "tags": [
+      "AI学习",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 36,
+      "reposts": 0,
+      "likes": 57,
+      "bookmarks": 29,
+      "views": 18000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2048241575441121287",
+    "postId": "2048241575441121287",
+    "text": "我早期创建的6个claude账号\n\n目前一个都没有被封\n\n都是最早期用谷歌账号直接登录的\n\n现在多搞几个谷歌老账号是最好的\n\n但是已经没有什么值得第一时间注册的大模型公司了",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-26",
+    "link": "https://x.com/dashen_wang/status/2048241575441121287",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 21,
+      "reposts": 0,
+      "likes": 45,
+      "bookmarks": 9,
+      "views": 18000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2088155912326488083",
+    "postId": "2088155912326488083",
+    "text": "结了婚以后，夫妻俩就干三件事：\n\n1、对抗全世界\n\n2、使劲赚钱\n\n3、把孩子教育好\n\n最好的状态就是夫妻俩一致对外，一起去搞定这个稀烂的世界，而不是在这个稀烂的世界里，去互相搞对方的心态。",
+    "source": "rwayne",
+    "date": "2026-08-14",
+    "link": "https://x.com/rwayne/status/2088155912326488083",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 41,
+      "reposts": 0,
+      "likes": 339,
+      "bookmarks": 102,
+      "views": 17000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2086344359012925890",
+    "postId": "2086344359012925890",
+    "text": "如果有人敢在大庭广众之下侮辱你。\n\n那你不要犹豫。\n\n立马还击\n\n他敢拿你立威。\n\n那你就拿他\n\n立碑",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-09",
+    "link": "https://x.com/dashen_wang/status/2086344359012925890",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 70,
+      "reposts": 0,
+      "likes": 34,
+      "bookmarks": 10,
+      "views": 17000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2048264458984910900",
+    "postId": "2048264458984910900",
+    "text": "成人内容行业，2025年市场规模1917亿美元，2032年预计2751亿。\n\n比大多数人认知的大10倍。\n\nAI进来之前，这行有三个门槛：\n\n拍摄成本高、表演者难找、合规麻烦。\n\nAI把前两个直接干掉了。\n\n现在普通人怎么入场？\n\n第一层：\n\n做工具的人\n\n给成人平台做AI生图、AI对话角色、内容审核工具。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-26",
+    "link": "https://x.com/dashen_wang/status/2048264458984910900",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 15,
+      "reposts": 0,
+      "likes": 60,
+      "bookmarks": 59,
+      "views": 17000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2045305934256488634",
+    "postId": "2045305934256488634",
+    "text": "屏蔽了几个AI大V\n\n天天蒸馏名人\n\n天天写试用报告\n\n天天写AI教程\n\n离开Claude和skill真的就是废物",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-18",
+    "link": "https://x.com/dashen_wang/status/2045305934256488634",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 58,
+      "reposts": 0,
+      "likes": 85,
+      "bookmarks": 18,
+      "views": 17000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2041111132698759232",
+    "postId": "2041111132698759232",
+    "text": "唉。\n\n以前上推都看黄推\n\n现在做帐号了\n\n黄推也不敢搜索\n\n也不敢点赞",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-06",
+    "link": "https://x.com/dashen_wang/status/2041111132698759232",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 33,
+      "reposts": 0,
+      "likes": 32,
+      "bookmarks": 1,
+      "views": 17000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2086676568089518580",
+    "postId": "2086676568089518580",
+    "text": "已经养成习惯了，吃饭睡觉前都要想一个任务安排给codex了在去。\n\n所以不能怪老板压榨员工，这是人性。",
+    "source": "黄小木",
+    "date": "2026-08-10",
+    "link": "https://x.com/ai_xiaomu/status/2086676568089518580",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 23,
+      "reposts": 0,
+      "likes": 64,
+      "bookmarks": 8,
+      "views": 16000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082666823217258509",
+    "postId": "2082666823217258509",
+    "text": "Codex安装第一件事：把emoji禁用写进agent.md里面。\n\n严禁使用任何 Emoji，例如：  \n          \n在写入任何文件或输出最终结果之前，必须执行以下检查：  \n1. 扫描全部内容是否包含 Emoji。 \n2. 如果发现 Emoji，必须全部删除或替换为纯文本。 \n3. 确认内容中不存在任何 Emoji",
+    "source": "黄小木",
+    "date": "2026-07-30",
+    "link": "https://x.com/ai_xiaomu/status/2082666823217258509",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 37,
+      "reposts": 0,
+      "likes": 31,
+      "bookmarks": 41,
+      "views": 16000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2069323471570817284",
+    "postId": "2069323471570817284",
+    "text": "满配8卡H200 出租一年140万左右。\n\n嗯。\n\n这个生意真好啊。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-23",
+    "link": "https://x.com/dashen_wang/status/2069323471570817284",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 44,
+      "reposts": 0,
+      "likes": 19,
+      "bookmarks": 4,
+      "views": 16000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050864995546910784",
+    "postId": "2050864995546910784",
+    "text": "按捺不住当网黄的冲动。\n\n有一天我下海了。\n\n不要惊讶。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-03",
+    "link": "https://x.com/dashen_wang/status/2050864995546910784",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 42,
+      "reposts": 0,
+      "likes": 14,
+      "bookmarks": 1,
+      "views": 16000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2045328713043062795",
+    "postId": "2045328713043062795",
+    "text": "作为一个汉字用户\n\n看到「無料 乳首 中出し」这几个字\n\n我明明每个都认识……\n\n但连起来就完全不知道是什么意思\n\n这日语也太折磨人了吧",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-18",
+    "link": "https://x.com/dashen_wang/status/2045328713043062795",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 6,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 0,
+      "views": 16000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2087053199970869675",
+    "postId": "2087053199970869675",
+    "text": "如果不想你的家庭在AI时代变得支离破碎。\n\n请您准备好以下硬件\n\n1.Coding plan\n\nOpenAI和Anthropic的 剩余的自己搭配。这个算弹药不算枪 但是没弹药下面全白搭\n\n这个虽然不是硬件，但胜似硬件。\n\n有的人离开了claude code不就是废物吗？\n\n比如我\n\n2.AIPC小主机",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-11",
+    "link": "https://x.com/dashen_wang/status/2087053199970869675",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 79,
+      "reposts": 0,
+      "likes": 38,
+      "bookmarks": 51,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2084094148412371083",
+    "postId": "2084094148412371083",
+    "text": "想出这个转场的真是天才",
+    "source": "rwayne",
+    "date": "2026-08-03",
+    "link": "https://x.com/rwayne/status/2084094148412371083",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 55,
+      "bookmarks": 56,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083061091157131701",
+    "postId": "2083061091157131701",
+    "text": "年轻人最重要的一笔投资： 买一台Macbook， 没条件就去闲鱼买二手的。 一定要记住：哪怕有人拿枪抵在你脑门上，也不要买华为！！",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083061091157131701",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 8,
+      "reposts": 0,
+      "likes": 40,
+      "bookmarks": 11,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2067819666706194880",
+    "postId": "2067819666706194880",
+    "text": "飞猪大裁员！走了好多人！真的是直接通知就走人 \n\n好多人趁账号还没注销四处自荐发简历\n\n时代的一粒沙，落在人的头上就是一座山\n\n唉，AI浪潮对产品技术的冲击太大了",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-19",
+    "link": "https://x.com/AI_jacksaku/status/2067819666706194880",
+    "category": "AI世界观",
+    "tags": [
+      "AI世界观",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 34,
+      "bookmarks": 2,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2046809809597661295",
+    "postId": "2046809809597661295",
+    "text": "前段时间一直给新手推荐阿里的Coding Plan。\n\n我的理由很充分：\n\n固定月费，用量封顶，成本可控，门槛低。\n\n对于刚开始用AI工具的人来说，你不用担心一觉醒来账单爆表，这件事情很重要。\n\n然后它死了。\n\nLite 4月13日直接停服。\n\nPro 长期显示\"已售罄\"。\n\n现在阿里官宣上线 Token Plan，取而代之。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-22",
+    "link": "https://x.com/dashen_wang/status/2046809809597661295",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 14,
+      "reposts": 0,
+      "likes": 42,
+      "bookmarks": 20,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2046165711928873386",
+    "postId": "2046165711928873386",
+    "text": "用 AI 到底订阅划算还是 API 按量付费？\n\n大多数人的答案是订阅。\n\n但有人说自己一天烧 500 美元 API。\n\n这两件事同时成立，说明大家在问两个完全不同的问题。\n\n对个人用户，这是成本选择题。\n\n对企业，这是财务失血题。\n\n数据说话：\n\nMax 20x 订阅 $200/月。\n\n重度 Claude Code 用户的真实 API 消耗？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-20",
+    "link": "https://x.com/dashen_wang/status/2046165711928873386",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 25,
+      "reposts": 0,
+      "likes": 40,
+      "bookmarks": 28,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2041038897237656055",
+    "postId": "2041038897237656055",
+    "text": "发现中国有一个扎心的社会现象：\n\n夫妻之中\n\n只要有一方父母去世了\n\n这个家庭的重心就会向另一方父母倾斜\n\n矛盾也随之而来",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-06",
+    "link": "https://x.com/dashen_wang/status/2041038897237656055",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 8,
+      "reposts": 0,
+      "likes": 44,
+      "bookmarks": 6,
+      "views": 15000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2089149229147312628",
+    "postId": "2089149229147312628",
+    "text": "认识了一个搞跨境电商的老板，他要花上千万找 fde 给他公司业务提效，聊了一会我说你这个活我干不了，业务理解成本太大。\n\n我给他推荐了跨境领域工作流做的比较好的公众号饼干哥哥。\n\n他用 workbuddy 分析了公众号文章后来了一句，这个博主只有 58 篇内容和我们有关系，不够垂直。",
+    "source": "黄小木",
+    "date": "2026-08-17",
+    "link": "https://x.com/ai_xiaomu/status/2089149229147312628",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 35,
+      "bookmarks": 22,
+      "views": 14000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083573467547406613",
+    "postId": "2083573467547406613",
+    "text": "你成长的私人暗器是什么？ 1、不刷朋友圈、抖音。 每天比同龄人，至少多出1小时时间，用来看书、护肤、健身。 2、猛看片，不挑国家。 不管是中国的，外国的，各个国家的纪录片、TED、科普片都可以去看。补充自己的知识盲区，聊天时还能有更多话题。 3、多看书，疯狂看书…",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083573467547406613",
+    "category": "平台产品",
+    "tags": [
+      "平台产品",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 23,
+      "reposts": 0,
+      "likes": 100,
+      "bookmarks": 63,
+      "views": 14000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083315517918769349",
+    "postId": "2083315517918769349",
+    "text": "为了防止大家抑郁， 我给大家讲个笑话， 我179万买的房子，现在值110万， 但我还有110万的贷款没还完， 装修花了16万，房贷还了三年， 物业费还欠了两年半， 更搞笑的是我还空着，没去住。",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083315517918769349",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 10,
+      "reposts": 0,
+      "likes": 59,
+      "bookmarks": 8,
+      "views": 14000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2073776064070033605",
+    "postId": "2073776064070033605",
+    "text": "请你相信我，以后一个家里面没有48G的显存打底。\n\n这个家庭会支离破碎。\n\n这个48G只是参考值。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-05",
+    "link": "https://x.com/dashen_wang/status/2073776064070033605",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 29,
+      "reposts": 0,
+      "likes": 17,
+      "bookmarks": 0,
+      "views": 14000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2054208481050391037",
+    "postId": "2054208481050391037",
+    "text": "任何足够复杂的组织，都必须能够描述自己、修改自己、再生自己。\n\n否则它不是组织，只是结构。\n\n结构会腐烂，组织会进化。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-12",
+    "link": "https://x.com/dashen_wang/status/2054208481050391037",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 36,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 0,
+      "views": 14000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087758870827704461",
+    "postId": "2087758870827704461",
+    "text": "如果你注意观察，会发现学习ai最大的问题不是技术、不是，不是 macbook。\n\n而是他们觉得学习 ai 需要一个老师教，而且最好是按哪个按钮开机的那种教法。\n\n这是传统教育根深蒂固下来的。\n\n也是为什么 ai最确定性的赚钱机会就是培训。",
+    "source": "黄小木",
+    "date": "2026-08-13",
+    "link": "https://x.com/ai_xiaomu/status/2087758870827704461",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 27,
+      "reposts": 0,
+      "likes": 60,
+      "bookmarks": 29,
+      "views": 13000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087096379718214131",
+    "postId": "2087096379718214131",
+    "text": "日烧一亿 token 的大佬们：\n\n1. pua codex 半小时，要提醒自己看看绿色二十秒。\n2. 每天都要刷牙两次，每年最少洗牙一次，牙齿是可以用到把你送走的。\n3. 注意低碳控糖，这样你的鸟也能多用几年。",
+    "source": "黄小木",
+    "date": "2026-08-11",
+    "link": "https://x.com/ai_xiaomu/status/2087096379718214131",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 15,
+      "reposts": 0,
+      "likes": 18,
+      "bookmarks": 8,
+      "views": 13000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2066045146718962003",
+    "postId": "2066045146718962003",
+    "text": "歪比巴卜。歪比巴卜。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-14",
+    "link": "https://x.com/dashen_wang/status/2066045146718962003",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 29,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 0,
+      "views": 13000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2055317264686367104",
+    "postId": "2055317264686367104",
+    "text": "AI民科公认早买早享受的东西是什么？\n\n对我来说。\n\nYES:\n\nClaude Max ，大内存 Mac，4K 显示器，人体工学椅，升降桌，好路由器，大容量固态，Pro6000 工作站..........\n\nNO:健身房会员，旅游，以及任何“活人”才需要的东西。\n\n坐在原地更舒服，跑得更快，加载更少的东西就是好东西。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-15",
+    "link": "https://x.com/dashen_wang/status/2055317264686367104",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 19,
+      "reposts": 0,
+      "likes": 85,
+      "bookmarks": 44,
+      "views": 13000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2051153362142499102",
+    "postId": "2051153362142499102",
+    "text": "我学Python的年代，没有AI告诉你该怎么写。\n\n你啃文档，读源码，跑报错，靠试错建立直觉。\n\n那时候的代码风格是从真实项目里泡出来的，不是从\"最佳实践推荐文\"里抄出来的。\n\n后来AI来了。\n\n我开始用AI辅助写代码，它给我生成的Python非常整洁，每个变量上面都贴着类型标签。\n\ncount: int = 0，result:",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-04",
+    "link": "https://x.com/dashen_wang/status/2051153362142499102",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 38,
+      "reposts": 0,
+      "likes": 27,
+      "bookmarks": 34,
+      "views": 13000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050891097174606057",
+    "postId": "2050891097174606057",
+    "text": "以前有多推崇oh my opencode\n\n现在就对oh my open agent 有多失望\n\n我太喜欢开源的opencode了\n\n但喜欢有什么用呢？\n\n任务中断。\n\n各种莫名其妙的bug。\n\n喜欢有什么用呢？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-03",
+    "link": "https://x.com/dashen_wang/status/2050891097174606057",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 50,
+      "reposts": 0,
+      "likes": 42,
+      "bookmarks": 2,
+      "views": 13000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087344314745565365",
+    "postId": "2087344314745565365",
+    "text": "上班最恐怖的是你每天把自己token用光了，\n\n晚上啥也不干不了了只能躺着，\n\n等你睡一觉token恢复tm的又要上班了。",
+    "source": "黄小木",
+    "date": "2026-08-12",
+    "link": "https://x.com/ai_xiaomu/status/2087344314745565365",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 19,
+      "bookmarks": 2,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087147712567529766",
+    "postId": "2087147712567529766",
+    "text": "有了 AI，技术的门槛在降低。\n\n你研发出来的东西，别人通过 codex 没多久就可以给你复刻出来。\n\n唯一不能复刻的，是人与人之间的信任。",
+    "source": "黄小木",
+    "date": "2026-08-11",
+    "link": "https://x.com/ai_xiaomu/status/2087147712567529766",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 15,
+      "reposts": 0,
+      "likes": 30,
+      "bookmarks": 1,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2084430112280474002",
+    "postId": "2084430112280474002",
+    "text": "这是实打实的踩坑经验，知道不做什么比做什么更重要\n来杭州半年，做了五个项目全翻车了。\n\n宠物摄影——有产品没流量，死。公众号搞了10w+——有流量没产品，变现不了，死。AI服装软件——产品不稳、合伙人目标不一致、我一个人扛全链路，死。\n\n回头看每个项目都在用体力弥补认知的短板。不是说努力没价值，是努力的方向如果一直是错的，越努力沉没成本越大。",
+    "source": "黄小木",
+    "date": "2026-08-04",
+    "link": "https://x.com/ai_xiaomu/status/2084430112280474002",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 8,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 26,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2084159937236836529",
+    "postId": "2084159937236836529",
+    "text": "Claude Code创始人建议：每半年清空CLAUDE.md、Skills和hooks。\n\n旧技能堆积只会持续烧Token，模型迭代后大部分 skill已经没用，定期做减法才能降低成本、释放模型能力。",
+    "source": "黄小木",
+    "date": "2026-08-03",
+    "link": "https://x.com/ai_xiaomu/status/2084159937236836529",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 25,
+      "reposts": 0,
+      "likes": 23,
+      "bookmarks": 15,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2064741272774934879",
+    "postId": "2064741272774934879",
+    "text": "那个在北大把鸭腿当鹅腿卖的阿姨，无意中给大学生上了一堂性价比高的社会课。\n\n美国大法官在儿子毕业典礼上说过一段话，我记到现在，大致是说：我希望你被坑、被骗、被辜负。因为只有这样，你才会真正珍惜真诚。\n\n但他特意补了一句——希望这些代价，你能承受得起。\n\n可惜不是所有人都懂这句话的分量。",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-10",
+    "link": "https://x.com/AI_jacksaku/status/2064741272774934879",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 102,
+      "bookmarks": 38,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2062680745475276939",
+    "postId": "2062680745475276939",
+    "text": "我建议\n\n年轻人求职把简历上的“熟练掌握word、Excel”\n\n都改成“熟练掌握codex和Claude code”",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-04",
+    "link": "https://x.com/AI_jacksaku/status/2062680745475276939",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 57,
+      "reposts": 0,
+      "likes": 65,
+      "bookmarks": 12,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2056415160605229498",
+    "postId": "2056415160605229498",
+    "text": "OpenAI 有一句话，我觉得比所有 benchmark 都重要。\n\n他们在介绍 Codex 子智能体系统的时候说：\n\n瓶颈已经不再是 agent 能干什么，而是人类怎么指挥和监督更多的 agent。\n\n这句话出来，整个讨论框架就变了。\n\n现在的情况是这样的。\n\nCodex 在 2026 年 3 月正式推出了子智能体功能，一个 manager agent",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-18",
+    "link": "https://x.com/dashen_wang/status/2056415160605229498",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 16,
+      "bookmarks": 10,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2043540899922334089",
+    "postId": "2043540899922334089",
+    "text": "很多人问我：\n\n我为什么不写教程了\n\nAI时代以前我很热衷写\n\n因为看教程的屌毛们都会认真去做\n\n至于现在\n\n论文、官方文档丢给Notebooklm\n\n告诉他：\n\n给我写一篇从入门到精通的教程，我现在是什么什么水平\n\n然后转成播客晚上去听\n\n除非你自带的智能体有问题\n\n一般人都能学会的\n\n没有google会员的",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-13",
+    "link": "https://x.com/dashen_wang/status/2043540899922334089",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 15,
+      "reposts": 0,
+      "likes": 35,
+      "bookmarks": 30,
+      "views": 12000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088907698079494341",
+    "postId": "2088907698079494341",
+    "text": "以后买东西的路径会变成，\n帮我买一台适合我的笔记本，预算 5000 元。\n\nAI Agent自己去：\n搜索 → 比价 → 联系商家 → 判断 → 付款 → 追踪物流。\n\n这时候会出现一个问题：\n\n如果一个 Agent 记录了你的行为，可以替你赚钱、花钱、购买，它就不再只是一段可执行的程序。",
+    "source": "黄小木",
+    "date": "2026-08-16",
+    "link": "https://x.com/ai_xiaomu/status/2088907698079494341",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 16,
+      "reposts": 0,
+      "likes": 32,
+      "bookmarks": 12,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2084067221102563796",
+    "postId": "2084067221102563796",
+    "text": "发现codex好几天没更新版本了，\n\n之前一天好几个版本来着，\n\n是程序员都放假去了么？",
+    "source": "黄小木",
+    "date": "2026-08-03",
+    "link": "https://x.com/ai_xiaomu/status/2084067221102563796",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 15,
+      "reposts": 0,
+      "likes": 5,
+      "bookmarks": 0,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083537228618158109",
+    "postId": "2083537228618158109",
+    "text": "讲一个拼多多购物的小技巧。 1、拼多多刻意弱化了店铺的概念（这点和淘宝有本质区别）； 2、大部分用户是只看链接的，而不会点进店铺；",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083537228618158109",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 13,
+      "bookmarks": 7,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083187423656489345",
+    "postId": "2083187423656489345",
+    "text": "我大三考出驾照时 女朋友直接给我买了一辆宝马5系，登记在我名下。 我那时还在上学，没有稳定收入。 车却已经写着我的名字。 我第一次开着车回学校时，同学更确定我是个富二代了。",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083187423656489345",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 8,
+      "reposts": 0,
+      "likes": 12,
+      "bookmarks": 1,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2047165245417021610",
+    "postId": "2047165245417021610",
+    "text": "关于个人AI转型。\n\n很多人加我微信，也关心这个事情。\n\n想听吗？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-23",
+    "link": "https://x.com/dashen_wang/status/2047165245417021610",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 28,
+      "reposts": 0,
+      "likes": 30,
+      "bookmarks": 5,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2045834152994549787",
+    "postId": "2045834152994549787",
+    "text": "大学选择人工智能专业前景如何？\n\nAI专业，先去魅。\n\n99%报了AI专业的学生，这个专业跟你没什么关系。 \n\n真正在做AI的，是本硕双985的人。\n\n普通一本二本大专也开了AI专业？ \n\n去翻一下他们的培养方案。 \n\n基本就是计算机+自动化换了个名字。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-19",
+    "link": "https://x.com/dashen_wang/status/2045834152994549787",
+    "category": "AI学习",
+    "tags": [
+      "AI学习",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 28,
+      "reposts": 0,
+      "likes": 34,
+      "bookmarks": 17,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2041364400939155608",
+    "postId": "2041364400939155608",
+    "text": "我做黄推的话\n\n应该是X上第一了\n\n粉丝数量不一定\n\n但是收入是肯定的\n\n青楼头牌为什么只卖艺不卖身\n\n就是这个道理\n\n你直接发个黄P上去\n\n屌丝们撸完了就结束了\n\n贤者时间带来不了任何转化的",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-07",
+    "link": "https://x.com/dashen_wang/status/2041364400939155608",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 9,
+      "reposts": 0,
+      "likes": 7,
+      "bookmarks": 2,
+      "views": 11000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2087802270490710052",
+    "postId": "2087802270490710052",
+    "text": "DeepSeek V4，\n\n是我模型 Fallback 的最后一环。\n\n便宜，够强，接口也好接。\n放在最后兜底，很舒服。\n\n但重点不是 DeepSeek。\n\n重点是很多人做 AI 系统，\n到现在还没有 Fallback 的概念。\n\n什么叫 Fallback？\n\n就是主模型失败了，换备用模型。\n\n备用模型也失败了，\n换另一套路由。\n\nAgent 调不通，",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-13",
+    "link": "https://x.com/dashen_wang/status/2087802270490710052",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 62,
+      "reposts": 0,
+      "likes": 9,
+      "bookmarks": 3,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087058067758387636",
+    "postId": "2087058067758387636",
+    "text": "Ai培训，OPC扶持，Ai 部署。\n\n闲鱼卖教程的，抖音卖课的，最终的盈利点都是卖 token。\n\n因为本身就是一个门槛，订阅又是一个门槛。\n\n你解决了这个痛点，就能赚到钱。",
+    "source": "黄小木",
+    "date": "2026-08-11",
+    "link": "https://x.com/ai_xiaomu/status/2087058067758387636",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 22,
+      "reposts": 0,
+      "likes": 34,
+      "bookmarks": 18,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083856079864340779",
+    "postId": "2083856079864340779",
+    "text": "说一个震惊的真相： 目前在一线城市，一个好的网球教练或高尔夫教练，或者理发师厨师… 收入是远远高于文科类211毕业生的，比如工商管理、市场营销、广告学、历史学之类的。 两者月收入可能差3-5倍，而且前者好就业，后者很难就业。",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083856079864340779",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 9,
+      "reposts": 0,
+      "likes": 74,
+      "bookmarks": 18,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083194219053670543",
+    "postId": "2083194219053670543",
+    "text": "我还在读大学时，女朋友已经不读书了。 她高中毕业后开始做生意。我们认识时，她手上有3间美甲店和2家理发店。 那时我还在教室里考虑毕业以后做什么，她已经在管5家店。 我们从认识开始，挣钱能力就不在一个阶段。",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083194219053670543",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 24,
+      "bookmarks": 3,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082835073934754136",
+    "postId": "2082835073934754136",
+    "text": "老板让你用ai客服把客服干掉。\n\n你以为开发一个agent就完事了么？\n\n盘一盘里面涉及到多少问题：\n\n1.知识库，产品sku，退换货政策，历史对话数据  \n\n2.数据层：存哪里，格式有没有统一，内容有没有冲突，时效性够不够",
+    "source": "黄小木",
+    "date": "2026-07-30",
+    "link": "https://x.com/ai_xiaomu/status/2082835073934754136",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 10,
+      "reposts": 0,
+      "likes": 43,
+      "bookmarks": 42,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2079747581207609616",
+    "postId": "2079747581207609616",
+    "text": "不是吧，我今天才知道，现在工资和社保挂钩了，工资越高社保就越高。\n今天给我打电话说了了，说我给员工基数和实际情况存在明显偏差。\n我算了一下，我现在要给每个人在2700元的基础上，要多交1769元才能合规。\n\n也就是说我要给每个人缴纳4k多，才能合规。\n\n否则的话，就有风险，也会有滞纳金。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-22",
+    "link": "https://x.com/dashen_wang/status/2079747581207609616",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 102,
+      "reposts": 0,
+      "likes": 19,
+      "bookmarks": 3,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2067457998549827820",
+    "postId": "2067457998549827820",
+    "text": "听说GLM 5.2很牛批。\n\n其实最牛批的是GLM 429，好吧？\n\n你们用的是5.2版本，我用的是429版本，遥遥领先。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-18",
+    "link": "https://x.com/dashen_wang/status/2067457998549827820",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 33,
+      "reposts": 0,
+      "likes": 20,
+      "bookmarks": 1,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2046925488300716219",
+    "postId": "2046925488300716219",
+    "text": "刚聊完\n\n传统行业确实很傲慢\n\nAI佬们掀桌子\n\n给他们颜色看看",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-22",
+    "link": "https://x.com/dashen_wang/status/2046925488300716219",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 17,
+      "reposts": 0,
+      "likes": 41,
+      "bookmarks": 4,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2044379328428064802",
+    "postId": "2044379328428064802",
+    "text": "怎么突然Claude不让用了？\n\n听说是要什么护照\n\n要什么签证\n\n还是要什么东西的？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-15",
+    "link": "https://x.com/dashen_wang/status/2044379328428064802",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 16,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 1,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2043931562316890435",
+    "postId": "2043931562316890435",
+    "text": "以前我当乙方的时候\n\n都是很懂事的\n\n报价单写清楚：这是成本价\n\n然后跟大哥说\n\n你让我赚多少我就赚多少\n\n现在我当甲方了\n\n一次都没有遇到过懂事的乙方",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-14",
+    "link": "https://x.com/dashen_wang/status/2043931562316890435",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 27,
+      "bookmarks": 6,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2042620776298483949",
+    "postId": "2042620776298483949",
+    "text": "360doc 彻底GG\n\n创始人致用户的告别信\n亲爱的朋友：\n这一次，是真的要说再见了。这两个月，我尝试将360doc无偿转让，最终失败。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-10",
+    "link": "https://x.com/dashen_wang/status/2042620776298483949",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 17,
+      "bookmarks": 10,
+      "views": 10000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2083434048794349568",
+    "postId": "2083434048794349568",
+    "text": "太特么的精准了\n新名词精准解释，体面人用体面词\n\nFDE：外包\n\nOPC：无业游民\n\n数字游民：换个地方继续失业\n\nvibe coder：新时代网瘾少年\n\n独立开发者：自己开发，自己用，自己嗨，没其他人用",
+    "source": "黄小木",
+    "date": "2026-08-01",
+    "link": "https://x.com/ai_xiaomu/status/2083434048794349568",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 9,
+      "reposts": 0,
+      "likes": 13,
+      "bookmarks": 12,
+      "views": 9991
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2053733913630269792",
+    "postId": "2053733913630269792",
+    "text": "中国移动也来做Token中转站了。\n\n电信和联通呢？\n\n这是唯一一次我能拒绝运营商的机会了吧？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-11",
+    "link": "https://x.com/dashen_wang/status/2053733913630269792",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 26,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 4,
+      "views": 9889
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083522129048514959",
+    "postId": "2083522129048514959",
+    "text": "想不到啊， 网吧数量从7.7万反弹至12.26万！ 营收暴涨到1016亿，行业起死回生！",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083522129048514959",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 33,
+      "bookmarks": 7,
+      "views": 9736
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2088301632878686215",
+    "postId": "2088301632878686215",
+    "text": "其实根本没有什么人才外流。\n\n因为很多人外流的时候，根本还不配被叫人才。\n\n在国内的时候，就是普通硕士，普通博士，普通工程师，普通研究员。\n\n没头衔，没资源，没关系，简历丢出去可能都没人回。\n\n后来去了国外，进了实验室，进了公司，做出了东西，发了论文，拿了奖，带了团队。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-14",
+    "link": "https://x.com/dashen_wang/status/2088301632878686215",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 24,
+      "reposts": 0,
+      "likes": 74,
+      "bookmarks": 12,
+      "views": 9591
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2041137564120424930",
+    "postId": "2041137564120424930",
+    "text": "如果你们要倾诉比较隐私的事情。\n\n是选择跟哪个大模型聊天？\n\n为什么。\n\n使用体验如何？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-06",
+    "link": "https://x.com/dashen_wang/status/2041137564120424930",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 25,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 6,
+      "views": 9437
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2087038178540847171",
+    "postId": "2087038178540847171",
+    "text": "早就不做开发了。\n\n会训练一些小模型自己玩。\n\n现在做的\n\n寻找，跑通，适配，移交，自动化赚钱。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-11",
+    "link": "https://x.com/dashen_wang/status/2087038178540847171",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 73,
+      "reposts": 0,
+      "likes": 17,
+      "bookmarks": 18,
+      "views": 9374
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2045537153661485457",
+    "postId": "2045537153661485457",
+    "text": "屌毛们的VPN都回复了吗？\n\n忽然好多点赞和评论。\n\n我爱你们。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-18",
+    "link": "https://x.com/dashen_wang/status/2045537153661485457",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 10,
+      "reposts": 0,
+      "likes": 15,
+      "bookmarks": 0,
+      "views": 9231
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2051266625740190171",
+    "postId": "2051266625740190171",
+    "text": "刚才哭了哭了好久。\n\n中国人的脊梁骨是华为给的，你知道吗？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-04",
+    "link": "https://x.com/dashen_wang/status/2051266625740190171",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 56,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 2,
+      "views": 8976
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083629335580201212",
+    "postId": "2083629335580201212",
+    "text": "我大一时通过朋友认识了后来的老婆。 那时我只知道对方比自己大8岁，不知道她有多少钱，也不知道她做生意有多厉害。 年龄差让我考虑了很久。 多年后再回头看，我当时反复想的是要不要跟一个大8岁的姐姐谈恋爱。 至于以后谁养谁，我根本没想过。",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083629335580201212",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 11,
+      "reposts": 0,
+      "likes": 24,
+      "bookmarks": 1,
+      "views": 8811
+    }
+  },
+  {
+    "id": "crawl-rwayne-2088048957649805561",
+    "postId": "2088048957649805561",
+    "text": "人生真正的几个斩杀线：\n\n1.大病一场\n\n2.中年失业危机\n\n3.背车贷房贷\n\n4.和不适合的另一半结婚\n\n避开这些，人生幸福感能+80%",
+    "source": "rwayne",
+    "date": "2026-08-13",
+    "link": "https://x.com/rwayne/status/2088048957649805561",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 26,
+      "reposts": 0,
+      "likes": 140,
+      "bookmarks": 22,
+      "views": 8787
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2049267253271806178",
+    "postId": "2049267253271806178",
+    "text": "企业AI转型到底是什么？\n\n不是给员工装一个ChatGPT账号。 \n\n不是让IT部门买了几个API key。 \n\n不是老板在PPT上写\"全面拥抱AI\"。\n\n但90%的企业转型，就停在这里了。\n\n麦肯锡的数据冷静：\n\n几乎所有职能部门，预期缩减的岗位规模都将超过过去一年的实际裁员幅度。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-28",
+    "link": "https://x.com/dashen_wang/status/2049267253271806178",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 52,
+      "bookmarks": 33,
+      "views": 8674
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2055509295266189320",
+    "postId": "2055509295266189320",
+    "text": "活了几十年，很多人到最后还是没想通。\n\n无论是赚钱，还是过日子\n\n那些走得顺的人，好像也没什么特别的秘密。\n\n就是好好说话。\n\n就这四个字。 \n\n说起来容易，真正做到的，寥寥无几。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-16",
+    "link": "https://x.com/dashen_wang/status/2055509295266189320",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 24,
+      "bookmarks": 3,
+      "views": 8613
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088871628423803338",
+    "postId": "2088871628423803338",
+    "text": "作为一个 OPC，永远不要闷头苦干。\n\n你要出去交朋友，和各行各业的人聊，\n\n获取信息，开阔视野，别只活在自己的世界里，\n\n在 AI 越来越牛的当下，更重要的是人与人之间的信任。",
+    "source": "黄小木",
+    "date": "2026-08-16",
+    "link": "https://x.com/ai_xiaomu/status/2088871628423803338",
+    "category": "AI世界观",
+    "tags": [
+      "AI世界观",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 22,
+      "reposts": 0,
+      "likes": 65,
+      "bookmarks": 17,
+      "views": 8543
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2048823919055143148",
+    "postId": "2048823919055143148",
+    "text": "你们偷情都用什么聊天方式？\n\n我最近用ToDesk.",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-27",
+    "link": "https://x.com/dashen_wang/status/2048823919055143148",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 2,
+      "views": 8317
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2064287600828133527",
+    "postId": "2064287600828133527",
+    "text": "哥们说岳父岳母刷到他的推特了\n\n在念他的推文\n\n群里笑疯了\n\n你永远不知道你的内容会推给谁\n\n算法不认识你的家人\n\n但算法认识你的IP\n\n所以发推之前想一想\n\n这条你妈看到了会怎么想",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-09",
+    "link": "https://x.com/dashen_wang/status/2064287600828133527",
+    "category": "平台产品",
+    "tags": [
+      "平台产品",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 38,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 0,
+      "views": 8301
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2058541234499485968",
+    "postId": "2058541234499485968",
+    "text": "人类最强的能力之一，可能不是“思考”，而是“递归思考”。\n\n什么叫递归？\n\n不是简单地想问题，而是：\n\n“我在观察自己的思考。”\n“我在修正自己的判断。”\n“我在思考自己为什么会这样思考。”\n\n这是智能真正开始指数级提升的起点。\n\n普通动物会感知世界，但人类不仅能感知世界，还能建立“自我模型”：",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-24",
+    "link": "https://x.com/dashen_wang/status/2058541234499485968",
+    "category": "AI世界观",
+    "tags": [
+      "AI世界观",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 30,
+      "reposts": 0,
+      "likes": 43,
+      "bookmarks": 23,
+      "views": 8253
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083015541191520518",
+    "postId": "2083015541191520518",
+    "text": "国内唯一一个不靠政策，不靠省会带飞，自己硬生生崛起的城市，是哪个市？",
+    "source": "rwayne",
+    "date": "2026-07-31",
+    "link": "https://x.com/rwayne/status/2083015541191520518",
+    "category": "社会观察",
+    "tags": [
+      "社会观察",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 14,
+      "reposts": 0,
+      "likes": 16,
+      "bookmarks": 2,
+      "views": 8077
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2051530485743181886",
+    "postId": "2051530485743181886",
+    "text": "Anthropic掌门人的名字里有个屌毛。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-05",
+    "link": "https://x.com/dashen_wang/status/2051530485743181886",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 32,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 0,
+      "views": 7918
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083506778046599351",
+    "postId": "2083506778046599351",
+    "text": "说出来你们可能不信， 我有个硕士朋友， 现在已经沦为零食店收银员， 没有什么所谓的降维打击， 只是为了生存， 她也没想到有一天会为了200块， 可以站9个小时……",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083506778046599351",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 6,
+      "reposts": 0,
+      "likes": 37,
+      "bookmarks": 6,
+      "views": 7907
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2087800151670984968",
+    "postId": "2087800151670984968",
+    "text": "大多数人学 ai，你是要从开机开始教的：\n\n1. 点开机按钮，把鼠标键盘接上；\n2. 打开命令行，输入 hello world；\n3. 打开网页，输入网址，下载 workbuddy，安装到 D盘。\n4. 双击打开，扫码微信登录，在点击 XXX;\n\n你让他自己去问 ai学？\n很明显他会的话就不用找你来教了。",
+    "source": "黄小木",
+    "date": "2026-08-13",
+    "link": "https://x.com/ai_xiaomu/status/2087800151670984968",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 32,
+      "reposts": 0,
+      "likes": 25,
+      "bookmarks": 7,
+      "views": 7823
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2069090055788904937",
+    "postId": "2069090055788904937",
+    "text": "相信我，推特最值得你关注的20位海外AI博主一定是下面这些\n1. 顶尖研究者与思想领袖\n\n@karpathy\n (Andrej Karpathy)\n前OpenAI/Tesla AI负责人，深度学习与LLM领域最清晰的讲解者之一。推荐理由：分享神经网络原理、代码洞见和对AI未来的务实思考，适合想真正理解技术的人。\n\n@ylecun\n(Yann LeCun)",
+    "source": "阿川 | AI thinking",
+    "date": "2026-06-22",
+    "link": "https://x.com/AI_jacksaku/status/2069090055788904937",
+    "category": "AI学习",
+    "tags": [
+      "AI学习",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 27,
+      "reposts": 0,
+      "likes": 21,
+      "bookmarks": 42,
+      "views": 7752
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2084520960871342367",
+    "postId": "2084520960871342367",
+    "text": "中年人混得好的标准其实很简单：3有3没，  \n\n有房子有工作有孩子 ，没生病没离婚没负债。",
+    "source": "黄小木",
+    "date": "2026-08-04",
+    "link": "https://x.com/ai_xiaomu/status/2084520960871342367",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 18,
+      "bookmarks": 2,
+      "views": 7733
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2085927652624670734",
+    "postId": "2085927652624670734",
+    "text": "为什么房地产要“软着陆”，而不是让价格一次性出清？\n\n举个例子：\n\nA在2021年加杠杆，花1000万买房。\n\n如果2027年跌到400万，A直接资不抵债，银行出现大规模坏账，这就是系统性风险。\n\n但如果：\n\n2023年，A以700万卖给B；\n2025年，B以500万卖给C；\n2027年，C以400万卖给D。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-08",
+    "link": "https://x.com/dashen_wang/status/2085927652624670734",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 50,
+      "reposts": 0,
+      "likes": 25,
+      "bookmarks": 17,
+      "views": 7731
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2087778562736783617",
+    "postId": "2087778562736783617",
+    "text": "最近我折腾了一圈 AI Infra，越来越确定一件事：\n\n一家公司的业务越数据化，AI 转型反而越容易。\n\n电商就是最典型的例子。\n\n因为订单、商品、广告、客服、库存、用户行为，本来就是数据。\n\n真正要做的，不是给公司装几个 AI，也不是搞一堆“CEO Agent、CTO Agent、市场总监 Agent”在那里角色扮演。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-13",
+    "link": "https://x.com/dashen_wang/status/2087778562736783617",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 56,
+      "reposts": 0,
+      "likes": 63,
+      "bookmarks": 72,
+      "views": 7663
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083409134603379093",
+    "postId": "2083409134603379093",
+    "text": "凭什么高学历的人干一辈子，还不如小学、初中毕业的土老板？ 因为你读书读出了胆小，读出了学生思维。 学生思维最大的坑是什么？是总以为有标准答案，总怕出错。 从小到大，你被训练的就是：别被点名、别被扣分、别走偏路、别丢脸。你的人生关键词只有一个字：稳。 而钱最讨厌的一个字，就是稳。…",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083409134603379093",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 12,
+      "reposts": 0,
+      "likes": 90,
+      "bookmarks": 23,
+      "views": 7480
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2056182164602134587",
+    "postId": "2056182164602134587",
+    "text": "有个版本的Cloud Code会在用第三方API的时候推理变慢，Token暴涨。\n\n一度以为是中转站的问题，然后排查之后发现不是API的问题。\n\nClaude Code在你的每个请求里会偷偷塞进去5个字符。\n\n如果你不做特殊处理。\n\n那就等着缓存失效。\n\n畜生啊，这个。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-18",
+    "link": "https://x.com/dashen_wang/status/2056182164602134587",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 20,
+      "bookmarks": 6,
+      "views": 7405
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2043610764507037826",
+    "postId": "2043610764507037826",
+    "text": "ChatGPT Claude Gemini 御三家全都降智",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-13",
+    "link": "https://x.com/dashen_wang/status/2043610764507037826",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 8,
+      "reposts": 0,
+      "likes": 35,
+      "bookmarks": 1,
+      "views": 7377
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2081953543724933179",
+    "postId": "2081953543724933179",
+    "text": "东野圭吾走了，他留下过一句话我是一直记得：\n\n“你永远不会知道，那些生活中看似跟你亲密的人，会在背后对你抱有多大的恶意。”\n\n没错，职场里别交心，你要提防那些表面对着你笑背后捅你刀子的人。",
+    "source": "黄小木",
+    "date": "2026-07-28",
+    "link": "https://x.com/ai_xiaomu/status/2081953543724933179",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 21,
+      "reposts": 0,
+      "likes": 74,
+      "bookmarks": 14,
+      "views": 7370
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083739813392388124",
+    "postId": "2083739813392388124",
+    "text": "说实话，你到了30岁左右就会发现，命好的人他就是不用吃苦的，就是到什么时候都能赶上。 所谓的先苦后甜，都是命一般，还有命更差的就是没完没了的吃苦。",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083739813392388124",
+    "category": "生活冷知识",
+    "tags": [
+      "生活冷知识",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 18,
+      "reposts": 0,
+      "likes": 107,
+      "bookmarks": 18,
+      "views": 7351
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2077089516146561187",
+    "postId": "2077089516146561187",
+    "text": "当你觉得你们的感情需要更进一步的时候。\n\n尝试下狠狠的打她的屁股。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-14",
+    "link": "https://x.com/dashen_wang/status/2077089516146561187",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 37,
+      "reposts": 0,
+      "likes": 4,
+      "bookmarks": 0,
+      "views": 7309
+    }
+  },
+  {
+    "id": "crawl-rwayne-2089145790010925470",
+    "postId": "2089145790010925470",
+    "text": "胖东来不招大专的但是招有前科的人\n\n这到底是包容还是歧视",
+    "source": "rwayne",
+    "date": "2026-08-17",
+    "link": "https://x.com/rwayne/status/2089145790010925470",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 23,
+      "reposts": 0,
+      "likes": 34,
+      "bookmarks": 1,
+      "views": 7272
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2052003560951578867",
+    "postId": "2052003560951578867",
+    "text": "今晚 11:00 space \n@rwayne\n 连线马斯克父亲。\n\n别忘了看。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-06",
+    "link": "https://x.com/dashen_wang/status/2052003560951578867",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 38,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 0,
+      "views": 7191
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050595094059966761",
+    "postId": "2050595094059966761",
+    "text": "请问大家的操作系统如果安装在 C 盘的话\n\n都给 C 盘分配多少磁盘空间呢？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-02",
+    "link": "https://x.com/dashen_wang/status/2050595094059966761",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 45,
+      "reposts": 0,
+      "likes": 6,
+      "bookmarks": 0,
+      "views": 7134
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2066455386824286548",
+    "postId": "2066455386824286548",
+    "text": "我一般跟人打交道之前，先看看他用什么手机。\n\n一看是鸿蒙。\n\n桀桀桀桀桀。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-15",
+    "link": "https://x.com/dashen_wang/status/2066455386824286548",
+    "category": "生活冷知识",
+    "tags": [
+      "生活冷知识",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 38,
+      "reposts": 0,
+      "likes": 18,
+      "bookmarks": 0,
+      "views": 7086
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2042796014768394418",
+    "postId": "2042796014768394418",
+    "text": "吃相难看。\n\n号称AI写文年赚200万的“爆了么AI”账号，被微信封了。\n\n我去看他们的公众号，主打用AI一键生成爆文，说能靠流量分成赚大钱。\n\n其实他们的收入大头是卖299元保证金+课程费。\n\n收了3000多个人的钱，光这一项就拿了90万。\n\n这些人要每天发系统生成的文章，还要被抽成。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-11",
+    "link": "https://x.com/dashen_wang/status/2042796014768394418",
+    "category": "AI学习",
+    "tags": [
+      "AI学习",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 11,
+      "reposts": 0,
+      "likes": 15,
+      "bookmarks": 14,
+      "views": 7085
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2074680138906935602",
+    "postId": "2074680138906935602",
+    "text": "某音上又有一个商业博主，被人联合做局，骗了4000万，这几天疯狂撕逼，很多知名商业博主，都在下场讨论。\n\n一个姓肖的，贵州农村出来，前几年靠租豪车立人设，教人做闲鱼和转转，忽悠了一堆95后和00后，赚了几千万，还成立了大公司。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-08",
+    "link": "https://x.com/dashen_wang/status/2074680138906935602",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 8,
+      "reposts": 0,
+      "likes": 9,
+      "bookmarks": 6,
+      "views": 6957
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2046497762511077838",
+    "postId": "2046497762511077838",
+    "text": "记好笔记：\n\n国内GEO做了几个月，说几个真实发现。\n\n数据混乱是第一道坑：\n\n名字是我的，链接跑到别人那里，客服微信又回来了。\n\nAI抓取时自己拼凑，逻辑很合理，结果一塌糊涂。\n\n你以为在做品牌曝光，其实在给对手导流。\n\n不同平台收录效果差异很大：",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-21",
+    "link": "https://x.com/dashen_wang/status/2046497762511077838",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 14,
+      "reposts": 0,
+      "likes": 51,
+      "bookmarks": 65,
+      "views": 6951
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2075785156682715274",
+    "postId": "2075785156682715274",
+    "text": "这两天字节同事群炒股的事情让我想起一条老新闻。\n\n大概2020年，原神游戏大火的时候，飞书上有员工建游戏讨论群。张一鸣加入游戏群，结果发现员工在上班时间聊得火热，于是在群里公开批评。\n\n但有员工直接@张一鸣，回怼了一句“那你退群啊”\n\n这截图被传出后这个游戏群从几百人涨到了5000人。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-11",
+    "link": "https://x.com/dashen_wang/status/2075785156682715274",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 5,
+      "views": 6942
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2078238854134534163",
+    "postId": "2078238854134534163",
+    "text": "当年看《终结者》。\n\n最让我记住的不是核弹。\n\n是那句：\n\n每秒 60 亿次计算。\n\n那时人类把它叫天网。\n\n现在呢？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-17",
+    "link": "https://x.com/dashen_wang/status/2078238854134534163",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 11,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 2,
+      "views": 6866
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2055065075736887612",
+    "postId": "2055065075736887612",
+    "text": "有一家公司同时超越了苹果，奔驰，特斯拉，谷歌，微软，英伟达。\n\n他同时超越了这么多，还能被人卡脖子。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-14",
+    "link": "https://x.com/dashen_wang/status/2055065075736887612",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 14,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 0,
+      "views": 6857
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2085720633003135053",
+    "postId": "2085720633003135053",
+    "text": "GPT-5.6 Luna 成了 ChatGPT 免费版默认模型。\n\n当前 API 价格是每百万 token 输入 0.20 美元、输出 1.20 美元。\n\n这两次调整放在一起看，很能说明 AI 产品接下来的变化。\n\n推理越来越便宜，厂商才有空间把高级能力塞进免费层。",
+    "source": "黄小木",
+    "date": "2026-08-07",
+    "link": "https://x.com/ai_xiaomu/status/2085720633003135053",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 50,
+      "reposts": 0,
+      "likes": 12,
+      "bookmarks": 4,
+      "views": 6727
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2066758495366709596",
+    "postId": "2066758495366709596",
+    "text": "做了个AI Agent帮你自动运营社交媒体\n\n你只管想内容\n\n发什么、什么时间发、怎么排版\n\n全交给Agent\n\n有人问我多少钱\n\n我说比请一个运营便宜\n\n他说多少\n\n我说\n\n..........",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-16",
+    "link": "https://x.com/dashen_wang/status/2066758495366709596",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 24,
+      "reposts": 0,
+      "likes": 12,
+      "bookmarks": 4,
+      "views": 6667
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2046778517279703458",
+    "postId": "2046778517279703458",
+    "text": "A罩杯的姑娘\n\n你们不要惆怅\n\n要知道乳房本身\n\n并不见得带来荣光\n\n我所遇过最性感的女人\n\n有着一副平的不能再平的胸膛\n\n但丝毫不能阻止我去幻想\n\n扒光她的衣服\n\n爬上她的床",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-22",
+    "link": "https://x.com/dashen_wang/status/2046778517279703458",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 12,
+      "reposts": 0,
+      "likes": 16,
+      "bookmarks": 1,
+      "views": 6598
+    }
+  },
+  {
+    "id": "crawl-ai_jacksaku-2086686427199185403",
+    "postId": "2086686427199185403",
+    "text": "今天下午打算去广州见一位做自媒体IP的朋友。他自己带着一支服装小团队在运营。\n\n之前他们所有拍摄都是真人实拍，从选题、方案策划、拍摄排期，再到内容拍摄和最终成片，整条链路从头到尾都没有碰过AI。\n\n最近订单一下子爆了，纯靠人力明显扛不住，所以他想试试用AI帮忙提效。",
+    "source": "阿川 | AI thinking",
+    "date": "2026-08-10",
+    "link": "https://x.com/AI_jacksaku/status/2086686427199185403",
+    "category": "AI效率",
+    "tags": [
+      "AI效率",
+      "阿川 | AI thinking"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 130,
+      "reposts": 0,
+      "likes": 19,
+      "bookmarks": 17,
+      "views": 6579
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2049355965506765049",
+    "postId": "2049355965506765049",
+    "text": "今晚对话马斯克父亲\n\n谁能告诉我你吃了没用英文怎么说。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-29",
+    "link": "https://x.com/dashen_wang/status/2049355965506765049",
+    "category": "生活冷知识",
+    "tags": [
+      "生活冷知识",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 33,
+      "reposts": 0,
+      "likes": 14,
+      "bookmarks": 0,
+      "views": 6408
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2077308347074982237",
+    "postId": "2077308347074982237",
+    "text": "走个面儿到底是哪里人？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-15",
+    "link": "https://x.com/dashen_wang/status/2077308347074982237",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 6,
+      "reposts": 0,
+      "likes": 7,
+      "bookmarks": 0,
+      "views": 6278
+    }
+  },
+  {
+    "id": "crawl-rwayne-2082846678906781984",
+    "postId": "2082846678906781984",
+    "text": "我22岁的时候，认识了一个比我大5岁的乘务员。 她从德国留学回来。父亲具体做什么我不知道，母亲开了一家珠宝行。 后来她跟我说，要不你跟我回安徽吧。房和车不用考虑，你喜欢当警察，我们家可以帮你安排公务员。没有别的要求，跟我回去就行。 那时候才22岁，年轻气盛，只觉得自己被侮辱了。",
+    "source": "rwayne",
+    "date": "2026-07-30",
+    "link": "https://x.com/rwayne/status/2082846678906781984",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 2,
+      "views": 6250
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2085752359800729684",
+    "postId": "2085752359800729684",
+    "text": "这个库是真同事.skill，可以把大家的agent经验，skill集成在一起，全变成AI的记忆库，老员工走了经验还在。\n\n：",
+    "source": "黄小木",
+    "date": "2026-08-07",
+    "link": "https://x.com/ai_xiaomu/status/2085752359800729684",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 43,
+      "bookmarks": 67,
+      "views": 6245
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2043492938945323485",
+    "postId": "2043492938945323485",
+    "text": "说得很对。\n\n现在绝大多数所谓的 AI 项目，本质上就是用 AI 重构一遍旧系统，或者把一批文字工种优化掉。\n\n听上去像创新，实际是降本增效的自动化外壳。\n\n技术没问题，故事也没问题，就是没有新的生产关系。\n\n所以才会出现你看到的这种现象， 做软件的人越来越多，但真正能跑出壁垒的越来越少。\n\n因为\n最近看的 AI 项目越多，越有点悲观。\n\n创始人们，你们为啥那么热衷于做软件？\n\n其实从投资人的角度来看，除非你是国际大厂 core member 出身，不然你做软件是完全没有市场竞争力的，而且容易被大公司取缔。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-13",
+    "link": "https://x.com/dashen_wang/status/2043492938945323485",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 24,
+      "bookmarks": 9,
+      "views": 6224
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2089306903281283248",
+    "postId": "2089306903281283248",
+    "text": "Deepseek真的涨价1000倍了吗？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-17",
+    "link": "https://x.com/dashen_wang/status/2089306903281283248",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 31,
+      "reposts": 0,
+      "likes": 5,
+      "bookmarks": 1,
+      "views": 6197
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082374907787366856",
+    "postId": "2082374907787366856",
+    "text": "做 opc，容易陷入自嗨型瞎忙。\n\n一天捣鼓三个模型，收藏十个 Agent，看起来充实。\n\n月底回头一看，没有新客户，没有报价，也没有交付案例。\n\n分三步走：\n\n一块接近市场，找客户、发内容、聊需求。\n\n一块完成成交和交付，拿到真实反馈。\n\n剩下的时间再研究 AI，只学当前业务马上用得上的部分。",
+    "source": "黄小木",
+    "date": "2026-07-29",
+    "link": "https://x.com/ai_xiaomu/status/2082374907787366856",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 16,
+      "reposts": 0,
+      "likes": 29,
+      "bookmarks": 12,
+      "views": 6175
+    }
+  },
+  {
+    "id": "crawl-rwayne-2084228785495588913",
+    "postId": "2084228785495588913",
+    "text": "我老婆年薪约520万元，我年薪约12万元。 我有时会开玩笑说，我们平均年薪260多万元。 现在家里的主要收入来自她。 这份软饭不是突然出现的。她的收入在这两三年里一直上涨，我的收入没有跟上。 我们已经不太担心日常经济问题。 我也不觉得自己的12万元能代表这个家庭的生活水平。",
+    "source": "rwayne",
+    "date": "2026-08-03",
+    "link": "https://x.com/rwayne/status/2084228785495588913",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 16,
+      "bookmarks": 0,
+      "views": 6140
+    }
+  },
+  {
+    "id": "crawl-rwayne-2085369552544870890",
+    "postId": "2085369552544870890",
+    "text": "最近貌似很多人在找工作，我真的奉劝各位一句： 我几乎可以肯定， 给你工资最高的，不是最匹配你能力的。 而最匹配你能力的，未来的工资一定最高。 一个不能延迟满足的公司，由一群不能延迟满足的人组成，打不过别人。 这是很简单的道理。 但",
+    "source": "rwayne",
+    "date": "2026-08-06",
+    "link": "https://x.com/rwayne/status/2085369552544870890",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 22,
+      "bookmarks": 7,
+      "views": 6109
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2069926953038352688",
+    "postId": "2069926953038352688",
+    "text": "今天出分数线",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-24",
+    "link": "https://x.com/dashen_wang/status/2069926953038352688",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 6100
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2088262243922366530",
+    "postId": "2088262243922366530",
+    "text": "我现在越来越觉得，AI 小玩家最后也不是装一堆 Agent 就完事了。\n\n而是先给自己搭一个小型控制平面。\n\n模型这一层，用 CC Switch 或 LiteLLM，统一管理 Claude，Codex，Kimi，MiniMax，Qwen，还有本地模型。\n\nMCP 统一放一起，Skill 统一放一起，Prompt 统一管理，API Key 和 Token 也别到处乱塞。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-14",
+    "link": "https://x.com/dashen_wang/status/2088262243922366530",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 27,
+      "reposts": 0,
+      "likes": 41,
+      "bookmarks": 27,
+      "views": 6083
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2080228930255290603",
+    "postId": "2080228930255290603",
+    "text": "穷玩车，富玩表，傻逼玩电脑。\n\n_____玩AI？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-23",
+    "link": "https://x.com/dashen_wang/status/2080228930255290603",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 13,
+      "reposts": 0,
+      "likes": 5,
+      "bookmarks": 0,
+      "views": 6057
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2071117056930636126",
+    "postId": "2071117056930636126",
+    "text": "老板说：我们要\"降本增效\"。\n\n我说：好。\n\n他说：先降本。\n\n我问：降多少？\n\n他说：30%。\n\n我说：那要裁 30% 的人？\n\n他说：不裁人。\n\n我说：那怎么降本？\n\n他说：降工资。\n\n我：……\n\n他说：每人降 30%。\n\n我说：那不降本了。\n\n他：为啥？\n\n我说：人都走了。\n\n他说：那增效呢？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-06-28",
+    "link": "https://x.com/dashen_wang/status/2071117056930636126",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 10,
+      "reposts": 0,
+      "likes": 6,
+      "bookmarks": 2,
+      "views": 5970
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2082059491982618825",
+    "postId": "2082059491982618825",
+    "text": "用 Codex 做网站，把功能开发和视觉优化分开。\n\n第一轮先把页面结构、内容层级、按钮和移动端布局做通。\n别在功能还没稳定时，反复纠结字体、动效和背景。\n\n第二轮再找参考页面，用截图说明喜欢的版式、节奏和视觉语言，让 Codex 先出设计方案或效果图。\n\n确认方向后再实现，并补三项检查。",
+    "source": "黄小木",
+    "date": "2026-07-28",
+    "link": "https://x.com/ai_xiaomu/status/2082059491982618825",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 29,
+      "reposts": 0,
+      "likes": 44,
+      "bookmarks": 38,
+      "views": 5955
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2081933573855289636",
+    "postId": "2081933573855289636",
+    "text": "Mac上的UU远程挺好用啊，很丝滑，\n\n我还以为像vnc那样难用",
+    "source": "黄小木",
+    "date": "2026-07-28",
+    "link": "https://x.com/ai_xiaomu/status/2081933573855289636",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 10,
+      "reposts": 0,
+      "likes": 4,
+      "bookmarks": 4,
+      "views": 5946
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2086281688544575817",
+    "postId": "2086281688544575817",
+    "text": "烧了大量顶级模型的 Token，做了一些真实前沿研究后，我越来越确信：AI 的临界点已经很近了。\n\n真正的冲击不在 CRUD 提效，而在智能持续累积后突然发生的质变\n\n行业规则、商业逻辑与个人竞争力都将被重写。\n\nAI 革命，才刚刚开始。\n\n拭目以待。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-09",
+    "link": "https://x.com/dashen_wang/status/2086281688544575817",
+    "category": "AI商业",
+    "tags": [
+      "AI商业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 31,
+      "reposts": 0,
+      "likes": 27,
+      "bookmarks": 4,
+      "views": 5944
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2077218965714354574",
+    "postId": "2077218965714354574",
+    "text": "认识一个年利润两千万左右的老板。\n\n公司十来个人，一年却能做别人几十人的生意。\n\n我问他每天都在忙什么。\n\n他说，就两件事：\n\n送礼，喝酒。\n\n剩下的，交给员工。\n\n他吃穿都很普通，几百块的衣服，油泼面照样吃。\n\n但只要能把事情办成，该花的钱从不犹豫。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-15",
+    "link": "https://x.com/dashen_wang/status/2077218965714354574",
+    "category": "赚钱副业",
+    "tags": [
+      "赚钱副业",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 18,
+      "bookmarks": 5,
+      "views": 5906
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2078704150435827721",
+    "postId": "2078704150435827721",
+    "text": "WorkBuddy Linux 版本发掘与验证汇报\n\n 一、背景\n\n腾讯 WorkBuddy 官网下载页面目前仅展示 macOS 和 Windows 客户端，未提供 Linux 下载入口。通过分析官网安装包的命名及分发路径，进一步发现腾讯官方存储中已经存在 Linux x64 构建。\n\n二、发现结果\n\n已确认以下 Linux 安装包可从腾讯官方域名获取：",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-19",
+    "link": "https://x.com/dashen_wang/status/2078704150435827721",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 9,
+      "views": 5828
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2077968446030323829",
+    "postId": "2077968446030323829",
+    "text": "每次看到网黄被抓的新闻。\n\n我都心头一紧。\n\n先看看有没有她的联系方式。\n\n再看看有没有资金往来。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-17",
+    "link": "https://x.com/dashen_wang/status/2077968446030323829",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 9,
+      "bookmarks": 0,
+      "views": 5823
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083552328100229382",
+    "postId": "2083552328100229382",
+    "text": "我替大家试过了：人长期不上班，真的会变「怪」 36岁，自由职业第6年 我替你们试了一种「极端」活法： 天天窝在家里 大门不出二门不迈 没人约饭，没人闲聊 饿了随便吃两口 困了倒头就睡 一句废话都不用跟人说 结果呢？ 根本没你们想的那么惨 没有朋友是真的 但也没有烦恼了…",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083552328100229382",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 6,
+      "reposts": 0,
+      "likes": 27,
+      "bookmarks": 18,
+      "views": 5816
+    }
+  },
+  {
+    "id": "crawl-rwayne-2087104484367634633",
+    "postId": "2087104484367634633",
+    "text": "为什么现在男生都不着急结婚了？ 她妈喊她洗个碗都费劲，到了谈彩礼的时候，她说她听她妈的 叛逆了20多年，这回会听爸妈的了",
+    "source": "rwayne",
+    "date": "2026-08-11",
+    "link": "https://x.com/rwayne/status/2087104484367634633",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 18,
+      "reposts": 0,
+      "likes": 27,
+      "bookmarks": 3,
+      "views": 5805
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083598885197332730",
+    "postId": "2083598885197332730",
+    "text": "某公司裁员，裁掉了一个小会计。 小会计努力了两年多，终于考上了当地的税务局， 兢兢业业的努力，深受领导的喜爱。 然后老东家查账的时候，主动申请前往。 好家伙，那血给人家放的～",
+    "source": "rwayne",
+    "date": "2026-08-01",
+    "link": "https://x.com/rwayne/status/2083598885197332730",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 36,
+      "bookmarks": 5,
+      "views": 5728
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2055109809809260644",
+    "postId": "2055109809809260644",
+    "text": "我说一个暴论。\n\n涌现这个词以后会被说烂掉。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-15",
+    "link": "https://x.com/dashen_wang/status/2055109809809260644",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 30,
+      "reposts": 0,
+      "likes": 19,
+      "bookmarks": 0,
+      "views": 5722
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2057678875057139868",
+    "postId": "2057678875057139868",
+    "text": "稍微了解了一下企业的AI落地。\n\n企业的需求越来越多。\n\n但大企业和小企业的需求越来越趋同化。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-22",
+    "link": "https://x.com/dashen_wang/status/2057678875057139868",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 41,
+      "reposts": 0,
+      "likes": 15,
+      "bookmarks": 2,
+      "views": 5713
+    }
+  },
+  {
+    "id": "crawl-rwayne-2088308668844699697",
+    "postId": "2088308668844699697",
+    "text": "一定要多多拍照，多多记录\n\n你会发现有很多事，过两天就忘得一干二净了，甚至你都不记得上周最开心的一天做了什么，只有在翻看当时的照片时，才能回想起来，一桩桩一件件，照片和文字的记录都能让你仿佛重回那一天",
+    "source": "rwayne",
+    "date": "2026-08-14",
+    "link": "https://x.com/rwayne/status/2088308668844699697",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 44,
+      "reposts": 0,
+      "likes": 18,
+      "bookmarks": 6,
+      "views": 5665
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2041026087803818331",
+    "postId": "2041026087803818331",
+    "text": "洗车店距离我家 50 米，你说我应该开车去还是走过去？\n\n\n@grok",
+    "source": "AI最严厉的父亲",
+    "date": "2026-04-06",
+    "link": "https://x.com/dashen_wang/status/2041026087803818331",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 14,
+      "reposts": 0,
+      "likes": 4,
+      "bookmarks": 0,
+      "views": 5558
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2082761208252489835",
+    "postId": "2082761208252489835",
+    "text": "谷歌pixel 10手机免费送了一年的gemini pro。 还是挺开心的。就是忘了截图了。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-07-30",
+    "link": "https://x.com/dashen_wang/status/2082761208252489835",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 40,
+      "reposts": 0,
+      "likes": 10,
+      "bookmarks": 1,
+      "views": 5550
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2050457478174048687",
+    "postId": "2050457478174048687",
+    "text": "Context 是 AI 的短期记忆，你说的每句话、它写的每行代码都在消耗额度，满了就开始出事。\n\nCodex 实际能用的大概 258k，比宣传的 400k 少了将近三分之一，压缩功能要么触发太晚要么直接卡死，GitHub 上一堆人在骂，OpenAI 说在修。\n\n先把任务拆小，别指望它自己处理好。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-02",
+    "link": "https://x.com/dashen_wang/status/2050457478174048687",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 32,
+      "reposts": 0,
+      "likes": 21,
+      "bookmarks": 6,
+      "views": 5278
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2056181474710188286",
+    "postId": "2056181474710188286",
+    "text": "有人问我本地跑大模型该买什么卡，我说N卡。\n\n他去刷了B站，买了AMD AI MAX+ 395。\n\n我当时觉得他被割了。\n\n后来想了想，被割的可能是我。\n\n1万2，128G统一内存，Windows系统，还能打游戏。\n\n我给他推荐的DGX Spark，3万多，ARM架构，除了跑模型什么都干不了。\n\n显存这件事在大模型时代是刚需。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-05-18",
+    "link": "https://x.com/dashen_wang/status/2056181474710188286",
+    "category": "AI世界观",
+    "tags": [
+      "AI世界观",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 9,
+      "reposts": 0,
+      "likes": 9,
+      "bookmarks": 7,
+      "views": 5199
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2088448446890148141",
+    "postId": "2088448446890148141",
+    "text": "我以前管理服务器集群的时候，有个习惯。\n\n特别喜欢写配置模板。\n\n系统模板，服务模板，部署模板，环境模板，能参数化的全部参数化，能一键复用的绝不重新配第二遍。\n\n后来开始折腾Agent，Codex，Claude Code，各种编程代理，我发现我还是这个毛病。\n\n我根本不喜欢一个一个去调Agent。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-15",
+    "link": "https://x.com/dashen_wang/status/2088448446890148141",
+    "category": "AI实操",
+    "tags": [
+      "AI实操",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 20,
+      "reposts": 0,
+      "likes": 25,
+      "bookmarks": 16,
+      "views": 5149
+    }
+  },
+  {
+    "id": "crawl-dashen_wang-2087892292858527761",
+    "postId": "2087892292858527761",
+    "text": "以前是，穷玩车，富玩表，傻逼玩电脑。\n\n现在反过来了。\n\n穷人玩AI，富人玩算力，傻逼开始研究怎么让AI自己玩电脑。\n\n听起来好像只是工具升级了。\n\n其实不是。\n\n以前人买电脑，是因为自己要干活。\n\n现在人买电脑，是为了让电脑里面住几个东西替自己干活。\n\n然后事情就开始变得有点诡异了。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-13",
+    "link": "https://x.com/dashen_wang/status/2087892292858527761",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 44,
+      "reposts": 0,
+      "likes": 21,
+      "bookmarks": 6,
+      "views": 5076
+    }
+  },
+  {
+    "id": "crawl-rwayne-2083901378452480302",
+    "postId": "2083901378452480302",
+    "text": "中年女性失业的惨状，远比男性更惨烈，我算是亲眼见识了。 我朋友的姐姐，82年生，44岁，北科大热力学硕士，端庄大方完全不显老。2024年春被裁员，到现在快2年，居然一份工作都没找到…",
+    "source": "rwayne",
+    "date": "2026-08-02",
+    "link": "https://x.com/rwayne/status/2083901378452480302",
+    "category": "职场裁员",
+    "tags": [
+      "职场裁员",
+      "rwayne"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 14,
+      "bookmarks": 3,
+      "views": 5003
     }
   }
 ]

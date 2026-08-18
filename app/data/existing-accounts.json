@@ -16,5 +16,23 @@
     "label": "#Roland.W",
     "accent": "#756b92",
     "avatar": "/avatars/rwayne.png"
+  },
+  {
+    "id": "dashen-wang",
+    "name": "AI最严厉的父亲",
+    "handle": "@dashen_wang",
+    "verified": true,
+    "label": "#AI最严厉的父亲",
+    "accent": "#1d506b",
+    "avatar": "/avatars/dashen-wang.jpg"
+  },
+  {
+    "id": "ai-jacksaku",
+    "name": "阿川 | AI thinking",
+    "handle": "@AI_jacksaku",
+    "verified": true,
+    "label": "#阿川",
+    "accent": "#be6b3d",
+    "avatar": "/avatars/ai-jacksaku.jpg"
   }
 ]

@@ -27,6 +27,8 @@ const sources = [
 const accounts = [
   { id: "ai-xiaomu", name: "黄小木", handle: "@ai_xiaomu", verified: true, label: "#黄小木", accent: "#263033", avatar: "/avatars/ai-xiaomu.png" },
   { id: "rwayne", name: "Roland.W", handle: "@rwayne", verified: true, label: "#Roland.W", accent: "#756b92", avatar: "/avatars/rwayne.png" },
+  { id: "dashen-wang", name: "AI最严厉的父亲", handle: "@dashen_wang", verified: true, label: "#AI最严厉的父亲", accent: "#1d506b", avatar: "/avatars/dashen-wang.jpg" },
+  { id: "ai-jacksaku", name: "阿川 | AI thinking", handle: "@AI_jacksaku", verified: true, label: "#阿川", accent: "#be6b3d", avatar: "/avatars/ai-jacksaku.jpg" },
 ];
 
 const users = [
@@ -35,6 +37,8 @@ const users = [
   { id: "user-wsl8297", name: "Joruno", handle: "@wsl8297", role: "已导入用户", accountIds: [] },
   { id: "user-ai-xiaomu", name: "黄小木", handle: "@ai_xiaomu", role: "已导入用户", accountIds: ["ai-xiaomu"] },
   { id: "user-rwayne", name: "Roland.W", handle: "@rwayne", role: "已导入用户", accountIds: ["rwayne"] },
+  { id: "user-dashen-wang", name: "AI最严厉的父亲", handle: "@dashen_wang", role: "已导入用户", accountIds: ["dashen-wang"] },
+  { id: "user-ai-jacksaku", name: "阿川 | AI thinking", handle: "@AI_jacksaku", role: "已导入用户", accountIds: ["ai-jacksaku"] },
 ];
 
 const readJson = async (relativePath) =>
@@ -239,8 +243,8 @@ for (const crawled of crawledItems) {
       ...existing,
       ...crawled,
       id: existing.id,
-      category: crawled.category === "其他" ? existing.category : crawled.category,
-      tags: crawled.category === "其他" ? existing.tags : crawled.tags,
+      category: existing.category === "其他" ? crawled.category : existing.category,
+      tags: existing.category === "其他" ? crawled.tags : existing.tags,
     };
   }
 }
