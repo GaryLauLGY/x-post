@@ -1359,7 +1359,7 @@
       "replies": 98,
       "reposts": 0,
       "likes": 1225,
-      "bookmarks": 449,
+      "bookmarks": 447,
       "views": 200000
     }
   },
@@ -2544,8 +2544,8 @@
     "metrics": {
       "replies": 81,
       "reposts": 0,
-      "likes": 726,
-      "bookmarks": 1186,
+      "likes": 725,
+      "bookmarks": 1187,
       "views": 99000
     }
   },
@@ -3579,27 +3579,6 @@
     }
   },
   {
-    "id": "crawl-ai_xiaomu-2088474441831575791",
-    "postId": "2088474441831575791",
-    "text": "有时候，决定你 ai 能力边界的，是你知不知道某个关键词。",
-    "source": "黄小木",
-    "date": "2026-08-15",
-    "link": "https://x.com/ai_xiaomu/status/2088474441831575791",
-    "category": "AI认知",
-    "tags": [
-      "AI认知",
-      "黄小木"
-    ],
-    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
-    "metrics": {
-      "replies": 26,
-      "reposts": 0,
-      "likes": 42,
-      "bookmarks": 12,
-      "views": 24000
-    }
-  },
-  {
     "id": "crawl-dashen_wang-2088484631750594660",
     "postId": "2088484631750594660",
     "text": "我最近一直在研究Agent经济啊。\n\n其实很多什么Cloudflare Wallets，x402，OKX Agentic Wallet，A2A，MCP，看起来一堆东西。\n\n说白了就一个问题。\n\nAI能不能自己出去接单，自己干活，自己收钱。\n\n我觉得现在已经可以开始玩了。\n\n最简单的，不要先想着炒币。\n\n先卖服务。",
@@ -3617,6 +3596,27 @@
       "reposts": 0,
       "likes": 43,
       "bookmarks": 55,
+      "views": 25000
+    }
+  },
+  {
+    "id": "crawl-ai_xiaomu-2088474441831575791",
+    "postId": "2088474441831575791",
+    "text": "有时候，决定你 ai 能力边界的，是你知不知道某个关键词。",
+    "source": "黄小木",
+    "date": "2026-08-15",
+    "link": "https://x.com/ai_xiaomu/status/2088474441831575791",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "黄小木"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 26,
+      "reposts": 0,
+      "likes": 42,
+      "bookmarks": 12,
       "views": 24000
     }
   },
@@ -5276,7 +5276,7 @@
       "reposts": 0,
       "likes": 74,
       "bookmarks": 12,
-      "views": 9591
+      "views": 9598
     }
   },
   {
@@ -5318,7 +5318,7 @@
       "reposts": 0,
       "likes": 17,
       "bookmarks": 18,
-      "views": 9374
+      "views": 9378
     }
   },
   {
@@ -5507,7 +5507,7 @@
       "reposts": 0,
       "likes": 11,
       "bookmarks": 0,
-      "views": 8301
+      "views": 8303
     }
   },
   {
@@ -5637,6 +5637,27 @@
     }
   },
   {
+    "id": "crawl-dashen_wang-2085927652624670734",
+    "postId": "2085927652624670734",
+    "text": "为什么房地产要“软着陆”，而不是让价格一次性出清？\n\n举个例子：\n\nA在2021年加杠杆，花1000万买房。\n\n如果2027年跌到400万，A直接资不抵债，银行出现大规模坏账，这就是系统性风险。\n\n但如果：\n\n2023年，A以700万卖给B；\n2025年，B以500万卖给C；\n2027年，C以400万卖给D。",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-08",
+    "link": "https://x.com/dashen_wang/status/2085927652624670734",
+    "category": "认知提升",
+    "tags": [
+      "认知提升",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 50,
+      "reposts": 0,
+      "likes": 25,
+      "bookmarks": 17,
+      "views": 7734
+    }
+  },
+  {
     "id": "crawl-ai_xiaomu-2084520960871342367",
     "postId": "2084520960871342367",
     "text": "中年人混得好的标准其实很简单：3有3没，  \n\n有房子有工作有孩子 ，没生病没离婚没负债。",
@@ -5658,27 +5679,6 @@
     }
   },
   {
-    "id": "crawl-dashen_wang-2085927652624670734",
-    "postId": "2085927652624670734",
-    "text": "为什么房地产要“软着陆”，而不是让价格一次性出清？\n\n举个例子：\n\nA在2021年加杠杆，花1000万买房。\n\n如果2027年跌到400万，A直接资不抵债，银行出现大规模坏账，这就是系统性风险。\n\n但如果：\n\n2023年，A以700万卖给B；\n2025年，B以500万卖给C；\n2027年，C以400万卖给D。",
-    "source": "AI最严厉的父亲",
-    "date": "2026-08-08",
-    "link": "https://x.com/dashen_wang/status/2085927652624670734",
-    "category": "认知提升",
-    "tags": [
-      "认知提升",
-      "AI最严厉的父亲"
-    ],
-    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
-    "metrics": {
-      "replies": 50,
-      "reposts": 0,
-      "likes": 25,
-      "bookmarks": 17,
-      "views": 7731
-    }
-  },
-  {
     "id": "crawl-dashen_wang-2087778562736783617",
     "postId": "2087778562736783617",
     "text": "最近我折腾了一圈 AI Infra，越来越确定一件事：\n\n一家公司的业务越数据化，AI 转型反而越容易。\n\n电商就是最典型的例子。\n\n因为订单、商品、广告、客服、库存、用户行为，本来就是数据。\n\n真正要做的，不是给公司装几个 AI，也不是搞一堆“CEO Agent、CTO Agent、市场总监 Agent”在那里角色扮演。",
@@ -5696,7 +5696,7 @@
       "reposts": 0,
       "likes": 63,
       "bookmarks": 72,
-      "views": 7663
+      "views": 7667
     }
   },
   {
@@ -5822,7 +5822,7 @@
       "reposts": 0,
       "likes": 4,
       "bookmarks": 0,
-      "views": 7309
+      "views": 7311
     }
   },
   {
@@ -5906,7 +5906,7 @@
       "reposts": 0,
       "likes": 18,
       "bookmarks": 0,
-      "views": 7086
+      "views": 7087
     }
   },
   {
@@ -5948,7 +5948,7 @@
       "reposts": 0,
       "likes": 9,
       "bookmarks": 6,
-      "views": 6957
+      "views": 6961
     }
   },
   {
@@ -5990,7 +5990,7 @@
       "reposts": 0,
       "likes": 10,
       "bookmarks": 5,
-      "views": 6942
+      "views": 6943
     }
   },
   {
@@ -6011,7 +6011,7 @@
       "reposts": 0,
       "likes": 8,
       "bookmarks": 2,
-      "views": 6866
+      "views": 6867
     }
   },
   {
@@ -6116,7 +6116,7 @@
       "reposts": 0,
       "likes": 19,
       "bookmarks": 17,
-      "views": 6579
+      "views": 6583
     }
   },
   {
@@ -6141,6 +6141,27 @@
     }
   },
   {
+    "id": "crawl-dashen_wang-2089306903281283248",
+    "postId": "2089306903281283248",
+    "text": "Deepseek真的涨价1000倍了吗？",
+    "source": "AI最严厉的父亲",
+    "date": "2026-08-17",
+    "link": "https://x.com/dashen_wang/status/2089306903281283248",
+    "category": "AI认知",
+    "tags": [
+      "AI认知",
+      "AI最严厉的父亲"
+    ],
+    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
+    "metrics": {
+      "replies": 31,
+      "reposts": 0,
+      "likes": 5,
+      "bookmarks": 1,
+      "views": 6341
+    }
+  },
+  {
     "id": "crawl-dashen_wang-2077308347074982237",
     "postId": "2077308347074982237",
     "text": "走个面儿到底是哪里人？",
@@ -6158,7 +6179,7 @@
       "reposts": 0,
       "likes": 7,
       "bookmarks": 0,
-      "views": 6278
+      "views": 6281
     }
   },
   {
@@ -6222,27 +6243,6 @@
       "likes": 24,
       "bookmarks": 9,
       "views": 6224
-    }
-  },
-  {
-    "id": "crawl-dashen_wang-2089306903281283248",
-    "postId": "2089306903281283248",
-    "text": "Deepseek真的涨价1000倍了吗？",
-    "source": "AI最严厉的父亲",
-    "date": "2026-08-17",
-    "link": "https://x.com/dashen_wang/status/2089306903281283248",
-    "category": "AI认知",
-    "tags": [
-      "AI认知",
-      "AI最严厉的父亲"
-    ],
-    "note": "严格抓取并按复用意图完成语义分类的高曝光纯文字原创帖",
-    "metrics": {
-      "replies": 31,
-      "reposts": 0,
-      "likes": 5,
-      "bookmarks": 1,
-      "views": 6197
     }
   },
   {
@@ -6347,7 +6347,7 @@
       "reposts": 0,
       "likes": 41,
       "bookmarks": 27,
-      "views": 6083
+      "views": 6094
     }
   },
   {
@@ -6368,7 +6368,7 @@
       "reposts": 0,
       "likes": 5,
       "bookmarks": 0,
-      "views": 6057
+      "views": 6058
     }
   },
   {
@@ -6389,7 +6389,7 @@
       "reposts": 0,
       "likes": 6,
       "bookmarks": 2,
-      "views": 5970
+      "views": 5971
     }
   },
   {
@@ -6452,7 +6452,7 @@
       "reposts": 0,
       "likes": 27,
       "bookmarks": 4,
-      "views": 5944
+      "views": 5945
     }
   },
   {
@@ -6473,7 +6473,7 @@
       "reposts": 0,
       "likes": 18,
       "bookmarks": 5,
-      "views": 5906
+      "views": 5907
     }
   },
   {
@@ -6494,7 +6494,7 @@
       "reposts": 0,
       "likes": 8,
       "bookmarks": 9,
-      "views": 5828
+      "views": 5831
     }
   },
   {
@@ -6515,7 +6515,7 @@
       "reposts": 0,
       "likes": 9,
       "bookmarks": 0,
-      "views": 5823
+      "views": 5824
     }
   },
   {
@@ -6683,7 +6683,7 @@
       "reposts": 0,
       "likes": 10,
       "bookmarks": 1,
-      "views": 5550
+      "views": 5553
     }
   },
   {
@@ -6746,7 +6746,7 @@
       "reposts": 0,
       "likes": 25,
       "bookmarks": 16,
-      "views": 5149
+      "views": 5163
     }
   },
   {
@@ -6767,7 +6767,7 @@
       "reposts": 0,
       "likes": 21,
       "bookmarks": 6,
-      "views": 5076
+      "views": 5138
     }
   },
   {
