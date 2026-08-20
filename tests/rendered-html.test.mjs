@@ -19,11 +19,9 @@ test("server-renders the tweet card studio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
   assert.match(html, /<title>星际留白 · 推文卡片工作台<\/title>/i);
-  assert.match(html, /团队推文库/);
+  assert.match(html, /正在连接素材服务器/);
   assert.doesNotMatch(html, /团队设置|已导入用户与发布账号/);
-  assert.match(html, /卡片设置/);
-  assert.match(html, /帖子数据/);
-  assert.match(html, /导出 PNG/);
+  assert.match(html, /正在读取最新素材、账号和背景/);
   assert.doesNotMatch(html, /本地原型/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });

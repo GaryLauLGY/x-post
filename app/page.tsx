@@ -2,51 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ChangeEvent, CSSProperties, PointerEvent as ReactPointerEvent } from "react";
-import existingAccounts from "./data/existing-accounts.json";
-import existingMaterials from "./data/existing-materials.json";
-
-type Account = {
-  id: string;
-  name: string;
-  handle: string;
-  verified: boolean;
-  label: string;
-  accent: string;
-  avatar?: string;
-};
-
-type PostMetrics = {
-  replies: number;
-  reposts: number;
-  likes: number;
-  bookmarks: number;
-  views: number;
-};
-
-type Post = {
-  id: string;
-  text: string;
-  source: string;
-  date: string;
-  link: string;
-  category: string;
-  tags: string[];
-  note?: string;
-  metrics: PostMetrics;
-};
-
-type Background = {
-  id: string;
-  name: string;
-  kind: "gradient" | "image";
-  value: string;
-  palette?: string[];
-};
+import { legacyBootstrap, loadLiveLibrary, type Account, type Background, type Post, type PostMetrics } from "./material-repository";
 
 type ActionIconName = "reply" | "repost" | "like" | "bookmark" | "share";
 
 const X_TEMPLATE_WIDTH = 1196;
-const X_TEMPLATE_BODY_FONT = 30;
+const X_TEMPLATE_BODY_FONT = 32;
 const CANVAS_WIDTH = 1080;
 const CANVAS_HEIGHT = 1440;
 const PREVIEW_BASE_SCALE = (CANVAS_WIDTH * 0.72) / (X_TEMPLATE_WIDTH / 2);
@@ -159,13 +120,12 @@ function AccountAvatar({ account, className }: { account: Account; className: st
   );
 }
 
-const accounts = existingAccounts as Account[];
-
-const seedPosts = existingMaterials as Post[];
+const legacyAccounts = legacyBootstrap.accounts;
+const seedPosts = legacyBootstrap.posts;
 const initialPost = seedPosts[0]!;
-const accountForSource = (source: string) =>
+const accountForSource = (source: string, accounts: Account[]) =>
   accounts.find((account) => account.name === source || account.handle.slice(1) === source);
-const initialAccount = accountForSource(initialPost.source) ?? accounts[0]!;
+const initialAccount = accountForSource(initialPost.source, legacyAccounts) ?? legacyAccounts[0]!;
 
 function publishingForCategory(category: string) {
   return CATEGORY_PUBLISHING[category] ?? {
@@ -297,7 +257,11 @@ async function loadCanvasImage(url: string) {
 
 export default function Home() {
   const [tab, setTab] = useState<"studio" | "library">("studio");
-  const posts = seedPosts;
+  const [posts, setPosts] = useState(seedPosts);
+  const [availableAccounts, setAvailableAccounts] = useState(legacyAccounts);
+  const [libraryState, setLibraryState] = useState<"loading" | "ready" | "error">("loading");
+  const [libraryError, setLibraryError] = useState("");
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [selectedPostId, setSelectedPostId] = useState(initialPost.id);
   const [text, setText] = useState(initialPost.text);
   const [publishDraft, setPublishDraft] = useState(buildPublishingDraft(initialPost, initialAccount));
@@ -337,8 +301,7 @@ export default function Home() {
   } | null>(null);
 
   const selectedPost = posts.find((post) => post.id === selectedPostId) ?? posts[0];
-  const availableAccounts = accounts;
-  const account = availableAccounts.find((item) => item.id === accountId) ?? availableAccounts[0] ?? accounts[0]!;
+  const account = availableAccounts.find((item) => item.id === accountId) ?? availableAccounts[0] ?? legacyAccounts[0]!;
   const background = backgrounds.find((item) => item.id === backgroundId) ?? backgrounds[0] ?? builtinBackgrounds[0]!;
   const authors = useMemo(() => ["全部", ...Array.from(new Set(posts.map((post) => post.source)))], [posts]);
   const categories = useMemo(() => {
@@ -356,6 +319,31 @@ export default function Home() {
     });
   }, [author, category, posts, search]);
   const effectiveCardScale = Math.min(cardScale, maxCardScale);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadLiveLibrary().then((library) => {
+      if (cancelled) return;
+      setPosts(library.posts);
+      setAvailableAccounts(library.accounts);
+      setBackgrounds(library.backgrounds);
+      const firstPost = library.posts[0]!;
+      const firstAccount = accountForSource(firstPost.source, library.accounts) ?? library.accounts[0]!;
+      setSelectedPostId(firstPost.id);
+      setText(firstPost.text);
+      setCardMetrics({ ...firstPost.metrics });
+      setAccountId(firstAccount.id);
+      setPublishDraft(buildPublishingDraft(firstPost, firstAccount));
+      setBackgroundId(library.backgrounds[0]!.id);
+      setLibraryState("ready");
+      setLibraryError("");
+    }).catch((error: unknown) => {
+      if (cancelled) return;
+      setLibraryError(error instanceof Error ? error.message : "服务器素材加载失败");
+      setLibraryState("error");
+    });
+    return () => { cancelled = true; };
+  }, [loadAttempt]);
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -432,7 +420,7 @@ export default function Home() {
   };
 
   const choosePost = (post: Post) => {
-    const sourceAccount = accountForSource(post.source) ?? account;
+    const sourceAccount = accountForSource(post.source, availableAccounts) ?? account;
     setSelectedPostId(post.id);
     setText(post.text);
     setPublishDraft(buildPublishingDraft(post, sourceAccount));
@@ -735,6 +723,14 @@ export default function Home() {
       notify(error instanceof Error ? error.message : "PNG 生成失败");
     }
   };
+
+  if (libraryState === "loading") {
+    return <main className="api-gate"><img src="/brand/xjlb-logo.png" alt="" /><h1>正在连接素材服务器</h1><p>正在读取最新素材、账号和背景。</p></main>;
+  }
+
+  if (libraryState === "error") {
+    return <main className="api-gate api-gate-error"><img src="/brand/xjlb-logo.png" alt="" /><h1>素材服务器暂时不可用</h1><p>{libraryError}</p><button onClick={() => { setLibraryState("loading"); setLoadAttempt((value) => value + 1); }}>重新连接</button></main>;
+  }
 
   return (
     <main className="app-shell">

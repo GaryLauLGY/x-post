@@ -17,6 +17,7 @@
     "db:generate": "drizzle-kit generate",
     "api:build": "tsc -p apps/api/tsconfig.json",
     "api:start": "node apps/api/dist/server.js",
+    "admin:bootstrap": "node scripts/bootstrap-admin.mjs --username admin",
     "db:migrate": "node scripts/run-migrations.mjs",
     "data:migrate:manifest": "node scripts/build-server-migration-manifest.mjs",
     "data:migrate:dry": "node scripts/migrate-existing-data.mjs --dry-run",

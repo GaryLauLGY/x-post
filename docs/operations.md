@@ -11,6 +11,15 @@ curl --fail --silent http://127.0.0.1:3002/health/ready
 sudo -n docker compose --env-file .env -f deploy/compose.yaml ps
 ```
 
+Public checks:
+
+```bash
+curl --fail --silent 'https://xpost.garylau.ai/api/v1/materials?limit=1'
+curl --silent --output /dev/null --write-out '%{http_code}\n' https://xpost.garylau.ai/api/v1/admin/overview
+```
+
+The second command must return `401` without an administrator session.
+
 ## Backup and restore check
 
 ```bash

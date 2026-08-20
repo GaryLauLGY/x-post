@@ -42,9 +42,9 @@ pnpm data:high-exposure
 
 项目级 Skill 位于 `.agents/skills/x-high-exposure-pure-text/`。它编排相邻 `gary-x-skills` 中的严格 X 原帖抓取与高曝光纯文字筛选，保留正文排版和五项公开数据。当前四位作者按 `Impressions > 5000` 入库；`pnpm data:high-exposure` 会过滤媒体、引用、回复及被 X 拆行隐藏的链接，再按复用意图分类并合并进默认素材。
 
-## mini PC 服务器里程碑 A
+## mini PC 服务器
 
-服务器端第一阶段包含 PostgreSQL 16、只读 Fastify API、329 条现有素材的幂等迁移、媒体持久化、备份和恢复冒烟测试。API 和数据库默认仅监听 mini PC 的 loopback，不会自动修改 DNS、证书或现有前端。
+服务器端包含 PostgreSQL 16、Fastify API、329 条现有素材的幂等迁移、媒体持久化、本地管理员登录、管理后台、备份和恢复冒烟测试。API 和数据库仍只监听 mini PC 的 loopback；公开访问由现有 Sites/Cloudflare 站点将同域 `/api/*` 转发到 Cloudflare Tunnel。
 
 ```bash
 pnpm api:build
@@ -52,7 +52,7 @@ pnpm test:server
 pnpm data:migrate:dry
 ```
 
-远端部署与运维命令见 [服务器部署说明](./docs/deployment.md)、[运维说明](./docs/operations.md) 和 [回滚说明](./docs/rollback.md)。管理员 OIDC、自动抓取、公开 API 域名和生产前端切换不属于里程碑 A，相关条件未满足时保持关闭。
+远端部署与运维命令见 [服务器部署说明](./docs/deployment.md)、[运维说明](./docs/operations.md) 和 [回滚说明](./docs/rollback.md)。管理员入口为 `/admin`，使用无公开注册入口的本地 `admin` 账号。真实自动抓取仍要求用户为本项目单独放置 storage state，并先验证明确的作者与日期窗口；条件未满足时定时任务保持关闭。
 
 ## 当前边界
 

@@ -3,14 +3,15 @@
 ## Scope
 
 - The project root is `/home/gary/x-post`; persistent data is `data/` and recoverable project backups are `archive/`.
-- Keep the existing public frontend on its current host until a feature-flag switch and rollback are separately verified.
-- Do not add a public domain, DNS route, Tunnel route, TLS certificate, firewall rule, or public listener unless `PROJECT.md` declares it and the user authorizes the external change.
+- Keep the public frontend on its current Sites/Cloudflare host. The approved production API is same-origin at `https://xpost.garylau.ai/api/v1` and is proxied by the Sites worker to the Tunnel origin declared in `PROJECT.md`.
+- Do not add another public domain, DNS route, Tunnel route, TLS certificate, firewall rule, or public listener unless `PROJECT.md` declares it and the user authorizes the external change.
 
 ## Runtime and data
 
 - Reuse the managed shared Node entry at `/home/gary/.local/bin/node`; dependencies remain project-local.
 - PostgreSQL is the only project container in milestone A. It must bind to `127.0.0.1:54329`; the API must bind to `127.0.0.1:3002`.
 - `.env` is owner-only and ignored by Git. Never print its values. `data/crawler/storage-states/` must be `700`, with files `600`.
+- Administrator passwords are set through the project bootstrap command over stdin, stored only as PostgreSQL scrypt hashes, and never placed in `.env`, Git, command arguments, logs, or chat.
 - Database, media, crawler state, exports, and backups remain outside the Git checkout's source directories and are never included in build contexts.
 
 ## X crawler
