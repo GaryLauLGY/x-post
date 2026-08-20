@@ -15,6 +15,8 @@
       "text": "保留原始段落与\n手动换行",
       "source": "Roland.W",
       "date": "2026-08-18",
+      "publishedAt": "2026-08-18T06:12:34.000Z",
+      "observedAt": "2026-08-20T03:20:10.000Z",
       "link": "https://x.com/rwayne/status/123",
       "category": "其他",
       "tags": ["其他", "Roland.W"],

@@ -35,4 +35,26 @@ The approved material baseline is 329: `rwayne=145`, `ai_xiaomu=61`, `dashen_wan
 
 ## Crawler boundary
 
-Do not enable a timer until the user has placed a project-specific storage state, approved explicit handle/date windows, and reviewed plan-only output. Keep partial runs and fallback results, but never advance their watermarks.
+The crawler uses a Codex scheduled task rather than a systemd timer. The task runs from the Mac `x-post` project and invokes the mini PC entrypoint over the existing SSH channel.
+
+Plan all configured authors without opening X:
+
+```bash
+bin/x-post-crawler-cycle --plan-only
+```
+
+Run the strict production cycle:
+
+```bash
+bin/x-post-crawler-cycle --execute
+```
+
+The cycle acquires both a filesystem lock and a PostgreSQL advisory lock, recovers stale `running` rows older than four hours, and processes authors sequentially. It calls the vendored crawler without reply/repost modes, without `--skip-original-verification`, and without partial-search/profile fallbacks. New strict candidates enter `pending`; existing materials retain review state and human classification while metrics update idempotently.
+
+Artifacts and watermarks:
+
+- `data/crawler/storage-states/`: owner-only project login state.
+- `data/crawler/runs/<cycle>/<author>/`: immutable plan, log, verified CSV, quarantine, summaries, candidates and SHA-256 manifest.
+- `data/crawler/watermarks/<author>.json`: promoted only after the corresponding PostgreSQL import commits.
+
+Keep the Codex task disabled until the user has placed a project-specific storage state, approved the resolved windows, and one bounded real run has passed. A partial run may import strictly verified candidates but cannot promote the filesystem or database watermark.

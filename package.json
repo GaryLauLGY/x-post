@@ -22,6 +22,8 @@
     "data:migrate:manifest": "node scripts/build-server-migration-manifest.mjs",
     "data:migrate:dry": "node scripts/migrate-existing-data.mjs --dry-run",
     "data:migrate": "node scripts/migrate-existing-data.mjs",
+    "crawler:plan": "bin/x-post-crawler-cycle --plan-only",
+    "crawler:run": "bin/x-post-crawler-cycle --execute",
     "test:server": "node --test tests/server/*.test.mjs"
   },
   "dependencies": {

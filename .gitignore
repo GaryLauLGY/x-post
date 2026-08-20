@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/.venv/
+/packages/crawler-runtime/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -45,3 +47,5 @@ yarn-error.log*
 /archive/
 /apps/api/dist/
 *.tsbuildinfo
+__pycache__/
+*.py[cod]

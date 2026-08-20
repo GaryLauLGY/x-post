@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
+NODE_BIN="${XPOST_NODE_BIN:-/home/gary/.local/bin/node}"
+
+if [[ ! -x "$NODE_BIN" ]]; then
+  echo "Managed Node entry is unavailable: $NODE_BIN" >&2
+  exit 1
+fi
+if [[ ! -f "$PROJECT_ROOT/.env" ]]; then
+  echo "Project environment file is unavailable" >&2
+  exit 1
+fi
+
+mkdir -p "$PROJECT_ROOT/data/crawler"
+set -a
+source "$PROJECT_ROOT/.env"
+set +a
+export PATH="/home/gary/.local/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-/home/gary/.cache/ms-playwright}"
+
+exec flock -n "$PROJECT_ROOT/data/crawler/cycle.lock" \
+  "$NODE_BIN" "$PROJECT_ROOT/scripts/run-crawler-cycle.mjs" "$@"
