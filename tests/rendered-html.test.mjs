@@ -87,12 +87,20 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(page, /event\.clientX - drag\.offsetX - rect\.left/);
   assert.doesNotMatch(page, /resize-handle/);
   assert.match(page, /X_TEMPLATE_WIDTH = 1196/);
-  assert.match(page, /X_TEMPLATE_BODY_FONT = 30/);
+  assert.match(page, /X_TEMPLATE_BODY_FONT = 32/);
+  assert.match(page, /DEFAULT_BODY_FONT_SIZE = 16/);
+  assert.match(page, /MIN_BODY_FONT_SIZE = DEFAULT_BODY_FONT_SIZE - 5/);
+  assert.match(page, /MAX_BODY_FONT_SIZE = DEFAULT_BODY_FONT_SIZE \+ 5/);
   assert.match(page, /canvas\.width \* 0\.72/);
   assert.doesNotMatch(page, /value != null && value > 0/);
   assert.doesNotMatch(page, /value >= 1000(?!0)/);
   assert.match(page, /value < 1000000 \? 1 : 0/);
-  assert.doesNotMatch(page, /setFontSize|正文字号/);
+  assert.match(page, /const \[bodyFontSize, setBodyFontSize\]/);
+  assert.match(page, /正文字号/);
+  assert.match(page, /min=\{MIN_BODY_FONT_SIZE\}/);
+  assert.match(page, /max=\{MAX_BODY_FONT_SIZE\}/);
+  assert.match(page, /exportBodyFontSize = X_TEMPLATE_BODY_FONT \+ \(bodyFontSize - DEFAULT_BODY_FONT_SIZE\) \* 2/);
+  assert.match(page, /baseLineHeight = \(bodyFontSize \+ 4\) \* 2/);
   for (const action of ["reply", "repost", "like", "bookmark", "share"]) {
     assert.match(page, new RegExp(`XAction name="${action}"`));
   }
@@ -223,6 +231,7 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(styles, /height: 1440px/);
   assert.match(styles, /scale\(var\(--canvas-display-scale, \.4\)\)/);
   assert.match(styles, /scale\(calc\(var\(--card-scale, 1\) \* var\(--preview-card-base-scale, 1\.3\)\)\)/);
-  assert.match(styles, /\.tweet-card p \{[\s\S]*?font-size: 15px[\s\S]*?line-height: 20px/);
+  assert.match(styles, /\.tweet-card p \{[\s\S]*?font-size: 16px[\s\S]*?line-height: 20px/);
+  assert.match(styles, /\.font-size-inputs \{[\s\S]*?grid-template-columns: 30px minmax\(0, 1fr\) 30px/);
   await assert.rejects(access(new URL("../app/_sites-preview/SkeletonPreview.tsx", import.meta.url)));
 });

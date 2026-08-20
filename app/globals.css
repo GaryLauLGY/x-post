@@ -454,6 +454,22 @@ textarea { resize: vertical; min-height: 94px; line-height: 1.6; }
   font-weight: 800;
 }
 .text-actions span { color: #99a39d; font-size: 9px; }
+.font-size-control { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.font-size-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.font-size-heading strong { color: #526058; font-size: 11px; }
+.font-size-heading span { color: #929d96; font-size: 9px; font-variant-numeric: tabular-nums; }
+.font-size-inputs { display: grid; grid-template-columns: 30px minmax(0, 1fr) 30px; align-items: center; gap: 9px; margin-top: 10px; }
+.font-size-inputs button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: #fbfcff;
+  font-size: 16px;
+  line-height: 1;
+}
+.font-size-inputs button:disabled { cursor: not-allowed; color: #c1c7c3; background: #f4f5f7; }
 .metric-editor { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .metric-editor-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .metric-editor-heading strong { color: #526058; font-size: 11px; }

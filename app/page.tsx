@@ -8,6 +8,9 @@ type ActionIconName = "reply" | "repost" | "like" | "bookmark" | "share";
 
 const X_TEMPLATE_WIDTH = 1196;
 const X_TEMPLATE_BODY_FONT = 32;
+const DEFAULT_BODY_FONT_SIZE = 16;
+const MIN_BODY_FONT_SIZE = DEFAULT_BODY_FONT_SIZE - 5;
+const MAX_BODY_FONT_SIZE = DEFAULT_BODY_FONT_SIZE + 5;
 const CANVAS_WIDTH = 1080;
 const CANVAS_HEIGHT = 1440;
 const PREVIEW_BASE_SCALE = (CANVAS_WIDTH * 0.72) / (X_TEMPLATE_WIDTH / 2);
@@ -272,6 +275,7 @@ export default function Home() {
   const [backgroundId, setBackgroundId] = useState(builtinBackgrounds[0].id);
   const [backgroundUrl, setBackgroundUrl] = useState("");
   const [dim, setDim] = useState(24);
+  const [bodyFontSize, setBodyFontSize] = useState(DEFAULT_BODY_FONT_SIZE);
   const [cardScale, setCardScale] = useState(1);
   const [maxCardScale, setMaxCardScale] = useState(1);
   const [canvasDisplayScale, setCanvasDisplayScale] = useState(0.4);
@@ -389,7 +393,7 @@ export default function Home() {
     observer.observe(poster);
     observer.observe(card);
     return () => observer.disconnect();
-  }, [selectedPostId, tab, text]);
+  }, [bodyFontSize, selectedPostId, tab, text]);
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -412,11 +416,15 @@ export default function Home() {
     });
 
     return () => window.cancelAnimationFrame(frame);
-  }, [effectiveCardScale, selectedPostId, tab, text]);
+  }, [bodyFontSize, effectiveCardScale, selectedPostId, tab, text]);
 
   const notify = (message: string) => {
     setToast(message);
     window.setTimeout(() => setToast(""), 2200);
+  };
+
+  const adjustBodyFontSize = (delta: number) => {
+    setBodyFontSize((current) => Math.min(MAX_BODY_FONT_SIZE, Math.max(MIN_BODY_FONT_SIZE, current + delta)));
   };
 
   const choosePost = (post: Post) => {
@@ -597,9 +605,10 @@ export default function Home() {
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       const basePadding = 32;
-      context.font = `400 ${X_TEMPLATE_BODY_FONT}px Arial, PingFang SC, sans-serif`;
+      const exportBodyFontSize = X_TEMPLATE_BODY_FONT + (bodyFontSize - DEFAULT_BODY_FONT_SIZE) * 2;
+      context.font = `400 ${exportBodyFontSize}px Arial, PingFang SC, sans-serif`;
       const lines = wrapCanvasText(context, text, X_TEMPLATE_WIDTH - basePadding * 2);
-      const baseLineHeight = 40;
+      const baseLineHeight = (bodyFontSize + 4) * 2;
       const baseTextTop = 134;
       const baseMetaTop = baseTextTop + Math.max(0, lines.length - 1) * baseLineHeight + 64;
       const baseDividerY = baseMetaTop + 41;
@@ -680,7 +689,7 @@ export default function Home() {
       context.fillText("•••", x + width - padding - 52 * scale, y + 34 * scale);
 
       context.fillStyle = "#0f1419";
-      context.font = `400 ${X_TEMPLATE_BODY_FONT * scale}px Arial, PingFang SC, sans-serif`;
+      context.font = `400 ${exportBodyFontSize * scale}px Arial, PingFang SC, sans-serif`;
       lines.forEach((line, index) => {
         context.fillText(line, x + padding, y + (baseTextTop + index * baseLineHeight) * scale);
       });
@@ -845,7 +854,7 @@ export default function Home() {
                       </div>
                       <span className="tweet-menu">•••</span>
                     </header>
-                    <p>{text || "在右侧输入推文正文"}</p>
+                    <p style={{ fontSize: bodyFontSize, lineHeight: `${bodyFontSize + 4}px` }}>{text || "在右侧输入推文正文"}</p>
                     <div className="tweet-meta">
                       <span>{formatChineseDate(selectedPost?.date ?? "")}</span>
                       <span>·</span>
@@ -901,6 +910,25 @@ export default function Home() {
               <button onClick={restoreOriginal}>使用原推</button>
               <span>{text.length} / 280</span>
             </div>
+            <section className="font-size-control" aria-label="正文字号">
+              <div className="font-size-heading">
+                <strong>正文字号</strong>
+                <span>{bodyFontSize}px · 可调 ±5</span>
+              </div>
+              <div className="font-size-inputs">
+                <button type="button" onClick={() => adjustBodyFontSize(-1)} disabled={bodyFontSize <= MIN_BODY_FONT_SIZE} aria-label="减小正文字号">−</button>
+                <input
+                  type="range"
+                  min={MIN_BODY_FONT_SIZE}
+                  max={MAX_BODY_FONT_SIZE}
+                  step="1"
+                  value={bodyFontSize}
+                  onChange={(event) => setBodyFontSize(Number(event.target.value))}
+                  aria-label="调整正文字号"
+                />
+                <button type="button" onClick={() => adjustBodyFontSize(1)} disabled={bodyFontSize >= MAX_BODY_FONT_SIZE} aria-label="增大正文字号">＋</button>
+              </div>
+            </section>
             <section className="metric-editor" aria-label="帖子数据">
               <div className="metric-editor-heading">
                 <strong>帖子数据</strong>
