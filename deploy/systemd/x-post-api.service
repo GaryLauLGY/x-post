@@ -1,0 +1,24 @@
+[Unit]
+Description=x-post private API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/gary/x-post
+EnvironmentFile=/home/gary/x-post/.env
+Environment=NODE_ENV=production
+Environment=XPOST_API_HOST=127.0.0.1
+Environment=XPOST_API_PORT=3002
+Environment=XPOST_MEDIA_ROOT=/home/gary/x-post/data/media
+ExecStart=/home/gary/.local/bin/node /home/gary/x-post/apps/api/dist/server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/gary/x-post/data
+
+[Install]
+WantedBy=default.target

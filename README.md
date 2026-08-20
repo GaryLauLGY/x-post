@@ -42,6 +42,18 @@ pnpm data:high-exposure
 
 项目级 Skill 位于 `.agents/skills/x-high-exposure-pure-text/`。它编排相邻 `gary-x-skills` 中的严格 X 原帖抓取与高曝光纯文字筛选，保留正文排版和五项公开数据。当前四位作者按 `Impressions > 5000` 入库；`pnpm data:high-exposure` 会过滤媒体、引用、回复及被 X 拆行隐藏的链接，再按复用意图分类并合并进默认素材。
 
+## mini PC 服务器里程碑 A
+
+服务器端第一阶段包含 PostgreSQL 16、只读 Fastify API、329 条现有素材的幂等迁移、媒体持久化、备份和恢复冒烟测试。API 和数据库默认仅监听 mini PC 的 loopback，不会自动修改 DNS、证书或现有前端。
+
+```bash
+pnpm api:build
+pnpm test:server
+pnpm data:migrate:dry
+```
+
+远端部署与运维命令见 [服务器部署说明](./docs/deployment.md)、[运维说明](./docs/operations.md) 和 [回滚说明](./docs/rollback.md)。管理员 OIDC、自动抓取、公开 API 域名和生产前端切换不属于里程碑 A，相关条件未满足时保持关闭。
+
 ## 当前边界
 
 网页本身不读取 Cookie、不直接连接 X、不自动发布，也不包含真实登录、数据库或服务端权限。当前页面只保留制作台和推文库，不提供团队设置页。项目级 Skill 只调用相邻工具仓库中已经授权的受控采集进程；Cookie / storage state 留在该进程的 Git 忽略目录，经过校验的公开素材才由离线脚本写入网页数据。
