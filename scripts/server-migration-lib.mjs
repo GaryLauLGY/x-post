@@ -2,7 +2,6 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import sharp from "sharp";
 import { contentHash, parseXStatusUrl, stableUuid } from "../packages/material-pipeline/index.mjs";
 
 export const SOURCE_MAP = new Map([
@@ -45,6 +44,44 @@ async function fileRecord(filePath, objectKey) {
     objectKey,
     bytes: info.size,
     sha256: createHash("sha256").update(bytes).digest("hex"),
+  };
+}
+
+function imageMetadata(bytes, filePath) {
+  if (bytes.length >= 24 && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+    return { mimeType: "image/png", width: bytes.readUInt32BE(16), height: bytes.readUInt32BE(20) };
+  }
+  if (bytes.length >= 4 && bytes[0] === 0xff && bytes[1] === 0xd8) {
+    let offset = 2;
+    while (offset + 9 < bytes.length) {
+      if (bytes[offset] !== 0xff) {
+        offset += 1;
+        continue;
+      }
+      const marker = bytes[offset + 1];
+      if (marker === 0xd8 || marker === 0xd9 || (marker >= 0xd0 && marker <= 0xd7)) {
+        offset += 2;
+        continue;
+      }
+      const length = bytes.readUInt16BE(offset + 2);
+      if (length < 2 || offset + 2 + length > bytes.length) break;
+      if ([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf].includes(marker)) {
+        return { mimeType: "image/jpeg", height: bytes.readUInt16BE(offset + 5), width: bytes.readUInt16BE(offset + 7) };
+      }
+      offset += 2 + length;
+    }
+  }
+  throw new Error(`Unsupported or invalid image: ${filePath}`);
+}
+
+async function imageRecord(filePath, objectKey) {
+  const [bytes, info] = await Promise.all([readFile(filePath), stat(filePath)]);
+  return {
+    sourcePath: path.relative(process.cwd(), filePath),
+    objectKey,
+    bytes: info.size,
+    sha256: createHash("sha256").update(bytes).digest("hex"),
+    ...imageMetadata(bytes, filePath),
   };
 }
 
@@ -94,15 +131,11 @@ export async function loadMigrationBundle() {
   const backgrounds = [];
   for (const file of backgroundNames) {
     const filePath = path.resolve("public/backgrounds", file);
-    const metadata = await sharp(filePath).metadata();
     const source = BACKGROUND_SOURCES[file] ?? [null, "Existing project asset; provenance retained from repository history"];
     backgrounds.push({
-      ...(await fileRecord(filePath, `backgrounds/${file}`)),
+      ...(await imageRecord(filePath, `backgrounds/${file}`)),
       id: stableUuid("background", file),
       title: BACKGROUND_NAMES[file] ?? path.parse(file).name,
-      mimeType: metadata.format === "png" ? "image/png" : "image/jpeg",
-      width: metadata.width ?? null,
-      height: metadata.height ?? null,
       sourceUrl: source[0],
       licenseNote: source[1],
     });
@@ -110,13 +143,7 @@ export async function loadMigrationBundle() {
   const avatars = [];
   for (const file of avatarNames) {
     const filePath = path.resolve("public/avatars", file);
-    const metadata = await sharp(filePath).metadata();
-    avatars.push({
-      ...(await fileRecord(filePath, `avatars/${file}`)),
-      mimeType: metadata.format === "png" ? "image/png" : "image/jpeg",
-      width: metadata.width ?? null,
-      height: metadata.height ?? null,
-    });
+    avatars.push(await imageRecord(filePath, `avatars/${file}`));
   }
 
   const sourceFiles = await Promise.all([
