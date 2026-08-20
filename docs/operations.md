@@ -57,4 +57,4 @@ Artifacts and watermarks:
 - `data/crawler/runs/<cycle>/<author>/`: immutable plan, log, verified CSV, quarantine, summaries, candidates and SHA-256 manifest.
 - `data/crawler/watermarks/<author>.json`: promoted only after the corresponding PostgreSQL import commits.
 
-Keep the Codex task disabled until the user has placed a project-specific storage state, approved the resolved windows, and one bounded real run has passed. A partial run may import strictly verified candidates but cannot promote the filesystem or database watermark.
+Codex automation `05-30-x-post` was enabled after the project-specific storage state, resolved windows, and bounded real runs passed on 2026-08-20. If the login state or project runtime is replaced, disable the task until the same gates pass again. A partial run may import strictly verified candidates but cannot promote the filesystem or database watermark.

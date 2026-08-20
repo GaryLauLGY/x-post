@@ -26,4 +26,4 @@ No mini PC public port or firewall rule is used. The Tunnel hostname is an origi
 8. Run migration `0003_local_admin_auth.sql`, bootstrap the local administrator over stdin, and verify authenticated/unauthenticated behavior.
 9. Add the Tunnel origin route, publish the Sites worker proxy and `/admin`, then verify health, pagination, counts, media checksums, backup, and restore smoke test.
 
-The crawler timer, `/admin`, public reverse proxy, CORS production origin, and frontend feature flag remain disabled until their separate prerequisites are available and tested.
+The administrator, public reverse proxy, production CORS origin, frontend integration, and crawler prerequisites have been validated. Codex automation `05-30-x-post` is active daily at 05:30 Asia/Shanghai; the mini PC does not install a separate systemd timer.

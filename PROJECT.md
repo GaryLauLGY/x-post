@@ -11,4 +11,4 @@
 - Tunnel origin: `xpost-origin.garylau.ai` routes only through the shared Cloudflare Tunnel to `127.0.0.1:3002`; no mini PC public listener or firewall rule.
 - Persistent data: `/home/gary/x-post/data`.
 - Backups: `/home/gary/x-post/archive`.
-- Crawler scheduler: Codex cron automation calling `bin/x-post-crawler-cycle`; it remains disabled until authentication, project runtimes, plan-only output, and a bounded real run are explicitly validated.
+- Crawler scheduler: active Codex cron automation `05-30-x-post`, running daily at 05:30 Asia/Shanghai and calling `bin/x-post-crawler-cycle`; authentication, project runtimes, plan-only output, and bounded real runs were validated on 2026-08-20.
