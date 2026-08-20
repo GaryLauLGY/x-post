@@ -75,6 +75,12 @@ export function shouldAdvanceFromSummary(summary) {
   );
 }
 
+export function persistedMaterialId(insertResult) {
+  const id = String(insertResult?.rows?.[0]?.id ?? "").trim();
+  if (!id) throw new Error("Material upsert did not return the persisted id");
+  return id;
+}
+
 export function sha256Json(value) {
   return createHash("sha256").update(JSON.stringify(value), "utf8").digest("hex");
 }

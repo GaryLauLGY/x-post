@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 
-URL_RE = re.compile(r"https?://\S+|www\.\S+", re.I)
+URL_RE = re.compile(r"https?://\S+|www\.\S+|\b(?:x|twitter)\.com/|\bt\.co/", re.I)
 
 
 def parse_args() -> argparse.Namespace:

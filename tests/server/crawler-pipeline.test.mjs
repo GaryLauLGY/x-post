@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { promisify } from "node:util";
-import { shouldAdvanceFromSummary, validateCandidatePayload } from "../../packages/crawler-pipeline/index.mjs";
+import { persistedMaterialId, shouldAdvanceFromSummary, validateCandidatePayload } from "../../packages/crawler-pipeline/index.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -56,6 +56,12 @@ test("watermarks advance only on complete strict coverage", () => {
   assert.equal(shouldAdvanceFromSummary({ ...complete, profile_fallback_used: true }), false);
 });
 
+test("metric imports use the database id returned by an existing-material upsert", () => {
+  const existingId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
+  assert.equal(persistedMaterialId({ rows: [{ id: existingId, inserted: false }] }), existingId);
+  assert.throws(() => persistedMaterialId({ rows: [] }), /did not return/);
+});
+
 test("crawler importer dry-run validates the complete strict evidence set", async () => {
   const tempDir = await mkdtemp(path.join(os.tmpdir(), "xpost-crawler-test-"));
   try {
@@ -88,6 +94,40 @@ test("crawler importer dry-run validates the complete strict evidence set", asyn
       "--dry-run",
     ]);
     assert.deepEqual(JSON.parse(stdout), { status: "dry_run", author: "rwayne", items: 1, watermarkAdvance: true });
+  } finally {
+    await rm(tempDir, { recursive: true, force: true });
+  }
+});
+
+test("candidate builder rejects scheme-less X short links before import", async () => {
+  const tempDir = await mkdtemp(path.join(os.tmpdir(), "xpost-builder-test-"));
+  try {
+    const candidatesPath = path.join(tempDir, "candidates.json");
+    const outputPath = path.join(tempDir, "materials.json");
+    await writeFile(candidatesPath, JSON.stringify([{
+      "Post id": "1234567890",
+      "Post text": "正文里隐藏 t.co/example",
+      "Verified author": "rwayne",
+      "Impressions": 5001,
+      "Published at": "2026-08-20T01:02:03.000Z",
+      "Observed at": "2026-08-20T04:05:06.000Z",
+      "Post Link": "https://x.com/rwayne/status/1234567890",
+      "Original verification": "verified_original",
+      "In reply to status id": "",
+      "Media URLs": "[]",
+      category: "pure_text",
+    }]));
+    await execFileAsync("python3", [
+      new URL("../../.agents/skills/x-high-exposure-pure-text/scripts/build_materials_from_candidates.py", import.meta.url).pathname,
+      "--candidates", candidatesPath,
+      "--author", "rwayne",
+      "--label", "Roland Wayne",
+      "--min-impressions", "5000",
+      "--output", outputPath,
+    ]);
+    const output = JSON.parse(await readFile(outputPath, "utf8"));
+    assert.deepEqual(output.items, []);
+    assert.deepEqual(output.rejected, { text_contains_url: 1 });
   } finally {
     await rm(tempDir, { recursive: true, force: true });
   }

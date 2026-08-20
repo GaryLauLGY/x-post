@@ -3,7 +3,7 @@ import path from "node:path";
 import process from "node:process";
 import pg from "pg";
 import { stableUuid } from "../packages/material-pipeline/index.mjs";
-import { normalizeHandle, sha256Json, shouldAdvanceFromSummary, validateCandidatePayload } from "../packages/crawler-pipeline/index.mjs";
+import { normalizeHandle, persistedMaterialId, sha256Json, shouldAdvanceFromSummary, validateCandidatePayload } from "../packages/crawler-pipeline/index.mjs";
 
 const { Pool } = pg;
 
@@ -87,7 +87,7 @@ try {
          content_hash = CASE WHEN materials.edited_text IS NULL THEN EXCLUDED.content_hash ELSE materials.content_hash END,
          last_seen_run_id = EXCLUDED.last_seen_run_id,
          updated_at = now()
-       RETURNING (xmax = 0) AS inserted`,
+       RETURNING id, (xmax = 0) AS inserted`,
       [
         materialId,
         item.postId,
@@ -103,13 +103,14 @@ try {
     );
     if (result.rows[0].inserted) importedCount += 1;
     else updatedCount += 1;
+    const materialDatabaseId = persistedMaterialId(result);
     await client.query(
       `INSERT INTO material_metrics(material_id, views, replies, reposts, likes, bookmarks, observed_at, metadata)
        VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
        ON CONFLICT (material_id, observed_at) DO UPDATE SET
          views = EXCLUDED.views, replies = EXCLUDED.replies, reposts = EXCLUDED.reposts,
          likes = EXCLUDED.likes, bookmarks = EXCLUDED.bookmarks, metadata = EXCLUDED.metadata`,
-      [materialId, item.metrics.views, item.metrics.replies, item.metrics.reposts, item.metrics.likes, item.metrics.bookmarks, item.observedAt, { source: "codex-crawler", crawlRunId: options.runId }],
+      [materialDatabaseId, item.metrics.views, item.metrics.replies, item.metrics.reposts, item.metrics.likes, item.metrics.bookmarks, item.observedAt, { source: "codex-crawler", crawlRunId: options.runId }],
     );
     const publicPayload = {
       platformPostId: item.postId,
@@ -123,7 +124,7 @@ try {
       `INSERT INTO material_raw_snapshots(material_id, schema_version, payload_hash, public_payload)
        VALUES ($1,'x-post/crawler-public/v1',$2,$3)
        ON CONFLICT (material_id, schema_version, payload_hash) DO NOTHING`,
-      [materialId, sha256Json(publicPayload), publicPayload],
+      [materialDatabaseId, sha256Json(publicPayload), publicPayload],
     );
   }
 
