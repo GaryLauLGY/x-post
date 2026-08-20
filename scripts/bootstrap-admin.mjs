@@ -45,7 +45,7 @@ try {
   await pool.query("UPDATE admin_sessions SET revoked_at = now() WHERE user_id = $1 AND revoked_at IS NULL", [user.rows[0].id]);
   await pool.query(
     `INSERT INTO audit_logs (actor_type, actor_id, action, entity_type, entity_id, metadata)
-     VALUES ('service', 'bootstrap-admin', 'admin.password.set', 'user', $1, jsonb_build_object('username', $2))`,
+     VALUES ('service', 'bootstrap-admin', 'admin.password.set', 'user', $1, jsonb_build_object('username', $2::text))`,
     [user.rows[0].id, username],
   );
   await pool.query("COMMIT");
