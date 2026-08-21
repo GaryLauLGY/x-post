@@ -72,6 +72,8 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(page, /const CANVAS_HEIGHT = 1440/);
   assert.match(page, /const [canvasDisplayScale, setCanvasDisplayScale]/);
   assert.match(page, /availableWidth \/ CANVAS_WIDTH, availableHeight \/ CANVAS_HEIGHT/);
+  assert.match(page, /typeof ResizeObserver === "undefined" \? null/);
+  assert.match(page, /window\.addEventListener\("resize", updateCanvasDisplayScale\)/);
   assert.match(page, /className="canvas-area"/);
   assert.match(page, /className="canvas-viewport"/);
   assert.match(page, /"--canvas-display-scale": canvasDisplayScale/);
@@ -83,6 +85,11 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(page, /canvas\.width \/ X_TEMPLATE_WIDTH/);
   assert.match(page, /canvas\.height \/ templateCardHeight/);
   assert.match(page, /const dragSession = useRef/);
+  assert.match(page, /const activeCardPointers = useRef\(new Map/);
+  assert.match(page, /const pinchSession = useRef/);
+  assert.match(page, /pointers\.size >= 2/);
+  assert.match(page, /distance \/ pinchSession\.current\.startDistance/);
+  assert.match(page, /双指或右下角缩放/);
   assert.match(page, /offsetX: event\.clientX - \(cardRect\.left \+ cardRect\.width \/ 2\)/);
   assert.match(page, /event\.clientX - drag\.offsetX - rect\.left/);
   assert.doesNotMatch(page, /resize-handle/);
@@ -231,6 +238,9 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(styles, /height: 1440px/);
   assert.match(styles, /scale\(var\(--canvas-display-scale, \.4\)\)/);
   assert.match(styles, /scale\(calc\(var\(--card-scale, 1\) \* var\(--preview-card-base-scale, 1\.3\)\)\)/);
+  assert.match(styles, /\.tweet-card \{[\s\S]*?touch-action: none/);
+  assert.match(styles, /height: clamp\(420px, 72dvh, 620px\)/);
+  assert.match(styles, /\.canvas-area \{ width: 100%; max-width: 100%; padding: 10px; contain: layout paint; \}/);
   assert.match(styles, /\.tweet-card p \{[\s\S]*?font-size: 16px[\s\S]*?line-height: 20px/);
   assert.match(styles, /\.font-size-inputs \{[\s\S]*?grid-template-columns: 30px minmax\(0, 1fr\) 30px/);
   await assert.rejects(access(new URL("../app/_sites-preview/SkeletonPreview.tsx", import.meta.url)));

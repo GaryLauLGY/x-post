@@ -303,6 +303,11 @@ export default function Home() {
     startDistance: number;
     startScale: number;
   } | null>(null);
+  const activeCardPointers = useRef(new Map<number, { x: number; y: number }>());
+  const pinchSession = useRef<{
+    startDistance: number;
+    startScale: number;
+  } | null>(null);
 
   const selectedPost = posts.find((post) => post.id === selectedPostId) ?? posts[0];
   const account = availableAccounts.find((item) => item.id === accountId) ?? availableAccounts[0] ?? legacyAccounts[0]!;
@@ -368,9 +373,13 @@ export default function Home() {
     };
 
     updateCanvasDisplayScale();
-    const observer = new ResizeObserver(updateCanvasDisplayScale);
-    observer.observe(canvasArea);
-    return () => observer.disconnect();
+    window.addEventListener("resize", updateCanvasDisplayScale);
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(updateCanvasDisplayScale);
+    observer?.observe(canvasArea);
+    return () => {
+      window.removeEventListener("resize", updateCanvasDisplayScale);
+      observer?.disconnect();
+    };
   }, [tab]);
 
   useEffect(() => {
@@ -389,10 +398,14 @@ export default function Home() {
     };
 
     updateFitLimit();
-    const observer = new ResizeObserver(updateFitLimit);
-    observer.observe(poster);
-    observer.observe(card);
-    return () => observer.disconnect();
+    window.addEventListener("resize", updateFitLimit);
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(updateFitLimit);
+    observer?.observe(poster);
+    observer?.observe(card);
+    return () => {
+      window.removeEventListener("resize", updateFitLimit);
+      observer?.disconnect();
+    };
   }, [bodyFontSize, selectedPostId, tab, text]);
 
   useEffect(() => {
@@ -517,6 +530,27 @@ export default function Home() {
       setCardScale(Math.min(maxCardScale, Math.max(minimumScale, requestedScale)));
       return;
     }
+
+    const pointers = activeCardPointers.current;
+    if (pointers.has(event.pointerId)) {
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    }
+    if (pointers.size >= 2) {
+      const [first, second] = Array.from(pointers.values());
+      const distance = Math.max(1, Math.hypot(second.x - first.x, second.y - first.y));
+      if (!pinchSession.current) {
+        pinchSession.current = { startDistance: distance, startScale: effectiveCardScale };
+      }
+      const minimumScale = Math.min(0.56, maxCardScale);
+      const requestedScale = pinchSession.current.startScale * (distance / pinchSession.current.startDistance);
+      setCardScale(Math.min(maxCardScale, Math.max(minimumScale, requestedScale)));
+      dragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
     const drag = dragSession.current;
     if (!drag || drag.pointerId !== event.pointerId || resizing) return;
     const cardRect = cardRef.current?.getBoundingClientRect();
@@ -537,13 +571,29 @@ export default function Home() {
 
   const startDrag = (event: ReactPointerEvent<HTMLElement>) => {
     if (event.button !== 0) return;
+    const pointers = activeCardPointers.current;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    event.currentTarget.setPointerCapture(event.pointerId);
+
+    if (pointers.size >= 2) {
+      const [first, second] = Array.from(pointers.values());
+      pinchSession.current = {
+        startDistance: Math.max(1, Math.hypot(second.x - first.x, second.y - first.y)),
+        startScale: effectiveCardScale,
+      };
+      dragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
     const cardRect = event.currentTarget.getBoundingClientRect();
     dragSession.current = {
       pointerId: event.pointerId,
       offsetX: event.clientX - (cardRect.left + cardRect.width / 2),
       offsetY: event.clientY - cardRect.top,
     };
-    event.currentTarget.setPointerCapture(event.pointerId);
     setDragging(true);
   };
 
@@ -567,9 +617,40 @@ export default function Home() {
     setResizing(true);
   };
 
-  const stopPointerInteraction = () => {
+  const endCardPointer = (event: ReactPointerEvent<HTMLElement>) => {
+    const pointers = activeCardPointers.current;
+    if (!pointers.has(event.pointerId)) return;
+    pointers.delete(event.pointerId);
+
+    if (pointers.size === 1 && pinchSession.current) {
+      const [pointerId, point] = Array.from(pointers.entries())[0];
+      const cardRect = cardRef.current?.getBoundingClientRect();
+      pinchSession.current = null;
+      setResizing(false);
+      if (cardRect) {
+        dragSession.current = {
+          pointerId,
+          offsetX: point.x - (cardRect.left + cardRect.width / 2),
+          offsetY: point.y - cardRect.top,
+        };
+        setDragging(true);
+      }
+      return;
+    }
+
+    if (pointers.size === 0) {
+      dragSession.current = null;
+      pinchSession.current = null;
+      setDragging(false);
+      setResizing(false);
+    }
+  };
+
+  const stopResizeInteraction = () => {
     dragSession.current = null;
     resizeSession.current = null;
+    pinchSession.current = null;
+    activeCardPointers.current.clear();
     setDragging(false);
     setResizing(false);
   };
@@ -811,7 +892,7 @@ export default function Home() {
           <section className="stage" aria-label="卡片预览区">
             <div className="stage-toolbar">
               <span><i /> 实时预览</span>
-              <span>拖动卡片调位置 · 拉右下角等比缩放 · 1080 × 1440</span>
+              <span>单指拖动 · 双指或右下角缩放 · 1080 × 1440</span>
             </div>
             <div ref={canvasAreaRef} className="canvas-area">
               <div
@@ -831,8 +912,8 @@ export default function Home() {
                     "--preview-card-base-scale": PREVIEW_BASE_SCALE,
                   } as CSSProperties}
                   onPointerMove={moveCard}
-                  onPointerUp={stopPointerInteraction}
-                  onPointerCancel={stopPointerInteraction}
+                  onPointerUp={endCardPointer}
+                  onPointerCancel={endCardPointer}
                   onPointerLeave={() => {
                     if (!dragSession.current && !resizeSession.current) setDragging(false);
                   }}
@@ -844,7 +925,7 @@ export default function Home() {
                     className={`tweet-card ${dragging ? "dragging" : ""} ${resizing ? "resizing" : ""}`}
                     style={{ "--card-scale": effectiveCardScale, left: `${cardX}%`, top: `${cardY}%` } as CSSProperties}
                     onPointerDown={startDrag}
-                    onLostPointerCapture={stopPointerInteraction}
+                    onLostPointerCapture={endCardPointer}
                   >
                     <header>
                       <AccountAvatar account={account} className="avatar" />
@@ -878,9 +959,9 @@ export default function Home() {
                       aria-valuemax={Math.round(maxCardScale * 100)}
                       aria-valuenow={Math.round(effectiveCardScale * 100)}
                       onPointerDown={startResize}
-                      onPointerUp={stopPointerInteraction}
-                      onPointerCancel={stopPointerInteraction}
-                      onLostPointerCapture={stopPointerInteraction}
+                      onPointerUp={stopResizeInteraction}
+                      onPointerCancel={stopResizeInteraction}
+                      onLostPointerCapture={stopResizeInteraction}
                     />
                   </article>
                 </div>

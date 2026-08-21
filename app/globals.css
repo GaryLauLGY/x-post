@@ -306,6 +306,7 @@ nav .nav-active { color: var(--accent-strong); background: #fff; font-weight: 75
   background: #fff;
   box-shadow: 0 12px 32px rgba(16, 26, 22, .2);
   cursor: grab;
+  touch-action: none;
   user-select: none;
   will-change: transform, left, top;
 }
@@ -632,11 +633,20 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   .brand-copy { min-width: 0; }
   nav { order: 3; width: 100%; margin: 0; }
   nav button { flex: 1; }
-  .workspace { grid-template-columns: 1fr; height: auto; min-height: 0; }
+  .workspace { width: 100%; min-width: 0; grid-template-columns: minmax(0, 1fr); height: auto; min-height: 0; }
   .library-panel { height: auto; min-height: 0; max-height: 320px; }
   .post-list { height: 130px; }
-  .stage { height: auto; min-height: 620px; padding-right: 0; }
-  .canvas-area { padding: 14px; }
+  .stage {
+    width: 100%;
+    max-width: 100%;
+    height: clamp(420px, 72dvh, 620px);
+    min-height: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+  .stage-toolbar { flex-wrap: wrap; gap: 4px 12px; padding: 10px 12px; line-height: 1.4; }
+  .canvas-area { width: 100%; max-width: 100%; padding: 10px; contain: layout paint; }
+  .canvas-viewport { max-width: 100%; max-height: 100%; }
   .control-panel { position: static; width: auto; max-height: none; }
   .primary-action { margin-left: auto; }
   .page-intro { padding: 26px 22px; }
