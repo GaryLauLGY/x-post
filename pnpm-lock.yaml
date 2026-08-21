@@ -36,9 +36,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 16.2.6
         version: 16.2.6
-      '@openai/sites-vite-plugin':
-        specifier: 0.1.0
-        version: 0.1.0(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12))
       '@tailwindcss/postcss':
         specifier: 4.2.1
         version: 4.2.1
@@ -54,6 +51,9 @@ importers:
       '@types/react-dom':
         specifier: 19.2.3
         version: 19.2.3(@types/react@19.2.14)
+      '@vinext/cloudflare':
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(vinext@1.0.0-beta.2(@vitejs/plugin-react@6.0.2(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))(@vitejs/plugin-rsc@0.5.26(react-dom@19.2.6(react@19.2.6))(react-server-dom-webpack@19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)))(react@19.2.6)(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))(react-dom@19.2.6(react@19.2.6))(react-server-dom-webpack@19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)))(react@19.2.6)(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))
       '@vitejs/plugin-react':
         specifier: 6.0.2
         version: 6.0.2(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12))
@@ -1139,12 +1139,6 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@openai/sites-vite-plugin@0.1.0':
-    resolution: {integrity: sha512-TYi3j4R4u+yPFWNMlN4czpHEUze35Py4whlURKMwN8msOasxNXVhRl226KYRTuKj0LrdKFEDVfXHMrELB8aQ4w==}
-    engines: {node: '>=22.13.0'}
-    peerDependencies:
-      vite: ^8.0.0
-
   '@oxc-project/types@0.130.0':
     resolution: {integrity: sha512-ibD2usx9JRu7f5pu2tMKMI4cpA4NgXJQoYRP4pQ7Pxmn1l6k/53qWtQWZayhYy3X4QZkt90Ot+mJEaeXouio6Q==}
 
@@ -1467,6 +1461,13 @@ packages:
   '@vercel/og@0.8.6':
     resolution: {integrity: sha512-hBcWIOppZV14bi+eAmCZj8Elj8hVSUZJTpf1lgGBhVD85pervzQ1poM/qYfFUlPraYSZYP+ASg6To5BwYmUSGQ==}
     engines: {node: '>=16'}
+
+  '@vinext/cloudflare@1.0.0-beta.2':
+    resolution: {integrity: sha512-1yYYR4GQCkFnAZeJcYdX5O+i8iEUN4h66jCJTujlBp4XiveQnnigJ1ZZOlvEGW73b+HaX7RD3OgBls3S3wv4ZQ==}
+    engines: {node: '>=22'}
+    hasBin: true
+    peerDependencies:
+      vinext: ^1.0.0-beta.2
 
   '@vinext/types@1.0.0-beta.2':
     resolution: {integrity: sha512-kbKY/H1RWlf7yox4G6Vwk1JeM6x0Tv1EAv28f3tDYkK3brq+89vp5eZHbdw3L/pZMbAhG4oFyhT9C976y+jkhQ==}
@@ -4244,10 +4245,6 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@openai/sites-vite-plugin@0.1.0(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12))':
-    dependencies:
-      vite: 8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)
-
   '@oxc-project/types@0.130.0': {}
 
   '@pinojs/redact@0.4.0': {}
@@ -4529,6 +4526,10 @@ snapshots:
     dependencies:
       '@resvg/resvg-wasm': 2.4.0
       satori: 0.16.0
+
+  '@vinext/cloudflare@1.0.0-beta.2(vinext@1.0.0-beta.2(@vitejs/plugin-react@6.0.2(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))(@vitejs/plugin-rsc@0.5.26(react-dom@19.2.6(react@19.2.6))(react-server-dom-webpack@19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)))(react@19.2.6)(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))(react-dom@19.2.6(react@19.2.6))(react-server-dom-webpack@19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)))(react@19.2.6)(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))':
+    dependencies:
+      vinext: 1.0.0-beta.2(@vitejs/plugin-react@6.0.2(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))(@vitejs/plugin-rsc@0.5.26(react-dom@19.2.6(react@19.2.6))(react-server-dom-webpack@19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)))(react@19.2.6)(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12)))(react-dom@19.2.6(react@19.2.6))(react-server-dom-webpack@19.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(webpack@5.109.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.26)))(react@19.2.6)(vite@8.0.13(@types/node@22.19.19)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(tsx@4.23.12))
 
   '@vinext/types@1.0.0-beta.2': {}
 

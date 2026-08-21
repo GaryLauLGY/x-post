@@ -3,7 +3,7 @@
 ## Scope
 
 - The project root is `/home/gary/x-post`; persistent data is `data/` and recoverable project backups are `archive/`.
-- OpenAI Sites is the current legacy frontend host, not the approved target architecture. The approved target is a Worker deployed in Gary's own Cloudflare account at `https://xpost.garylau.ai`; it keeps `/api/*` same-origin and proxies those requests to the Tunnel origin declared in `PROJECT.md`. Follow `docs/frontend-hosting-migration.md` and do not describe the migration as complete before its cutover checks pass.
+- Production frontend is the project-owned `x-post` Cloudflare Worker in Gary's account at `https://xpost.garylau.ai`. It keeps `/api/*` same-origin and proxies those requests to the Tunnel origin declared in `PROJECT.md`. OpenAI Sites is retired and must not be restored or republished except as an explicitly authorized emergency rollback.
 - Frontend source changes, builds, Cloudflare Worker deployment, and hostname cutover are performed from `/Users/garylau/Work/x-post` on the Mac. The mini PC remains the PostgreSQL/API/crawler origin and is used only for scoped SSH preflight, deployment, and verification of those server components.
 - Do not add another public domain, DNS route, Tunnel route, TLS certificate, firewall rule, or public listener unless `PROJECT.md` declares it and the user authorizes the external change.
 
@@ -27,4 +27,4 @@
 - Preserve user data and unrelated worktree changes. Migration and imports must be idempotent.
 - Before schema changes, create a database backup. Prefer forward-compatible migrations; do not use destructive down migrations as automatic rollback.
 - Deployment completion requires health checks, row/media reconciliation, backup restore smoke testing, and a recorded source SHA/image digest. A running container alone is not completion.
-- The frontend migration must be rollback-safe: verify the self-managed Worker on a temporary hostname before cutover, preserve the existing Sites attachment until the custom hostname is healthy, and remove Sites only after public homepage, API, admin authentication, media, and PNG-export checks pass.
+- Frontend releases must be rollback-safe: verify the Worker build and temporary hostname before changing the custom domain, then verify the public homepage, API, admin authentication boundary, media, PNG export, and the previously blocked mini PC exit. Never recreate an OpenAI Sites attachment as a routine deployment step.

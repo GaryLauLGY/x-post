@@ -46,7 +46,7 @@ pnpm data:high-exposure
 
 服务器端包含 PostgreSQL 16、Fastify API、素材幂等迁移、媒体持久化、本地管理员登录、管理后台、备份和恢复冒烟测试。API 和数据库仍只监听 mini PC 的 loopback；公开访问保持同域 `/api/*`，经 Cloudflare Tunnel 到达 mini PC。
 
-前端托管已经决定迁出 OpenAI Sites，目标是在 Gary 自己的 Cloudflare 账户中部署 vinext Worker，继续使用 `xpost.garylau.ai`。迁移从 Mac 项目目录执行；mini PC 继续只承担 PostgreSQL、API 和 crawler。当前生产在切换完成前仍经过 Sites，不能把“已决定迁移”写成“已经迁移完成”。权威方案、切换门禁和回滚顺序见 [前端托管迁移](./docs/frontend-hosting-migration.md)。
+前端已于 2026-08-22 迁移到 Gary 自己 Cloudflare 账户中的 `x-post` vinext Worker，继续使用 `xpost.garylau.ai`；OpenAI Sites 已解除域名绑定并退出生产链路。前端构建与发布从 Mac 项目目录执行，mini PC 继续只承担 PostgreSQL、API 和 crawler。权威架构、发布门禁和回滚顺序见 [前端托管迁移](./docs/frontend-hosting-migration.md)。
 
 ```bash
 pnpm api:build
