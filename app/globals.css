@@ -252,6 +252,7 @@ nav .nav-active { color: var(--accent-strong); background: #fff; font-weight: 75
   border-bottom: 1px solid var(--line);
   background: #fbfcff;
 }
+.mobile-card-scale { display: none; }
 .canvas-area {
   flex: 1;
   min-width: 0;
@@ -634,8 +635,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   nav { order: 3; width: 100%; margin: 0; }
   nav button { flex: 1; }
   .workspace { width: 100%; min-width: 0; grid-template-columns: minmax(0, 1fr); height: auto; min-height: 0; }
-  .library-panel { height: auto; min-height: 0; max-height: 320px; }
-  .post-list { height: 130px; }
+  .library-panel { height: auto; min-height: 0; max-height: none; }
+  .post-list { height: clamp(280px, 42dvh, 420px); }
+  .post-text { font-size: 14px; line-height: 1.7; }
   .stage {
     width: 100%;
     max-width: 100%;
@@ -644,7 +646,18 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
     padding-right: 0;
     overflow: hidden;
   }
-  .stage-toolbar { flex-wrap: wrap; gap: 4px 12px; padding: 10px 12px; line-height: 1.4; }
+  .stage-toolbar { flex-wrap: wrap; gap: 6px 12px; padding: 10px 12px; line-height: 1.4; }
+  .mobile-card-scale {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    color: #64706a;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .mobile-card-scale input { min-width: 0; margin: 0; }
   .canvas-area { width: 100%; max-width: 100%; padding: 10px; contain: layout paint; }
   .canvas-viewport { max-width: 100%; max-height: 100%; }
   .control-panel { position: static; width: auto; max-height: none; }

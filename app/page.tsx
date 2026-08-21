@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { ChangeEvent, CSSProperties, PointerEvent as ReactPointerEvent } from "react";
+import type { ChangeEvent, CSSProperties, PointerEvent as ReactPointerEvent, TouchEvent as ReactTouchEvent } from "react";
 import { legacyBootstrap, loadLiveLibrary, type Account, type Background, type Post, type PostMetrics } from "./material-repository";
 
 type ActionIconName = "reply" | "repost" | "like" | "bookmark" | "share";
@@ -308,6 +308,10 @@ export default function Home() {
     startDistance: number;
     startScale: number;
   } | null>(null);
+  const touchDragSession = useRef<{
+    offsetX: number;
+    offsetY: number;
+  } | null>(null);
 
   const selectedPost = posts.find((post) => post.id === selectedPostId) ?? posts[0];
   const account = availableAccounts.find((item) => item.id === accountId) ?? availableAccounts[0] ?? legacyAccounts[0]!;
@@ -571,6 +575,7 @@ export default function Home() {
 
   const startDrag = (event: ReactPointerEvent<HTMLElement>) => {
     if (event.button !== 0) return;
+    if (event.pointerType === "touch") return;
     const pointers = activeCardPointers.current;
     pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
     event.currentTarget.setPointerCapture(event.pointerId);
@@ -653,6 +658,94 @@ export default function Home() {
     activeCardPointers.current.clear();
     setDragging(false);
     setResizing(false);
+  };
+
+  const startTouchInteraction = (event: ReactTouchEvent<HTMLElement>) => {
+    const touches = Array.from(event.touches);
+    if (touches.length >= 2) {
+      const [first, second] = touches;
+      pinchSession.current = {
+        startDistance: Math.max(1, Math.hypot(second.clientX - first.clientX, second.clientY - first.clientY)),
+        startScale: effectiveCardScale,
+      };
+      touchDragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
+    const touch = touches[0];
+    const cardRect = event.currentTarget.getBoundingClientRect();
+    touchDragSession.current = {
+      offsetX: touch.clientX - (cardRect.left + cardRect.width / 2),
+      offsetY: touch.clientY - cardRect.top,
+    };
+    pinchSession.current = null;
+    setDragging(true);
+    setResizing(false);
+  };
+
+  const moveTouchInteraction = (event: ReactTouchEvent<HTMLElement>) => {
+    const touches = Array.from(event.touches);
+    if (touches.length >= 2) {
+      const [first, second] = touches;
+      const distance = Math.max(1, Math.hypot(second.clientX - first.clientX, second.clientY - first.clientY));
+      if (!pinchSession.current) {
+        pinchSession.current = { startDistance: distance, startScale: effectiveCardScale };
+      }
+      const minimumScale = Math.min(0.56, maxCardScale);
+      const requestedScale = pinchSession.current.startScale * (distance / pinchSession.current.startDistance);
+      setCardScale(Math.min(maxCardScale, Math.max(minimumScale, requestedScale)));
+      touchDragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
+    const touch = touches[0];
+    const drag = touchDragSession.current;
+    const poster = posterRef.current;
+    const card = cardRef.current;
+    if (!touch || !drag || !poster || !card || pinchSession.current) return;
+    const posterRect = poster.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const halfWidth = (cardRect.width / posterRect.width) * 50;
+    const cardHeight = (cardRect.height / posterRect.height) * 100;
+    const minX = Math.min(50, halfWidth);
+    const maxX = Math.max(50, 100 - minX);
+    const maxY = Math.max(0, 100 - cardHeight);
+    const requestedX = ((touch.clientX - drag.offsetX - posterRect.left) / posterRect.width) * 100;
+    const requestedY = ((touch.clientY - drag.offsetY - posterRect.top) / posterRect.height) * 100;
+    setCardX(Math.min(maxX, Math.max(minX, requestedX)));
+    setCardY(Math.min(maxY, Math.max(0, requestedY)));
+    event.preventDefault();
+  };
+
+  const endTouchInteraction = (event: ReactTouchEvent<HTMLElement>) => {
+    const touches = Array.from(event.touches);
+    if (touches.length === 1 && pinchSession.current) {
+      const touch = touches[0];
+      const cardRect = cardRef.current?.getBoundingClientRect();
+      pinchSession.current = null;
+      setResizing(false);
+      if (cardRect) {
+        touchDragSession.current = {
+          offsetX: touch.clientX - (cardRect.left + cardRect.width / 2),
+          offsetY: touch.clientY - cardRect.top,
+        };
+        setDragging(true);
+      }
+      return;
+    }
+
+    if (touches.length === 0) {
+      touchDragSession.current = null;
+      pinchSession.current = null;
+      setDragging(false);
+      setResizing(false);
+    }
   };
 
   const downloadPng = async () => {
@@ -893,6 +986,17 @@ export default function Home() {
             <div className="stage-toolbar">
               <span><i /> 实时预览</span>
               <span>单指拖动 · 双指或右下角缩放 · 1080 × 1440</span>
+              <label className="mobile-card-scale">
+                <span>卡片大小</span>
+                <input
+                  type="range"
+                  min={Math.round(Math.min(0.56, maxCardScale) * 100)}
+                  max={Math.round(maxCardScale * 100)}
+                  value={Math.round(effectiveCardScale * 100)}
+                  onChange={(event) => setCardScale(Number(event.target.value) / 100)}
+                  aria-label="调整卡片大小"
+                />
+              </label>
             </div>
             <div ref={canvasAreaRef} className="canvas-area">
               <div
@@ -926,6 +1030,10 @@ export default function Home() {
                     style={{ "--card-scale": effectiveCardScale, left: `${cardX}%`, top: `${cardY}%` } as CSSProperties}
                     onPointerDown={startDrag}
                     onLostPointerCapture={endCardPointer}
+                    onTouchStart={startTouchInteraction}
+                    onTouchMove={moveTouchInteraction}
+                    onTouchEnd={endTouchInteraction}
+                    onTouchCancel={endTouchInteraction}
                   >
                     <header>
                       <AccountAvatar account={account} className="avatar" />
