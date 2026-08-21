@@ -16,6 +16,7 @@ const materialBuilder = path.join(projectRoot, ".agents", "skills", "x-high-expo
 const importerScript = path.join(projectRoot, "scripts", "import-crawler-materials.mjs");
 const runtimeDir = path.join(projectRoot, "packages", "crawler-runtime");
 const storageState = path.join(dataRoot, "storage-states", "primary.json");
+const fallbackStorageState = path.join(dataRoot, "storage-states", "secondary.json");
 const python = path.join(projectRoot, ".venv", "bin", "python");
 
 function parseArgs(argv) {
@@ -139,10 +140,17 @@ async function promoteWatermark(working, canonical) {
 
 const options = parseArgs(process.argv.slice(2));
 if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL is required");
-for (const required of [crawlerScript, analyticsScript, materialBuilder, python, storageState]) {
+for (const required of [crawlerScript, analyticsScript, materialBuilder, python, storageState, fallbackStorageState]) {
   if (!(await pathExists(required))) throw new Error(`Required crawler prerequisite is missing: ${path.relative(projectRoot, required)}`);
 }
 if (!(await pathExists(path.join(runtimeDir, "node_modules", "playwright")))) throw new Error("Project Playwright runtime is not installed");
+for (const stateFile of [storageState, fallbackStorageState]) {
+  const info = await stat(stateFile);
+  if ((info.mode & 0o077) !== 0) throw new Error(`Crawler storage state must be owner-only: ${path.relative(projectRoot, stateFile)}`);
+}
+if ((await sha256File(storageState)) === (await sha256File(fallbackStorageState))) {
+  throw new Error("Crawler primary and secondary storage states must be independent");
+}
 
 const config = await readJson(path.join(projectRoot, "config", "crawler-authors.json"));
 let configuredAuthors = config.authors;
@@ -182,6 +190,14 @@ try {
 
   for (const configured of configuredAuthors) {
     const handle = normalizeHandle(configured.handle);
+    if (configured.initialMinLocalDate && !/^\d{4}-\d{2}-\d{2}$/u.test(configured.initialMinLocalDate)) {
+      results.push({ author: handle, status: "failed", error: "Invalid configured initialMinLocalDate" });
+      continue;
+    }
+    if (configured.windowDays !== undefined && (!Number.isInteger(configured.windowDays) || configured.windowDays < 1)) {
+      results.push({ author: handle, status: "failed", error: "Invalid configured windowDays" });
+      continue;
+    }
     const author = rowsByHandle.get(handle);
     if (!author) {
       results.push({ author: handle, status: "failed", error: "Enabled source author not found" });
@@ -197,9 +213,9 @@ try {
       await copyFile(canonicalWatermark, originalWatermark);
       await copyFile(canonicalWatermark, workingWatermark);
     }
-    const initialMinDate = author.latest_material_date
+    const initialMinDate = hadCanonicalWatermark && author.latest_material_date
       ? shiftDate(author.latest_material_date, -Number(config.watermarkOverlapDays ?? 2))
-      : shiftDate(dateInBeijing(), -Number(config.initialHistoryDays ?? 14));
+      : configured.initialMinLocalDate || shiftDate(dateInBeijing(), -Number(config.initialHistoryDays ?? 14));
     const planPath = path.join(authorDir, "plan.json");
     const planLog = path.join(authorDir, "plan.log");
     const commonArgs = [
@@ -207,12 +223,13 @@ try {
       "--username", author.handle,
       "--runtime-dir", runtimeDir,
       "--storage-state", storageState,
+      "--fallback-storage-state", fallbackStorageState,
       "--output-dir", authorDir,
       "--watermark-file", workingWatermark,
       "--until-local-date", untilLocalDate,
       "--initial-min-local-date", initialMinDate,
       "--watermark-overlap-days", String(config.watermarkOverlapDays ?? 2),
-      "--window-days", "2",
+      "--window-days", String(configured.windowDays ?? 2),
       "--retry-error-windows", "2",
       "--error-sleep-seconds", "60",
     ];
@@ -221,7 +238,7 @@ try {
     try {
       await runCommand(python, [...commonArgs, "--plan-only", "--summary-json", planPath], { logFile: planLog, timeoutMinutes: 5 });
       const plan = await readJson(planPath);
-      if (plan.reply_mode !== "exclude" || plan.include_reposts || !plan.strict_original_verification || plan.storage_state_count < 1) {
+      if (plan.reply_mode !== "exclude" || plan.include_reposts || !plan.strict_original_verification || plan.storage_state_count !== 2) {
         throw new Error("Crawler plan failed the strict plan gate");
       }
       if (options.mode === "plan") {

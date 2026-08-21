@@ -45,6 +45,14 @@ yarn-error.log*
 /.artifacts/
 /data/
 /archive/
+/pgdata/
+/postgres-data/
+*.dump
+*.backup
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
 /apps/api/dist/
 *.tsbuildinfo
 __pycache__/

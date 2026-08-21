@@ -3,7 +3,7 @@
 一个先本地运行的团队推文素材库与卡片制作网页。当前版本用于确认产品结构和制作体验，已经打通：
 
 - 团队推文库浏览、搜索、按作者与分类筛选、选择并跳转 X 原贴
-- 默认载入 rwayne、黄小木、AI最严厉的父亲和阿川的 329 条纯文字贴文；网页不提供贴文文件导入入口，素材由受控离线同步更新
+- 生产环境从服务器 API 动态载入全部 `approved` 素材及当前已配置作者；网页不提供贴文文件导入入口，素材由受控 crawler 流程更新
 - 推文来源与发布账号分离
 - 仅显示当前用户可用的发布账号（原型内存权限）
 - 发布账号包含黄小木、Roland.W、AI最严厉的父亲和阿川，账号切换同步名称、ID、认证状态和名称标签
@@ -44,7 +44,9 @@ pnpm data:high-exposure
 
 ## mini PC 服务器
 
-服务器端包含 PostgreSQL 16、Fastify API、329 条现有素材的幂等迁移、媒体持久化、本地管理员登录、管理后台、备份和恢复冒烟测试。API 和数据库仍只监听 mini PC 的 loopback；公开访问由现有 Sites/Cloudflare 站点将同域 `/api/*` 转发到 Cloudflare Tunnel。
+服务器端包含 PostgreSQL 16、Fastify API、素材幂等迁移、媒体持久化、本地管理员登录、管理后台、备份和恢复冒烟测试。API 和数据库仍只监听 mini PC 的 loopback；公开访问保持同域 `/api/*`，经 Cloudflare Tunnel 到达 mini PC。
+
+前端托管已经决定迁出 OpenAI Sites，目标是在 Gary 自己的 Cloudflare 账户中部署 vinext Worker，继续使用 `xpost.garylau.ai`。迁移从 Mac 项目目录执行；mini PC 继续只承担 PostgreSQL、API 和 crawler。当前生产在切换完成前仍经过 Sites，不能把“已决定迁移”写成“已经迁移完成”。权威方案、切换门禁和回滚顺序见 [前端托管迁移](./docs/frontend-hosting-migration.md)。
 
 ```bash
 pnpm api:build
@@ -56,6 +58,8 @@ pnpm data:migrate:dry
 
 ## 当前边界
 
-网页本身不读取 Cookie、不直接连接 X、不自动发布，也不包含真实登录、数据库或服务端权限。当前页面只保留制作台和推文库，不提供团队设置页。项目级 Skill 只调用相邻工具仓库中已经授权的受控采集进程；Cookie / storage state 留在该进程的 Git 忽略目录，经过校验的公开素材才由离线脚本写入网页数据。
+网页本身不读取 X Cookie、不直接连接 X、也不自动发布。生产素材、管理员认证和服务端权限由 mini PC 的 Fastify API 与 PostgreSQL 提供；当前公开页面保留制作台和推文库，管理员入口为 `/admin`。项目级 Skill 只调用已经授权的受控采集进程；Cookie / storage state 仅保留在 mini PC 的 owner-only crawler 目录，只有严格校验通过的公开素材才能写入数据库。
 
 开发方案、数据契约、后端模型、测试清单和 App 集成路线见 [开发文档](./docs/开发文档.md)。需要交给具备服务器 SSH 权限的项目 Agent 执行时，使用 [服务器端开发与部署清单](./docs/服务器端开发与部署清单.md)。新增免费背景的来源与使用记录见 [背景素材来源](./docs/背景素材来源.md)。Research Swarm 的执行状态、已核实结论和未核实缺口见 [调研记录](./docs/调研记录.md)。
+
+仓库可以公开源代码，但 PostgreSQL 数据、备份、crawler 登录态和运行产物永远不进入 Git。公开边界与发布前检查见 [Public repository boundary](./docs/public-repository-boundary.md)。

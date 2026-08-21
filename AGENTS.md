@@ -3,7 +3,8 @@
 ## Scope
 
 - The project root is `/home/gary/x-post`; persistent data is `data/` and recoverable project backups are `archive/`.
-- Keep the public frontend on its current Sites/Cloudflare host. The approved production API is same-origin at `https://xpost.garylau.ai/api/v1` and is proxied by the Sites worker to the Tunnel origin declared in `PROJECT.md`.
+- OpenAI Sites is the current legacy frontend host, not the approved target architecture. The approved target is a Worker deployed in Gary's own Cloudflare account at `https://xpost.garylau.ai`; it keeps `/api/*` same-origin and proxies those requests to the Tunnel origin declared in `PROJECT.md`. Follow `docs/frontend-hosting-migration.md` and do not describe the migration as complete before its cutover checks pass.
+- Frontend source changes, builds, Cloudflare Worker deployment, and hostname cutover are performed from `/Users/garylau/Work/x-post` on the Mac. The mini PC remains the PostgreSQL/API/crawler origin and is used only for scoped SSH preflight, deployment, and verification of those server components.
 - Do not add another public domain, DNS route, Tunnel route, TLS certificate, firewall rule, or public listener unless `PROJECT.md` declares it and the user authorizes the external change.
 
 ## Runtime and data
@@ -26,3 +27,4 @@
 - Preserve user data and unrelated worktree changes. Migration and imports must be idempotent.
 - Before schema changes, create a database backup. Prefer forward-compatible migrations; do not use destructive down migrations as automatic rollback.
 - Deployment completion requires health checks, row/media reconciliation, backup restore smoke testing, and a recorded source SHA/image digest. A running container alone is not completion.
+- The frontend migration must be rollback-safe: verify the self-managed Worker on a temporary hostname before cutover, preserve the existing Sites attachment until the custom hostname is healthy, and remove Sites only after public homepage, API, admin authentication, media, and PNG-export checks pass.
