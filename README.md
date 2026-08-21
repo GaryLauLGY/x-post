@@ -52,7 +52,7 @@ pnpm test:server
 pnpm data:migrate:dry
 ```
 
-远端部署与运维命令见 [服务器部署说明](./docs/deployment.md)、[运维说明](./docs/operations.md) 和 [回滚说明](./docs/rollback.md)。管理员入口为 `/admin`，使用无公开注册入口的本地 `admin` 账号。自动抓取由 Codex 定时任务通过 SSH 调用项目入口，mini PC 不另设 systemd timer；任务复用项目内固定版本的 `gary-x-post-crawler`，严格验证后将新素材写为 `pending`，并只在完整覆盖与数据库导入同时成功后推进水位线。
+远端部署与运维命令见 [服务器部署说明](./docs/deployment.md)、[运维说明](./docs/operations.md) 和 [回滚说明](./docs/rollback.md)。管理员入口为 `/admin`，使用无公开注册入口的本地 `admin` 账号。自动抓取由 Codex 定时任务通过 SSH 调用项目入口，mini PC 不另设 systemd timer；任务复用项目内固定版本的 `gary-x-post-crawler`，严格验证通过的新素材自动写为 `approved` 并进入制作台，被人工拒绝或归档的素材不会因后续抓取而恢复，并只在完整覆盖与数据库导入同时成功后推进水位线。
 
 ## 当前边界
 

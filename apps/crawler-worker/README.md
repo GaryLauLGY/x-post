@@ -6,7 +6,7 @@ The production crawler is orchestrated by a Codex scheduled task. The task conne
 bin/x-post-crawler-cycle --execute
 ```
 
-The entrypoint calls the vendored, reviewed `gary-x-post-crawler`, preserves strict-original verification artifacts, runs the bounded `gary-x-analytics` pure-text classifier, and imports only records that pass the pure-text gate. New materials enter PostgreSQL as `pending`; existing approved materials keep their review state and classification while receiving fresh public metrics.
+The entrypoint calls the vendored, reviewed `gary-x-post-crawler`, preserves strict-original verification artifacts, runs the bounded `gary-x-analytics` pure-text classifier, and imports only records that pass the pure-text gate. New strict materials enter PostgreSQL as `approved` and are immediately visible; existing pending strict materials are promoted, while manually rejected or archived materials remain removed. Existing human classification is preserved while public metrics refresh.
 
 Before enabling a run, configure these paths in a project-local, owner-only environment file:
 

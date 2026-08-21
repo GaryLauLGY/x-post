@@ -49,7 +49,7 @@ Run the strict production cycle:
 bin/x-post-crawler-cycle --execute
 ```
 
-The cycle acquires both a filesystem lock and a PostgreSQL advisory lock, recovers stale `running` rows older than four hours, and processes authors sequentially. It calls the vendored crawler without reply/repost modes, without `--skip-original-verification`, and without partial-search/profile fallbacks. New strict candidates enter `pending`; existing materials retain review state and human classification while metrics update idempotently.
+The cycle acquires both a filesystem lock and a PostgreSQL advisory lock, recovers stale `running` rows older than four hours, and processes authors sequentially. It calls the vendored crawler without reply/repost modes, without `--skip-original-verification`, and without partial-search/profile fallbacks. New strict candidates enter `approved` and are immediately visible in the editor; existing `pending` strict candidates are promoted, while manually rejected or archived materials stay removed. Existing human classification remains authoritative and public metrics update idempotently.
 
 Artifacts and watermarks:
 

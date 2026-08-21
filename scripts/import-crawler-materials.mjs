@@ -76,13 +76,20 @@ try {
       `INSERT INTO materials(
          id, platform, platform_post_id, source_author_id, source_url, original_text,
          published_at, content_type, category, tags, admin_note, status,
-         verified_original, content_hash, first_seen_run_id, last_seen_run_id
-       ) VALUES ($1,'x',$2,$3,$4,$5,$6,'pure_text','其他',$7,$8,'pending',true,$9,$10,$10)
+         approved_at, verified_original, content_hash, first_seen_run_id, last_seen_run_id
+       ) VALUES ($1,'x',$2,$3,$4,$5,$6,'pure_text','其他',$7,$8,'approved',now(),true,$9,$10,$10)
        ON CONFLICT (platform, platform_post_id) DO UPDATE SET
          source_author_id = EXCLUDED.source_author_id,
          source_url = EXCLUDED.source_url,
          original_text = CASE WHEN materials.edited_text IS NULL THEN EXCLUDED.original_text ELSE materials.original_text END,
          published_at = EXCLUDED.published_at,
+         admin_note = CASE
+           WHEN materials.status = 'pending' AND materials.admin_note = 'Codex 定时抓取：严格原创纯文字候选，等待管理员审核分类'
+             THEN EXCLUDED.admin_note
+           ELSE materials.admin_note
+         END,
+         status = CASE WHEN materials.status = 'pending' THEN 'approved'::material_status ELSE materials.status END,
+         approved_at = CASE WHEN materials.status = 'pending' THEN COALESCE(materials.approved_at, now()) ELSE materials.approved_at END,
          verified_original = true,
          content_hash = CASE WHEN materials.edited_text IS NULL THEN EXCLUDED.content_hash ELSE materials.content_hash END,
          last_seen_run_id = EXCLUDED.last_seen_run_id,
@@ -96,7 +103,7 @@ try {
         item.text,
         item.publishedAt,
         ["其他", author.display_name],
-        "Codex 定时抓取：严格原创纯文字候选，等待管理员审核分类",
+        "Codex 定时抓取：严格原创纯文字素材，自动进入制作台",
         item.contentHash,
         options.runId,
       ],
@@ -180,7 +187,7 @@ try {
   await client.query(
     `INSERT INTO audit_logs(actor_type, actor_id, action, entity_type, entity_id, metadata)
      VALUES ('service','codex-automation','crawler_import','crawl_run',$1,$2)`,
-    [options.runId, { author: handle, importedCount, updatedCount, watermarkAdvance }],
+    [options.runId, { author: handle, importedCount, updatedCount, watermarkAdvance, strictCandidatesAutoApproved: true }],
   );
   await client.query("COMMIT");
   committed = true;

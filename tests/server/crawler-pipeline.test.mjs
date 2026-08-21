@@ -99,6 +99,14 @@ test("crawler importer dry-run validates the complete strict evidence set", asyn
   }
 });
 
+test("crawler importer makes strict candidates visible without reviving removed materials", async () => {
+  const source = await readFile(new URL("../../scripts/import-crawler-materials.mjs", import.meta.url), "utf8");
+  assert.match(source, /'approved',now\(\),true/);
+  assert.match(source, /materials\.status = 'pending' THEN 'approved'::material_status ELSE materials\.status/);
+  assert.match(source, /strictCandidatesAutoApproved: true/);
+  assert.doesNotMatch(source, /'pending',true/);
+});
+
 test("candidate builder rejects scheme-less X short links before import", async () => {
   const tempDir = await mkdtemp(path.join(os.tmpdir(), "xpost-builder-test-"));
   try {
