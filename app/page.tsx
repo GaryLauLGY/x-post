@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- Dynamic same-origin media and Canvas export require native image elements. */
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";

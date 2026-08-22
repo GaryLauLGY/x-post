@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- The admin shell renders a small static brand asset without an image optimizer. */
 "use client";
 
 import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";

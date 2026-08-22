@@ -1,6 +1,12 @@
 # 星际留白团队推文卡片工具
 
-一个先本地运行的团队推文素材库与卡片制作网页。当前版本用于确认产品结构和制作体验，已经打通：
+面向团队内容生产的推文素材库与 1080 × 1440 卡片制作工具。
+
+**[在线使用 xpost.garylau.ai](https://xpost.garylau.ai/)**
+
+[![星际留白推文卡片工作台截图](./docs/assets/x-post-workbench.png)](https://xpost.garylau.ai/)
+
+当前生产版本已经打通：
 
 - 团队推文库浏览、搜索、按作者与分类筛选、选择并跳转 X 原贴
 - 生产环境从服务器 API 动态载入全部 `approved` 素材及当前已配置作者；网页不提供贴文文件导入入口，素材由受控 crawler 流程更新
@@ -41,6 +47,12 @@ pnpm data:high-exposure
 `pnpm data:sync` 会从相邻 `Social` 工作区中 rwayne、黄小木的两份 `collection_manifest.json` 重新生成脱敏后的既有素材，并合并四位授权作者的严格抓取结果。AI 内容细分为 `AI工具`、`AI效率`、`AI实操`、`AI世界观`、`AI认知`、`AI商业`、`AI学习`；非 AI 内容保留原分类。网页只显示每条素材的实际分类，“纯文字”和“类别”都不作为界面类别或标签。输出只包含公开正文、来源、日期、链接、分类和公开指标，不复制 Cookie、凭据或源文件绝对路径。
 
 项目级 Skill 位于 `.agents/skills/x-high-exposure-pure-text/`。它编排相邻 `gary-x-skills` 中的严格 X 原帖抓取与高曝光纯文字筛选，保留正文排版和五项公开数据。当前四位作者按 `Impressions > 5000` 入库；`pnpm data:high-exposure` 会过滤媒体、引用、回复及被 X 拆行隐藏的链接，再按复用意图分类并合并进默认素材。
+
+## 参与协作
+
+前端图层、卡片交互、响应式布局和仓库内背景素材都通过 GitHub Pull Request 协作。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)，从功能分支提交改动，并附上必要的桌面端/移动端截图及验证结果。
+
+Pull Request 只运行无密钥的构建与测试。合并和生产发布由仓库维护者执行；协作者不需要 mini PC、PostgreSQL、X 登录态、管理员账号或 Cloudflare 权限。
 
 ## mini PC 服务器
 
