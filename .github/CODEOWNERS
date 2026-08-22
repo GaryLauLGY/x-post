@@ -1,0 +1,18 @@
+# Default ownership keeps repository-wide changes under maintainer review.
+* @GaryLauLGY
+
+# Frontend collaboration.
+/app/page.tsx @GaryLauLGY @adrianpunk
+/app/globals.css @GaryLauLGY @adrianpunk
+/public/ @GaryLauLGY @adrianpunk
+/tests/rendered-html.test.mjs @GaryLauLGY @adrianpunk
+
+# Security-sensitive and production paths always require Gary's review.
+/.github/ @GaryLauLGY
+/app/admin/ @GaryLauLGY
+/apps/api/ @GaryLauLGY
+/deploy/ @GaryLauLGY
+/packages/database/ @GaryLauLGY
+/scripts/ @GaryLauLGY
+/worker/ @GaryLauLGY
+/wrangler.jsonc @GaryLauLGY

@@ -1,52 +1,17 @@
+/* eslint-disable @next/next/no-img-element -- Dynamic same-origin media and Canvas export require native image elements. */
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { ChangeEvent, CSSProperties, PointerEvent as ReactPointerEvent } from "react";
-import existingAccounts from "./data/existing-accounts.json";
-import existingMaterials from "./data/existing-materials.json";
-
-type Account = {
-  id: string;
-  name: string;
-  handle: string;
-  verified: boolean;
-  label: string;
-  accent: string;
-  avatar?: string;
-};
-
-type PostMetrics = {
-  replies: number;
-  reposts: number;
-  likes: number;
-  bookmarks: number;
-  views: number;
-};
-
-type Post = {
-  id: string;
-  text: string;
-  source: string;
-  date: string;
-  link: string;
-  category: string;
-  tags: string[];
-  note?: string;
-  metrics: PostMetrics;
-};
-
-type Background = {
-  id: string;
-  name: string;
-  kind: "gradient" | "image";
-  value: string;
-  palette?: string[];
-};
+import type { ChangeEvent, CSSProperties, PointerEvent as ReactPointerEvent, TouchEvent as ReactTouchEvent } from "react";
+import { legacyBootstrap, loadLiveLibrary, type Account, type Background, type Post, type PostMetrics } from "./material-repository";
 
 type ActionIconName = "reply" | "repost" | "like" | "bookmark" | "share";
 
 const X_TEMPLATE_WIDTH = 1196;
-const X_TEMPLATE_BODY_FONT = 30;
+const X_TEMPLATE_BODY_FONT = 32;
+const DEFAULT_BODY_FONT_SIZE = 16;
+const MIN_BODY_FONT_SIZE = DEFAULT_BODY_FONT_SIZE - 5;
+const MAX_BODY_FONT_SIZE = DEFAULT_BODY_FONT_SIZE + 5;
 const CANVAS_WIDTH = 1080;
 const CANVAS_HEIGHT = 1440;
 const PREVIEW_BASE_SCALE = (CANVAS_WIDTH * 0.72) / (X_TEMPLATE_WIDTH / 2);
@@ -159,13 +124,12 @@ function AccountAvatar({ account, className }: { account: Account; className: st
   );
 }
 
-const accounts = existingAccounts as Account[];
-
-const seedPosts = existingMaterials as Post[];
+const legacyAccounts = legacyBootstrap.accounts;
+const seedPosts = legacyBootstrap.posts;
 const initialPost = seedPosts[0]!;
-const accountForSource = (source: string) =>
+const accountForSource = (source: string, accounts: Account[]) =>
   accounts.find((account) => account.name === source || account.handle.slice(1) === source);
-const initialAccount = accountForSource(initialPost.source) ?? accounts[0]!;
+const initialAccount = accountForSource(initialPost.source, legacyAccounts) ?? legacyAccounts[0]!;
 
 function publishingForCategory(category: string) {
   return CATEGORY_PUBLISHING[category] ?? {
@@ -297,7 +261,11 @@ async function loadCanvasImage(url: string) {
 
 export default function Home() {
   const [tab, setTab] = useState<"studio" | "library">("studio");
-  const posts = seedPosts;
+  const [posts, setPosts] = useState(seedPosts);
+  const [availableAccounts, setAvailableAccounts] = useState(legacyAccounts);
+  const [libraryState, setLibraryState] = useState<"loading" | "ready" | "error">("loading");
+  const [libraryError, setLibraryError] = useState("");
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [selectedPostId, setSelectedPostId] = useState(initialPost.id);
   const [text, setText] = useState(initialPost.text);
   const [publishDraft, setPublishDraft] = useState(buildPublishingDraft(initialPost, initialAccount));
@@ -308,6 +276,7 @@ export default function Home() {
   const [backgroundId, setBackgroundId] = useState(builtinBackgrounds[0].id);
   const [backgroundUrl, setBackgroundUrl] = useState("");
   const [dim, setDim] = useState(24);
+  const [bodyFontSize, setBodyFontSize] = useState(DEFAULT_BODY_FONT_SIZE);
   const [cardScale, setCardScale] = useState(1);
   const [maxCardScale, setMaxCardScale] = useState(1);
   const [canvasDisplayScale, setCanvasDisplayScale] = useState(0.4);
@@ -335,10 +304,18 @@ export default function Home() {
     startDistance: number;
     startScale: number;
   } | null>(null);
+  const activeCardPointers = useRef(new Map<number, { x: number; y: number }>());
+  const pinchSession = useRef<{
+    startDistance: number;
+    startScale: number;
+  } | null>(null);
+  const touchDragSession = useRef<{
+    offsetX: number;
+    offsetY: number;
+  } | null>(null);
 
   const selectedPost = posts.find((post) => post.id === selectedPostId) ?? posts[0];
-  const availableAccounts = accounts;
-  const account = availableAccounts.find((item) => item.id === accountId) ?? availableAccounts[0] ?? accounts[0]!;
+  const account = availableAccounts.find((item) => item.id === accountId) ?? availableAccounts[0] ?? legacyAccounts[0]!;
   const background = backgrounds.find((item) => item.id === backgroundId) ?? backgrounds[0] ?? builtinBackgrounds[0]!;
   const authors = useMemo(() => ["全部", ...Array.from(new Set(posts.map((post) => post.source)))], [posts]);
   const categories = useMemo(() => {
@@ -356,6 +333,31 @@ export default function Home() {
     });
   }, [author, category, posts, search]);
   const effectiveCardScale = Math.min(cardScale, maxCardScale);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadLiveLibrary().then((library) => {
+      if (cancelled) return;
+      setPosts(library.posts);
+      setAvailableAccounts(library.accounts);
+      setBackgrounds(library.backgrounds);
+      const firstPost = library.posts[0]!;
+      const firstAccount = accountForSource(firstPost.source, library.accounts) ?? library.accounts[0]!;
+      setSelectedPostId(firstPost.id);
+      setText(firstPost.text);
+      setCardMetrics({ ...firstPost.metrics });
+      setAccountId(firstAccount.id);
+      setPublishDraft(buildPublishingDraft(firstPost, firstAccount));
+      setBackgroundId(library.backgrounds[0]!.id);
+      setLibraryState("ready");
+      setLibraryError("");
+    }).catch((error: unknown) => {
+      if (cancelled) return;
+      setLibraryError(error instanceof Error ? error.message : "服务器素材加载失败");
+      setLibraryState("error");
+    });
+    return () => { cancelled = true; };
+  }, [loadAttempt]);
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -376,9 +378,13 @@ export default function Home() {
     };
 
     updateCanvasDisplayScale();
-    const observer = new ResizeObserver(updateCanvasDisplayScale);
-    observer.observe(canvasArea);
-    return () => observer.disconnect();
+    window.addEventListener("resize", updateCanvasDisplayScale);
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(updateCanvasDisplayScale);
+    observer?.observe(canvasArea);
+    return () => {
+      window.removeEventListener("resize", updateCanvasDisplayScale);
+      observer?.disconnect();
+    };
   }, [tab]);
 
   useEffect(() => {
@@ -397,11 +403,15 @@ export default function Home() {
     };
 
     updateFitLimit();
-    const observer = new ResizeObserver(updateFitLimit);
-    observer.observe(poster);
-    observer.observe(card);
-    return () => observer.disconnect();
-  }, [selectedPostId, tab, text]);
+    window.addEventListener("resize", updateFitLimit);
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(updateFitLimit);
+    observer?.observe(poster);
+    observer?.observe(card);
+    return () => {
+      window.removeEventListener("resize", updateFitLimit);
+      observer?.disconnect();
+    };
+  }, [bodyFontSize, selectedPostId, tab, text]);
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -424,15 +434,19 @@ export default function Home() {
     });
 
     return () => window.cancelAnimationFrame(frame);
-  }, [effectiveCardScale, selectedPostId, tab, text]);
+  }, [bodyFontSize, effectiveCardScale, selectedPostId, tab, text]);
 
   const notify = (message: string) => {
     setToast(message);
     window.setTimeout(() => setToast(""), 2200);
   };
 
+  const adjustBodyFontSize = (delta: number) => {
+    setBodyFontSize((current) => Math.min(MAX_BODY_FONT_SIZE, Math.max(MIN_BODY_FONT_SIZE, current + delta)));
+  };
+
   const choosePost = (post: Post) => {
-    const sourceAccount = accountForSource(post.source) ?? account;
+    const sourceAccount = accountForSource(post.source, availableAccounts) ?? account;
     setSelectedPostId(post.id);
     setText(post.text);
     setPublishDraft(buildPublishingDraft(post, sourceAccount));
@@ -521,6 +535,27 @@ export default function Home() {
       setCardScale(Math.min(maxCardScale, Math.max(minimumScale, requestedScale)));
       return;
     }
+
+    const pointers = activeCardPointers.current;
+    if (pointers.has(event.pointerId)) {
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    }
+    if (pointers.size >= 2) {
+      const [first, second] = Array.from(pointers.values());
+      const distance = Math.max(1, Math.hypot(second.x - first.x, second.y - first.y));
+      if (!pinchSession.current) {
+        pinchSession.current = { startDistance: distance, startScale: effectiveCardScale };
+      }
+      const minimumScale = Math.min(0.56, maxCardScale);
+      const requestedScale = pinchSession.current.startScale * (distance / pinchSession.current.startDistance);
+      setCardScale(Math.min(maxCardScale, Math.max(minimumScale, requestedScale)));
+      dragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
     const drag = dragSession.current;
     if (!drag || drag.pointerId !== event.pointerId || resizing) return;
     const cardRect = cardRef.current?.getBoundingClientRect();
@@ -541,13 +576,30 @@ export default function Home() {
 
   const startDrag = (event: ReactPointerEvent<HTMLElement>) => {
     if (event.button !== 0) return;
+    if (event.pointerType === "touch") return;
+    const pointers = activeCardPointers.current;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    event.currentTarget.setPointerCapture(event.pointerId);
+
+    if (pointers.size >= 2) {
+      const [first, second] = Array.from(pointers.values());
+      pinchSession.current = {
+        startDistance: Math.max(1, Math.hypot(second.x - first.x, second.y - first.y)),
+        startScale: effectiveCardScale,
+      };
+      dragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
     const cardRect = event.currentTarget.getBoundingClientRect();
     dragSession.current = {
       pointerId: event.pointerId,
       offsetX: event.clientX - (cardRect.left + cardRect.width / 2),
       offsetY: event.clientY - cardRect.top,
     };
-    event.currentTarget.setPointerCapture(event.pointerId);
     setDragging(true);
   };
 
@@ -571,11 +623,130 @@ export default function Home() {
     setResizing(true);
   };
 
-  const stopPointerInteraction = () => {
+  const endCardPointer = (event: ReactPointerEvent<HTMLElement>) => {
+    const pointers = activeCardPointers.current;
+    if (!pointers.has(event.pointerId)) return;
+    pointers.delete(event.pointerId);
+
+    if (pointers.size === 1 && pinchSession.current) {
+      const [pointerId, point] = Array.from(pointers.entries())[0];
+      const cardRect = cardRef.current?.getBoundingClientRect();
+      pinchSession.current = null;
+      setResizing(false);
+      if (cardRect) {
+        dragSession.current = {
+          pointerId,
+          offsetX: point.x - (cardRect.left + cardRect.width / 2),
+          offsetY: point.y - cardRect.top,
+        };
+        setDragging(true);
+      }
+      return;
+    }
+
+    if (pointers.size === 0) {
+      dragSession.current = null;
+      pinchSession.current = null;
+      setDragging(false);
+      setResizing(false);
+    }
+  };
+
+  const stopResizeInteraction = () => {
     dragSession.current = null;
     resizeSession.current = null;
+    pinchSession.current = null;
+    activeCardPointers.current.clear();
     setDragging(false);
     setResizing(false);
+  };
+
+  const startTouchInteraction = (event: ReactTouchEvent<HTMLElement>) => {
+    const touches = Array.from(event.touches);
+    if (touches.length >= 2) {
+      const [first, second] = touches;
+      pinchSession.current = {
+        startDistance: Math.max(1, Math.hypot(second.clientX - first.clientX, second.clientY - first.clientY)),
+        startScale: effectiveCardScale,
+      };
+      touchDragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
+    const touch = touches[0];
+    const cardRect = event.currentTarget.getBoundingClientRect();
+    touchDragSession.current = {
+      offsetX: touch.clientX - (cardRect.left + cardRect.width / 2),
+      offsetY: touch.clientY - cardRect.top,
+    };
+    pinchSession.current = null;
+    setDragging(true);
+    setResizing(false);
+  };
+
+  const moveTouchInteraction = (event: ReactTouchEvent<HTMLElement>) => {
+    const touches = Array.from(event.touches);
+    if (touches.length >= 2) {
+      const [first, second] = touches;
+      const distance = Math.max(1, Math.hypot(second.clientX - first.clientX, second.clientY - first.clientY));
+      if (!pinchSession.current) {
+        pinchSession.current = { startDistance: distance, startScale: effectiveCardScale };
+      }
+      const minimumScale = Math.min(0.56, maxCardScale);
+      const requestedScale = pinchSession.current.startScale * (distance / pinchSession.current.startDistance);
+      setCardScale(Math.min(maxCardScale, Math.max(minimumScale, requestedScale)));
+      touchDragSession.current = null;
+      setDragging(false);
+      setResizing(true);
+      event.preventDefault();
+      return;
+    }
+
+    const touch = touches[0];
+    const drag = touchDragSession.current;
+    const poster = posterRef.current;
+    const card = cardRef.current;
+    if (!touch || !drag || !poster || !card || pinchSession.current) return;
+    const posterRect = poster.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const halfWidth = (cardRect.width / posterRect.width) * 50;
+    const cardHeight = (cardRect.height / posterRect.height) * 100;
+    const minX = Math.min(50, halfWidth);
+    const maxX = Math.max(50, 100 - minX);
+    const maxY = Math.max(0, 100 - cardHeight);
+    const requestedX = ((touch.clientX - drag.offsetX - posterRect.left) / posterRect.width) * 100;
+    const requestedY = ((touch.clientY - drag.offsetY - posterRect.top) / posterRect.height) * 100;
+    setCardX(Math.min(maxX, Math.max(minX, requestedX)));
+    setCardY(Math.min(maxY, Math.max(0, requestedY)));
+    event.preventDefault();
+  };
+
+  const endTouchInteraction = (event: ReactTouchEvent<HTMLElement>) => {
+    const touches = Array.from(event.touches);
+    if (touches.length === 1 && pinchSession.current) {
+      const touch = touches[0];
+      const cardRect = cardRef.current?.getBoundingClientRect();
+      pinchSession.current = null;
+      setResizing(false);
+      if (cardRect) {
+        touchDragSession.current = {
+          offsetX: touch.clientX - (cardRect.left + cardRect.width / 2),
+          offsetY: touch.clientY - cardRect.top,
+        };
+        setDragging(true);
+      }
+      return;
+    }
+
+    if (touches.length === 0) {
+      touchDragSession.current = null;
+      pinchSession.current = null;
+      setDragging(false);
+      setResizing(false);
+    }
   };
 
   const downloadPng = async () => {
@@ -609,9 +780,10 @@ export default function Home() {
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       const basePadding = 32;
-      context.font = `400 ${X_TEMPLATE_BODY_FONT}px Arial, PingFang SC, sans-serif`;
+      const exportBodyFontSize = X_TEMPLATE_BODY_FONT + (bodyFontSize - DEFAULT_BODY_FONT_SIZE) * 2;
+      context.font = `400 ${exportBodyFontSize}px Arial, PingFang SC, sans-serif`;
       const lines = wrapCanvasText(context, text, X_TEMPLATE_WIDTH - basePadding * 2);
-      const baseLineHeight = 40;
+      const baseLineHeight = (bodyFontSize + 4) * 2;
       const baseTextTop = 134;
       const baseMetaTop = baseTextTop + Math.max(0, lines.length - 1) * baseLineHeight + 64;
       const baseDividerY = baseMetaTop + 41;
@@ -692,7 +864,7 @@ export default function Home() {
       context.fillText("•••", x + width - padding - 52 * scale, y + 34 * scale);
 
       context.fillStyle = "#0f1419";
-      context.font = `400 ${X_TEMPLATE_BODY_FONT * scale}px Arial, PingFang SC, sans-serif`;
+      context.font = `400 ${exportBodyFontSize * scale}px Arial, PingFang SC, sans-serif`;
       lines.forEach((line, index) => {
         context.fillText(line, x + padding, y + (baseTextTop + index * baseLineHeight) * scale);
       });
@@ -735,6 +907,14 @@ export default function Home() {
       notify(error instanceof Error ? error.message : "PNG 生成失败");
     }
   };
+
+  if (libraryState === "loading") {
+    return <main className="api-gate"><img src="/brand/xjlb-logo.png" alt="" /><h1>正在连接素材服务器</h1><p>正在读取最新素材、账号和背景。</p></main>;
+  }
+
+  if (libraryState === "error") {
+    return <main className="api-gate api-gate-error"><img src="/brand/xjlb-logo.png" alt="" /><h1>素材服务器暂时不可用</h1><p>{libraryError}</p><button onClick={() => { setLibraryState("loading"); setLoadAttempt((value) => value + 1); }}>重新连接</button></main>;
+  }
 
   return (
     <main className="app-shell">
@@ -806,7 +986,18 @@ export default function Home() {
           <section className="stage" aria-label="卡片预览区">
             <div className="stage-toolbar">
               <span><i /> 实时预览</span>
-              <span>拖动卡片调位置 · 拉右下角等比缩放 · 1080 × 1440</span>
+              <span>单指拖动 · 双指或右下角缩放 · 1080 × 1440</span>
+              <label className="mobile-card-scale">
+                <span>卡片大小</span>
+                <input
+                  type="range"
+                  min={Math.round(Math.min(0.56, maxCardScale) * 100)}
+                  max={Math.round(maxCardScale * 100)}
+                  value={Math.round(effectiveCardScale * 100)}
+                  onChange={(event) => setCardScale(Number(event.target.value) / 100)}
+                  aria-label="调整卡片大小"
+                />
+              </label>
             </div>
             <div ref={canvasAreaRef} className="canvas-area">
               <div
@@ -826,8 +1017,8 @@ export default function Home() {
                     "--preview-card-base-scale": PREVIEW_BASE_SCALE,
                   } as CSSProperties}
                   onPointerMove={moveCard}
-                  onPointerUp={stopPointerInteraction}
-                  onPointerCancel={stopPointerInteraction}
+                  onPointerUp={endCardPointer}
+                  onPointerCancel={endCardPointer}
                   onPointerLeave={() => {
                     if (!dragSession.current && !resizeSession.current) setDragging(false);
                   }}
@@ -839,7 +1030,11 @@ export default function Home() {
                     className={`tweet-card ${dragging ? "dragging" : ""} ${resizing ? "resizing" : ""}`}
                     style={{ "--card-scale": effectiveCardScale, left: `${cardX}%`, top: `${cardY}%` } as CSSProperties}
                     onPointerDown={startDrag}
-                    onLostPointerCapture={stopPointerInteraction}
+                    onLostPointerCapture={endCardPointer}
+                    onTouchStart={startTouchInteraction}
+                    onTouchMove={moveTouchInteraction}
+                    onTouchEnd={endTouchInteraction}
+                    onTouchCancel={endTouchInteraction}
                   >
                     <header>
                       <AccountAvatar account={account} className="avatar" />
@@ -849,7 +1044,7 @@ export default function Home() {
                       </div>
                       <span className="tweet-menu">•••</span>
                     </header>
-                    <p>{text || "在右侧输入推文正文"}</p>
+                    <p style={{ fontSize: bodyFontSize, lineHeight: `${bodyFontSize + 4}px` }}>{text || "在右侧输入推文正文"}</p>
                     <div className="tweet-meta">
                       <span>{formatChineseDate(selectedPost?.date ?? "")}</span>
                       <span>·</span>
@@ -873,9 +1068,9 @@ export default function Home() {
                       aria-valuemax={Math.round(maxCardScale * 100)}
                       aria-valuenow={Math.round(effectiveCardScale * 100)}
                       onPointerDown={startResize}
-                      onPointerUp={stopPointerInteraction}
-                      onPointerCancel={stopPointerInteraction}
-                      onLostPointerCapture={stopPointerInteraction}
+                      onPointerUp={stopResizeInteraction}
+                      onPointerCancel={stopResizeInteraction}
+                      onLostPointerCapture={stopResizeInteraction}
                     />
                   </article>
                 </div>
@@ -905,6 +1100,25 @@ export default function Home() {
               <button onClick={restoreOriginal}>使用原推</button>
               <span>{text.length} / 280</span>
             </div>
+            <section className="font-size-control" aria-label="正文字号">
+              <div className="font-size-heading">
+                <strong>正文字号</strong>
+                <span>{bodyFontSize}px · 可调 ±5</span>
+              </div>
+              <div className="font-size-inputs">
+                <button type="button" onClick={() => adjustBodyFontSize(-1)} disabled={bodyFontSize <= MIN_BODY_FONT_SIZE} aria-label="减小正文字号">−</button>
+                <input
+                  type="range"
+                  min={MIN_BODY_FONT_SIZE}
+                  max={MAX_BODY_FONT_SIZE}
+                  step="1"
+                  value={bodyFontSize}
+                  onChange={(event) => setBodyFontSize(Number(event.target.value))}
+                  aria-label="调整正文字号"
+                />
+                <button type="button" onClick={() => adjustBodyFontSize(1)} disabled={bodyFontSize >= MAX_BODY_FONT_SIZE} aria-label="增大正文字号">＋</button>
+              </div>
+            </section>
             <section className="metric-editor" aria-label="帖子数据">
               <div className="metric-editor-heading">
                 <strong>帖子数据</strong>

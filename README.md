@@ -1,9 +1,15 @@
 # 星际留白团队推文卡片工具
 
-一个先本地运行的团队推文素材库与卡片制作网页。当前版本用于确认产品结构和制作体验，已经打通：
+面向团队内容生产的推文素材库与 1080 × 1440 卡片制作工具。
+
+**[在线使用 xpost.garylau.ai](https://xpost.garylau.ai/)**
+
+[![星际留白推文卡片工作台截图](./docs/assets/x-post-workbench.png)](https://xpost.garylau.ai/)
+
+当前生产版本已经打通：
 
 - 团队推文库浏览、搜索、按作者与分类筛选、选择并跳转 X 原贴
-- 默认载入 rwayne、黄小木、AI最严厉的父亲和阿川的 329 条纯文字贴文；网页不提供贴文文件导入入口，素材由受控离线同步更新
+- 生产环境从服务器 API 动态载入全部 `approved` 素材及当前已配置作者；网页不提供贴文文件导入入口，素材由受控 crawler 流程更新
 - 推文来源与发布账号分离
 - 仅显示当前用户可用的发布账号（原型内存权限）
 - 发布账号包含黄小木、Roland.W、AI最严厉的父亲和阿川，账号切换同步名称、ID、认证状态和名称标签
@@ -42,8 +48,30 @@ pnpm data:high-exposure
 
 项目级 Skill 位于 `.agents/skills/x-high-exposure-pure-text/`。它编排相邻 `gary-x-skills` 中的严格 X 原帖抓取与高曝光纯文字筛选，保留正文排版和五项公开数据。当前四位作者按 `Impressions > 5000` 入库；`pnpm data:high-exposure` 会过滤媒体、引用、回复及被 X 拆行隐藏的链接，再按复用意图分类并合并进默认素材。
 
+## 参与协作
+
+前端图层、卡片交互、响应式布局和仓库内背景素材都通过 GitHub Pull Request 协作。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)，从功能分支提交改动，并附上必要的桌面端/移动端截图及验证结果。
+
+Pull Request 只运行无密钥的构建与测试。合并和生产发布由仓库维护者执行；协作者不需要 mini PC、PostgreSQL、X 登录态、管理员账号或 Cloudflare 权限。
+
+## mini PC 服务器
+
+服务器端包含 PostgreSQL 16、Fastify API、素材幂等迁移、媒体持久化、本地管理员登录、管理后台、备份和恢复冒烟测试。API 和数据库仍只监听 mini PC 的 loopback；公开访问保持同域 `/api/*`，经 Cloudflare Tunnel 到达 mini PC。
+
+前端已于 2026-08-22 迁移到 Gary 自己 Cloudflare 账户中的 `x-post` vinext Worker，继续使用 `xpost.garylau.ai`；OpenAI Sites 已解除域名绑定并退出生产链路。前端构建与发布从 Mac 项目目录执行，mini PC 继续只承担 PostgreSQL、API 和 crawler。权威架构、发布门禁和回滚顺序见 [前端托管迁移](./docs/frontend-hosting-migration.md)。
+
+```bash
+pnpm api:build
+pnpm test:server
+pnpm data:migrate:dry
+```
+
+远端部署与运维命令见 [服务器部署说明](./docs/deployment.md)、[运维说明](./docs/operations.md) 和 [回滚说明](./docs/rollback.md)。管理员入口为 `/admin`，使用无公开注册入口的本地 `admin` 账号。自动抓取由 Codex 定时任务通过 SSH 调用项目入口，mini PC 不另设 systemd timer；任务复用项目内固定版本的 `gary-x-post-crawler`，严格验证通过的新素材自动写为 `approved` 并进入制作台，被人工拒绝或归档的素材不会因后续抓取而恢复，并只在完整覆盖与数据库导入同时成功后推进水位线。
+
 ## 当前边界
 
-网页本身不读取 Cookie、不直接连接 X、不自动发布，也不包含真实登录、数据库或服务端权限。当前页面只保留制作台和推文库，不提供团队设置页。项目级 Skill 只调用相邻工具仓库中已经授权的受控采集进程；Cookie / storage state 留在该进程的 Git 忽略目录，经过校验的公开素材才由离线脚本写入网页数据。
+网页本身不读取 X Cookie、不直接连接 X、也不自动发布。生产素材、管理员认证和服务端权限由 mini PC 的 Fastify API 与 PostgreSQL 提供；当前公开页面保留制作台和推文库，管理员入口为 `/admin`。项目级 Skill 只调用已经授权的受控采集进程；Cookie / storage state 仅保留在 mini PC 的 owner-only crawler 目录，只有严格校验通过的公开素材才能写入数据库。
 
 开发方案、数据契约、后端模型、测试清单和 App 集成路线见 [开发文档](./docs/开发文档.md)。需要交给具备服务器 SSH 权限的项目 Agent 执行时，使用 [服务器端开发与部署清单](./docs/服务器端开发与部署清单.md)。新增免费背景的来源与使用记录见 [背景素材来源](./docs/背景素材来源.md)。Research Swarm 的执行状态、已核实结论和未核实缺口见 [调研记录](./docs/调研记录.md)。
+
+仓库可以公开源代码，但 PostgreSQL 数据、备份、crawler 登录态和运行产物永远不进入 Git。公开边界与发布前检查见 [Public repository boundary](./docs/public-repository-boundary.md)。

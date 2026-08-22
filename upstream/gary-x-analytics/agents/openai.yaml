@@ -1,0 +1,4 @@
+interface:
+  display_name: "X 内容分析与交付"
+  short_description: "分析已校验的 X 热帖数据并生成本地素材、截图和交付文档"
+  default_prompt: "使用 $gary-x-analytics 分析官方或已校验的 X 数据，并生成本地交付材料。"

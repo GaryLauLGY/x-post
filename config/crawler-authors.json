@@ -1,0 +1,13 @@
+{
+  "schema": "x-post/crawler-authors/v1",
+  "timezone": "Asia/Shanghai",
+  "watermarkOverlapDays": 2,
+  "initialHistoryDays": 14,
+  "authors": [
+    { "handle": "rwayne", "label": "rwayne" },
+    { "handle": "ai_xiaomu", "label": "黄小木" },
+    { "handle": "dashen_wang", "label": "AI最严厉的父亲" },
+    { "handle": "AI_jacksaku", "label": "阿川" },
+    { "handle": "AdrianPunk115", "label": "Adrian Punk", "initialMinLocalDate": "2026-04-24", "windowDays": 10 }
+  ]
+}

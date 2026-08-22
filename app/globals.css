@@ -20,6 +20,19 @@ body {
   color: var(--ink);
   font-family: var(--font-geist-sans), "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+.api-gate {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 32px;
+  text-align: center;
+}
+.api-gate img { width: 72px; height: 72px; object-fit: contain; }
+.api-gate h1 { margin: 8px 0 0; font-size: 24px; }
+.api-gate p { margin: 0; color: var(--muted); }
+.api-gate button { border: 0; border-radius: 10px; padding: 10px 16px; color: #fff; background: var(--accent-strong); }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
 button, input, textarea, select { transition: border-color .16s ease, background-color .16s ease, color .16s ease, box-shadow .16s ease, transform .16s ease; }
@@ -239,6 +252,7 @@ nav .nav-active { color: var(--accent-strong); background: #fff; font-weight: 75
   border-bottom: 1px solid var(--line);
   background: #fbfcff;
 }
+.mobile-card-scale { display: none; }
 .canvas-area {
   flex: 1;
   min-width: 0;
@@ -293,6 +307,7 @@ nav .nav-active { color: var(--accent-strong); background: #fff; font-weight: 75
   background: #fff;
   box-shadow: 0 12px 32px rgba(16, 26, 22, .2);
   cursor: grab;
+  touch-action: none;
   user-select: none;
   will-change: transform, left, top;
 }
@@ -341,7 +356,7 @@ nav .nav-active { color: var(--accent-strong); background: #fff; font-weight: 75
 .tweet-card p {
   margin: 13px 0 22px;
   color: #0f1419;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
   font-weight: 400;
   letter-spacing: normal;
@@ -441,6 +456,22 @@ textarea { resize: vertical; min-height: 94px; line-height: 1.6; }
   font-weight: 800;
 }
 .text-actions span { color: #99a39d; font-size: 9px; }
+.font-size-control { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.font-size-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.font-size-heading strong { color: #526058; font-size: 11px; }
+.font-size-heading span { color: #929d96; font-size: 9px; font-variant-numeric: tabular-nums; }
+.font-size-inputs { display: grid; grid-template-columns: 30px minmax(0, 1fr) 30px; align-items: center; gap: 9px; margin-top: 10px; }
+.font-size-inputs button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: #fbfcff;
+  font-size: 16px;
+  line-height: 1;
+}
+.font-size-inputs button:disabled { cursor: not-allowed; color: #c1c7c3; background: #f4f5f7; }
 .metric-editor { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .metric-editor-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .metric-editor-heading strong { color: #526058; font-size: 11px; }
@@ -603,11 +634,32 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   .brand-copy { min-width: 0; }
   nav { order: 3; width: 100%; margin: 0; }
   nav button { flex: 1; }
-  .workspace { grid-template-columns: 1fr; height: auto; min-height: 0; }
-  .library-panel { height: auto; min-height: 0; max-height: 320px; }
-  .post-list { height: 130px; }
-  .stage { height: auto; min-height: 620px; padding-right: 0; }
-  .canvas-area { padding: 14px; }
+  .workspace { width: 100%; min-width: 0; grid-template-columns: minmax(0, 1fr); height: auto; min-height: 0; }
+  .library-panel { height: auto; min-height: 0; max-height: none; }
+  .post-list { height: clamp(280px, 42dvh, 420px); }
+  .post-text { font-size: 14px; line-height: 1.7; }
+  .stage {
+    width: 100%;
+    max-width: 100%;
+    height: clamp(420px, 72dvh, 620px);
+    min-height: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+  .stage-toolbar { flex-wrap: wrap; gap: 6px 12px; padding: 10px 12px; line-height: 1.4; }
+  .mobile-card-scale {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    color: #64706a;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .mobile-card-scale input { min-width: 0; margin: 0; }
+  .canvas-area { width: 100%; max-width: 100%; padding: 10px; contain: layout paint; }
+  .canvas-viewport { max-width: 100%; max-height: 100%; }
   .control-panel { position: static; width: auto; max-height: none; }
   .primary-action { margin-left: auto; }
   .page-intro { padding: 26px 22px; }

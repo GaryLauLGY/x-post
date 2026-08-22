@@ -1,0 +1,4 @@
+interface:
+  display_name: "X 博主帖子抓取"
+  short_description: "按日期窗口滚动抓取 X 博主帖子并轮换多个授权登录态"
+  default_prompt: "使用 $gary-x-post-crawler 按日期增量抓取指定 X 博主的帖子，并输出经过原创校验的 CSV。"

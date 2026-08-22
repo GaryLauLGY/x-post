@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 
-URL_RE = re.compile(r"https?://\S+|www\.\S+", re.I)
+URL_RE = re.compile(r"https?://\S+|www\.\S+|\b(?:x|twitter)\.com/|\bt\.co/", re.I)
 
 
 def parse_args() -> argparse.Namespace:
@@ -93,6 +93,8 @@ def main() -> None:
                 "text": text,
                 "source": args.label,
                 "date": date,
+                "publishedAt": str(row.get("Published at") or "").strip(),
+                "observedAt": str(row.get("Observed at") or "").strip(),
                 "link": str(row.get("Post Link") or f"https://x.com/{expected_author}/status/{post_id}"),
                 "category": "其他",
                 "tags": ["其他", args.label],
