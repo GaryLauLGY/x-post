@@ -6,7 +6,7 @@ import { contentHash, parseXStatusUrl, stableUuid } from "../packages/material-p
 
 export const SOURCE_MAP = new Map([
   ["rwayne", { handle: "rwayne", displayName: "rwayne", avatar: "avatars/rwayne.png" }],
-  ["黄小木", { handle: "ai_xiaomu", displayName: "黄小木", avatar: "avatars/ai-xiaomu.png" }],
+  ["黄小木", { handle: "ai_xiaomu", displayName: "黄小木", avatar: "avatars/ai-xiaomu-2076716603392323584.png" }],
   ["AI最严厉的父亲", { handle: "dashen_wang", displayName: "AI最严厉的父亲", avatar: "avatars/dashen-wang.jpg" }],
   ["阿川 | AI thinking", { handle: "AI_jacksaku", displayName: "阿川 | AI thinking", avatar: "avatars/ai-jacksaku.jpg" }],
 ]);

@@ -25,7 +25,7 @@ const sources = [
 ];
 
 const accounts = [
-  { id: "ai-xiaomu", name: "黄小木", handle: "@ai_xiaomu", verified: true, label: "#黄小木", accent: "#263033", avatar: "/avatars/ai-xiaomu.png" },
+  { id: "ai-xiaomu", name: "黄小木", handle: "@ai_xiaomu", verified: true, label: "#黄小木", accent: "#263033", avatar: "/avatars/ai-xiaomu-2076716603392323584.png" },
   { id: "rwayne", name: "Roland.W", handle: "@rwayne", verified: true, label: "#Roland.W", accent: "#756b92", avatar: "/avatars/rwayne.png" },
   { id: "dashen-wang", name: "AI最严厉的父亲", handle: "@dashen_wang", verified: true, label: "#AI最严厉的父亲", accent: "#1d506b", avatar: "/avatars/dashen-wang.jpg" },
   { id: "ai-jacksaku", name: "阿川 | AI thinking", handle: "@AI_jacksaku", verified: true, label: "#阿川", accent: "#be6b3d", avatar: "/avatars/ai-jacksaku.jpg" },
