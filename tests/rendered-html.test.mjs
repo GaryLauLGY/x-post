@@ -201,7 +201,7 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.equal(accountRecords.length, 4);
   assert.deepEqual(accountRecords.map((item) => item.id), ["ai-xiaomu", "rwayne", "dashen-wang", "ai-jacksaku"]);
   assert.equal(accountRecords.find((item) => item.id === "rwayne").avatar, "/avatars/rwayne.png");
-  assert.equal(accountRecords.find((item) => item.id === "ai-xiaomu").avatar, "/avatars/ai-xiaomu.png");
+  assert.equal(accountRecords.find((item) => item.id === "ai-xiaomu").avatar, "/avatars/ai-xiaomu-2076716603392323584.png");
   assert.equal(accountRecords.find((item) => item.id === "rwayne").label, "#Roland.W");
   assert.equal(accountRecords.find((item) => item.id === "dashen-wang").avatar, "/avatars/dashen-wang.jpg");
   assert.equal(accountRecords.find((item) => item.id === "ai-jacksaku").avatar, "/avatars/ai-jacksaku.jpg");
