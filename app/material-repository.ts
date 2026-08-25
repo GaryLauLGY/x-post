@@ -13,7 +13,7 @@ export type Account = {
 
 export type PostMetrics = { replies: number; reposts: number; likes: number; bookmarks: number; views: number };
 export type Post = { id: string; text: string; source: string; date: string; link: string; category: string; tags: string[]; note?: string; metrics: PostMetrics };
-export type Background = { id: string; name: string; kind: "gradient" | "image"; value: string; palette?: string[] };
+export type Background = { id: string; name: string; kind: "gradient" | "image"; value: string; palette?: string[]; isPersonal?: boolean };
 
 export const legacyBootstrap = {
   accounts: existingAccounts as Account[],
