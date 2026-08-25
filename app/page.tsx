@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ChangeEvent, CSSProperties, PointerEvent as ReactPointerEvent, TouchEvent as ReactTouchEvent } from "react";
 import { legacyBootstrap, loadLiveLibrary, type Account, type Background, type Post, type PostMetrics } from "./material-repository";
+import { deletePersonalBackground, listPersonalBackgrounds, savePersonalBackground, type PersonalBackgroundRecord } from "./personal-backgrounds";
 
 type ActionIconName = "reply" | "repost" | "like" | "bookmark" | "share";
 
@@ -289,6 +290,7 @@ export default function Home() {
   const [dragging, setDragging] = useState(false);
   const [resizing, setResizing] = useState(false);
   const backgroundInput = useRef<HTMLInputElement>(null);
+  const personalBackgroundUrls = useRef(new Map<string, string>());
   const canvasAreaRef = useRef<HTMLDivElement>(null);
   const posterRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLElement>(null);
@@ -334,13 +336,33 @@ export default function Home() {
   }, [author, category, posts, search]);
   const effectiveCardScale = Math.min(cardScale, maxCardScale);
 
+  const backgroundFromPersonalRecord = (record: PersonalBackgroundRecord): Background => {
+    let value = personalBackgroundUrls.current.get(record.id);
+    if (!value) {
+      value = URL.createObjectURL(record.blob);
+      personalBackgroundUrls.current.set(record.id, value);
+    }
+    return { id: record.id, name: record.name, kind: "image", value, isPersonal: true };
+  };
+
   useEffect(() => {
     let cancelled = false;
-    loadLiveLibrary().then((library) => {
+    Promise.all([
+      loadLiveLibrary(),
+      listPersonalBackgrounds().catch(() => []),
+    ]).then(([library, personalRecords]) => {
       if (cancelled) return;
       setPosts(library.posts);
       setAvailableAccounts(library.accounts);
-      setBackgrounds(library.backgrounds);
+      const personalBackgrounds = personalRecords.map(backgroundFromPersonalRecord);
+      const personalIds = new Set(personalBackgrounds.map((item) => item.id));
+      for (const [id, url] of personalBackgroundUrls.current) {
+        if (!personalIds.has(id)) {
+          URL.revokeObjectURL(url);
+          personalBackgroundUrls.current.delete(id);
+        }
+      }
+      setBackgrounds([...library.backgrounds, ...personalBackgrounds]);
       const firstPost = library.posts[0]!;
       const firstAccount = accountForSource(firstPost.source, library.accounts) ?? library.accounts[0]!;
       setSelectedPostId(firstPost.id);
@@ -358,6 +380,11 @@ export default function Home() {
     });
     return () => { cancelled = true; };
   }, [loadAttempt]);
+
+  useEffect(() => () => {
+    for (const url of personalBackgroundUrls.current.values()) URL.revokeObjectURL(url);
+    personalBackgroundUrls.current.clear();
+  }, []);
 
   useEffect(() => {
     if (tab !== "studio") return;
@@ -481,19 +508,36 @@ export default function Home() {
     setPublishDraft((current) => replacePublishingTagLine(current, buildPublishingTags(selectedPost, account, nextOffset)));
   };
 
-  const uploadBackground = (event: ChangeEvent<HTMLInputElement>) => {
+  const uploadBackground = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     event.target.value = "";
     if (!file) return;
-    const item: Background = {
-      id: `upload-${Date.now()}`,
-      name: file.name.replace(/\.[^.]+$/, ""),
-      kind: "image",
-      value: URL.createObjectURL(file),
-    };
-    setBackgrounds((current) => [...current, item]);
-    setBackgroundId(item.id);
-    notify("背景已加入当前素材库");
+    try {
+      const record = await savePersonalBackground(file);
+      const item = backgroundFromPersonalRecord(record);
+      setBackgrounds((current) => [...current, item]);
+      setBackgroundId(item.id);
+      notify("图片仅保存到当前浏览器");
+    } catch (error) {
+      notify(error instanceof Error ? error.message : "图片保存失败");
+    }
+  };
+
+  const removePersonalBackground = async (item: Background) => {
+    if (!window.confirm(`删除本机图片“${item.name}”？此操作无法撤销。`)) return;
+    try {
+      await deletePersonalBackground(item.id);
+      const objectUrl = personalBackgroundUrls.current.get(item.id);
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      personalBackgroundUrls.current.delete(item.id);
+      setBackgrounds((current) => current.filter((candidate) => candidate.id !== item.id));
+      setBackgroundId((current) => current === item.id
+        ? (backgrounds.find((candidate) => candidate.id !== item.id)?.id ?? builtinBackgrounds[0]!.id)
+        : current);
+      notify("本机图片已删除");
+    } catch (error) {
+      notify(error instanceof Error ? error.message : "本机图片删除失败");
+    }
   };
 
   const addNetworkBackground = () => {
@@ -1145,21 +1189,34 @@ export default function Home() {
               <label>背景压暗<input type="range" min="0" max="70" value={dim} onChange={(event) => setDim(Number(event.target.value))} /></label>
               <b>{dim}%</b>
             </div>
-            <div className="background-heading"><strong>背景素材</strong><span>{backgrounds.length} 张</span></div>
+            <div className="background-heading"><strong>背景素材</strong><span>{backgrounds.length} 张 · {backgrounds.filter((item) => item.isPersonal).length} 张本机图片</span></div>
             <div className="background-grid">
               {backgrounds.map((item) => (
-                <button
-                  key={item.id}
-                  aria-label={item.name}
-                  title={item.name}
-                  className={item.id === background.id ? "background-active" : ""}
-                  style={backgroundStyle(item)}
-                  onClick={() => setBackgroundId(item.id)}
-                />
+                <div className="background-tile" key={item.id}>
+                  <button
+                    aria-label={item.name}
+                    title={item.name}
+                    className={`background-swatch ${item.id === background.id ? "background-active" : ""}`}
+                    style={backgroundStyle(item)}
+                    onClick={() => setBackgroundId(item.id)}
+                  />
+                  {item.isPersonal && (
+                    <button
+                      type="button"
+                      className="background-remove"
+                      aria-label={`删除本机图片 ${item.name}`}
+                      title="删除本机图片"
+                      onClick={() => void removePersonalBackground(item)}
+                    >×</button>
+                  )}
+                </div>
               ))}
-              <button className="background-add" onClick={() => backgroundInput.current?.click()} aria-label="上传背景">＋</button>
+              <div className="background-tile background-add-tile">
+                <button className="background-add" onClick={() => backgroundInput.current?.click()} aria-label="上传背景">＋</button>
+              </div>
             </div>
             <input ref={backgroundInput} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadBackground} />
+            <p className="background-privacy">上传图片仅保存在当前浏览器，不会上传到服务器或分享给其他用户。</p>
             <div className="url-row">
               <input value={backgroundUrl} onChange={(event) => setBackgroundUrl(event.target.value)} placeholder="粘贴网络图片地址" />
               <button onClick={addNetworkBackground}>添加</button>
