@@ -37,7 +37,37 @@ async function responseJson<T>(url: string) {
   return response.json() as Promise<T>;
 }
 
+function preloadLibraryImage(url: string, priority: "high" | "auto") {
+  if (typeof Image === "undefined") return Promise.resolve();
+  return new Promise<void>((resolve) => {
+    const image = new Image();
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      resolve();
+    };
+    const timeout = setTimeout(finish, 12000);
+    image.fetchPriority = priority;
+    image.addEventListener("load", finish, { once: true });
+    image.addEventListener("error", finish, { once: true });
+    image.src = url;
+    if (image.complete) finish();
+  });
+}
+
 export async function loadLiveLibrary() {
+  const accountsRequest = responseJson<{ data: Array<{ id: string; name: string; handle: string; verified: boolean; label?: string; accent?: string; avatarUrl?: string }> }>("/api/v1/publishing-accounts");
+  const backgroundsRequest = responseJson<{ data: Array<{ id: string; title: string; url: string }> }>("/api/v1/backgrounds");
+  const preloadedAccountsRequest = accountsRequest.then(async (response) => {
+    await Promise.all(response.data.map((item) => item.avatarUrl ? preloadLibraryImage(item.avatarUrl, "high") : Promise.resolve()));
+    return response;
+  });
+  const preloadedBackgroundsRequest = backgroundsRequest.then(async (response) => {
+    await Promise.all(response.data.map((item) => preloadLibraryImage(item.url, "auto")));
+    return response;
+  });
   const materials: ApiMaterial[] = [];
   let cursor: string | null = null;
   do {
@@ -48,10 +78,7 @@ export async function loadLiveLibrary() {
     cursor = page.page.nextCursor;
   } while (cursor);
 
-  const [accountsResponse, backgroundsResponse] = await Promise.all([
-    responseJson<{ data: Array<{ id: string; name: string; handle: string; verified: boolean; label?: string; accent?: string; avatarUrl?: string }> }>("/api/v1/publishing-accounts"),
-    responseJson<{ data: Array<{ id: string; title: string; url: string }> }>("/api/v1/backgrounds"),
-  ]);
+  const [accountsResponse, backgroundsResponse] = await Promise.all([preloadedAccountsRequest, preloadedBackgroundsRequest]);
 
   const posts: Post[] = materials.map((item) => ({
     id: item.id,

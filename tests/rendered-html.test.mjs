@@ -27,7 +27,7 @@ test("server-renders the tweet card studio", async () => {
 });
 
 test("removes starter-only preview assets and metadata", async () => {
-  const [page, layout, packageJson, materials, accounts, users, styles, syncScript, personalBackgrounds] = await Promise.all([
+  const [page, layout, packageJson, materials, accounts, users, styles, syncScript, personalBackgrounds, materialRepository] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
@@ -37,6 +37,7 @@ test("removes starter-only preview assets and metadata", async () => {
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../scripts/build-existing-materials.mjs", import.meta.url), "utf8"),
     readFile(new URL("../app/personal-backgrounds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/material-repository.ts", import.meta.url), "utf8"),
   ]);
   assert.match(page, /downloadPng/);
   assert.doesNotMatch(page, /本地原型|prototype-badge/);
@@ -135,9 +136,14 @@ test("removes starter-only preview assets and metadata", async () => {
   assert.match(page, /deletePersonalBackground/);
   assert.match(page, /上传图片仅保存在当前浏览器，不会上传到服务器或分享给其他用户/);
   assert.match(page, /className="background-remove"/);
+  assert.match(page, /className="background-tile background-add-tile"/);
   assert.match(personalBackgrounds, /indexedDB\.open/);
   assert.match(personalBackgrounds, /PERSONAL_BACKGROUND_MAX_BYTES = 20 \* 1024 \* 1024/);
   assert.doesNotMatch(personalBackgrounds, /fetch\(|XMLHttpRequest/);
+  assert.match(materialRepository, /function preloadLibraryImage/);
+  assert.match(materialRepository, /image\.fetchPriority = priority/);
+  assert.match(materialRepository, /preloadedAccountsRequest/);
+  assert.match(materialRepository, /preloadedBackgroundsRequest/);
   await access(new URL("../public/backgrounds/itadaki-city-night.jpg", import.meta.url));
   await access(new URL("../public/backgrounds/sunny-city-blue-sky.jpg", import.meta.url));
   await access(new URL("../public/backgrounds/sunny-city-clouds.jpg", import.meta.url));

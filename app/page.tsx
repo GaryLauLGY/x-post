@@ -1211,7 +1211,9 @@ export default function Home() {
                   )}
                 </div>
               ))}
-              <button className="background-add" onClick={() => backgroundInput.current?.click()} aria-label="上传背景">＋</button>
+              <div className="background-tile background-add-tile">
+                <button className="background-add" onClick={() => backgroundInput.current?.click()} aria-label="上传背景">＋</button>
+              </div>
             </div>
             <input ref={backgroundInput} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadBackground} />
             <p className="background-privacy">上传图片仅保存在当前浏览器，不会上传到服务器或分享给其他用户。</p>
